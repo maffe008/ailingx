@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
+	<title>{{ abc_name }}</title>
+    <link rel="shortcut icon" href="">
+
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/jquery-ui.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/jquery-ui.structure.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/jquery-ui.theme.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/sogis.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/somap.css' %}" />
+
+
+    <link rel="stylesheet" href="http://cache.amap.com/lbs/static/main1119.css"/>
+    <script src="http://cache.amap.com/lbs/static/es5.min.js"></script>
+    <script src="http://webapi.amap.com/maps?v=1.3&key=6a1f1e70483a2dc9efa4bfcbfb15c109"></script>
+
+    <!-- UI组件库 1.0 -->
+    <script src="//webapi.amap.com/ui/1.0/main.js"></script>
+
+    <script src="{% static 'js/jquery.js' %}"></script>
+    <script src="{% static 'js/bootstrap.js' %}"></script>
+    <script src="{% static 'js/jquery-ui.js' %}"></script>
+    <script src="{% static 'js/demo-option.js' %}"></script>
+    <script src="{% static 'js/demo-jquery.js' %}"></script>
+    <script src="{% static 'js/demo-blockfunc.js' %}"></script>
+    <script src="{% static 'js/demo-jquery-ui.js' %}"></script>
+
+</head>
+<body>
+    {% include 'DataDiv.html' %}
+	<div id="allmap"></div>
+</body>
+</html>
+<script type="text/javascript">
+
+    var imgnswe = {{ img_nswe|safe }};
+    var wsp = new AMap.LngLat(imgnswe[2],imgnswe[1]);
+    var enp = new AMap.LngLat(imgnswe[3],imgnswe[0]);
+    var gpscenterP = new AMap.LngLat({{ centerPlng|safe }},{{ centerPlat|safe }});
+    var ps = [wsp,enp,gpscenterP];
+     AMap.convertFrom(ps, "gps", function(status, result) {
+        //alert(result.locations[0]+","+result.locations[1]+","+result.locations[2]);
+        var map = new AMap.Map('allmap', {
+            resizeEnable: true,
+            zoom:{{ zoom|safe }},
+            center: result.locations[2],
+            expandZoomRange: true,
+            zooms: [3,20]
+        });
+        map.setMapStyle("fresh");
+        AMapUI.loadUI(['control/BasicControl'], function(BasicControl) {
+            //缩放控件，显示Zoom值
+            map.addControl(new BasicControl.Zoom({
+                position: 'rb',
+                showZoomNum: true
+            }));
+            //图层切换控件
+            map.addControl(new BasicControl.LayerSwitcher({
+                position: 'rt'
+            }));
+        });
+        /*
+        */
+        //单击获取点击的经纬度
+        map.on('click', function(e) {
+            alert('['+e.lnglat.getLng()+','+e.lnglat.getLat()+']');
+        });
+        var bounds = new AMap.Bounds(result.locations[0],result.locations[1]),
+        groundImageOpts = {
+            opacity: 1,   //图片透明度
+            clickable: true,//图片相应鼠标点击事件，默认：false
+            map: map     //图片叠加的地图对象
+        };
+        map.setLimitBounds(bounds);
+        var groundImage = new AMap.GroundImage({{ NCurl|safe }}, bounds, groundImageOpts);
+
+        var NDVI_choose = document.getElementById("NDVI_choose");
+        NDVI_choose.addEventListener("click",show_ndvi);
+        function show_ndvi(){
+            if (NDVI_choose.className == "check-box glyphicon glyphicon-unchecked"){
+                NDVI_choose.className ='check-box glyphicon glyphicon-check';
+                var groundImagendvi = new AMap.GroundImage({{ NDVIurl|safe }}, bounds, groundImageOpts);
+            }else if(NDVI_choose.className == "check-box glyphicon glyphicon-check"){
+                NDVI_choose.className ='check-box glyphicon glyphicon-unchecked';
+                var groundImage = new AMap.GroundImage({{ NCurl|safe }}, bounds, groundImageOpts);
+            }else{
+                alert("NDVI_choose ERROR");
+            }
+        }
+
+    });
+
+</script>
+

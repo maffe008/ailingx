@@ -1,0 +1,473 @@
+<!--呼伦贝尔-->
+<div class="panel-group blocklist" id="panel-blocklist">
+    <div class="blocklist-heading-Area">
+        <a href="{% url 'demo:demomap' 1 %}" target="_blank"><span id="Demo_Area_Hulbr" class="glyphicon glyphicon-map-marker" onclick="" style="cursor: pointer"></span></a>
+        <span id="Demo_Area_Hulbr_loc" onclick="change_intro('Hulbr')" style="cursor: pointer">呼伦贝尔农垦</span>
+        <span class="glyphicon glyphicon-chevron-down" data-toggle="collapse" data-parent="#listBar"
+              data-target="#panel-element-demo-Hulbr"  style="float: right;cursor: pointer"></span>
+    </div>
+    <!--地块列表|呼伦贝尔-->
+    <div id="panel-element-demo-Hulbr" class="panel-collapse collapse">
+        <div class="blocklist-heading" >
+            <span id="Demo_Area_Hulbr_T" class="glyphicon glyphicon-map-marker" onclick=""></span>
+            <span id="Demo_Area_Hulbr_T_outline" onclick="change_intro('Hulbr_T')">呼伦贝尔农垦特泥河农牧场</span>
+            <span class="glyphicon glyphicon-chevron-down" data-toggle="collapse" data-parent="#panel-blocklist"
+                  data-target="#panel-element-demo-Hulbr_T" style="float: right"></span>
+        </div>
+        <div id="panel-element-demo-Hulbr_T" class="panel-collapse collapse">
+            <div id="Demo_Comprt_Hulbr_T_01" class="Blockname panel-body" >
+                <span id="Demo_Comprt_Hulbr_T_01_info" class="glyphicon glyphicon-th-list" style="cursor: pointer"></span>
+                <span id="Demo_Comprt_Hulbr_T_01_loc" style="cursor: pointer">特泥河四队</span>
+            </div>
+            <div id="Demo_Comprt_Hulbr_T_02" class="Blockname panel-body">
+                <span id="Demo_Comprt_Hulbr_T_02_info" class="glyphicon glyphicon-th-list" style="cursor: pointer"></span>
+                <span id="Demo_Comprt_Hulbr_T_02_loc" style="cursor: pointer">特泥河七队</span>
+            </div>
+        </div>
+        <div class="blocklist-heading" >
+            <span id="Demo_Area_Hulbr_X" class="glyphicon glyphicon-map-marker" onclick=""></span>
+            <span id="Demo_Area_Hulbr_X_outline" onclick="change_intro('Hulbr_X')">呼伦贝尔农垦谢尔塔拉农牧场</span>
+            <span class="glyphicon glyphicon-chevron-down" data-toggle="collapse" data-parent="#panel-blocklist"
+                  data-target="#panel-element-demo-Hulbr_X" style="float: right"></span>
+        </div>
+        <div id="panel-element-demo-Hulbr_X" class="panel-collapse collapse">
+            <div id="Demo_Comprt_Hulbr_X_01" class="Blockname panel-body" >
+                <span id="Demo_Comprt_Hulbr_X_01_info" class="glyphicon glyphicon-th-list" style="cursor: pointer"> </span>
+                <span id="Demo_Comprt_Hulbr_X_01_loc" style="cursor: pointer">谢尔塔拉一队</span>
+            </div>
+            <div id="Demo_Comprt_Hulbr_X_02" class="Blockname panel-body">
+                <span id="Demo_Comprt_Hulbr_X_02_info" class="glyphicon glyphicon-th-list" style="cursor: pointer"> </span>
+                <span id="Demo_Comprt_Hulbr_X_02_loc" style="cursor: pointer">谢尔塔拉二队</span>
+            </div>
+            <div id="Demo_Comprt_Hulbr_X_03" class="Blockname panel-body">
+                <span id="Demo_Comprt_Hulbr_X_03_info" class="glyphicon glyphicon-th-list" style="cursor: pointer"> </span>
+                <span id="Demo_Comprt_Hulbr_X_03_loc" style="cursor: pointer">谢尔塔拉三队</span>
+            </div>
+        </div>
+        <!--
+        <div class="blocklist-heading" >
+            <span id="Demo_Area_Hulbr_A" class="glyphicon glyphicon-map-marker" onclick=""></span>
+            <span id="Demo_Area_Hulbr_A_outline">呼伦贝尔农垦地块A</span>
+            <span class="glyphicon glyphicon-chevron-down" data-toggle="collapse" data-parent="#panel-blocklist"
+                  data-target="#panel-element-demo-Hulbr_A" style="float: right"></span>
+        </div>
+        <div id="panel-element-demo-Hulbr_A" class="panel-collapse collapse">
+            <div id="Demo_Comprt_Hulbr_A_01" class="Blockname panel-body" >
+                <span id="Demo_Comprt_Hulbr_A_01_loc" class="glyphicon glyphicon-map-marker" style="cursor: pointer"></span>
+                区划01|农场A
+            </div>
+            <div id="Demo_Comprt_Hulbr_A_02" class="Blockname panel-body">
+                <span id="Demo_Comprt_Hulbr_A_02_loc" class="glyphicon glyphicon-map-marker" style="cursor: pointer"></span>
+                区划02|农场B
+            </div>
+        </div>
+        <div class="blocklist-heading">
+            <span id="Demo_Area_Hulbr_B" class="glyphicon glyphicon-map-marker" onclick=""></span>
+            <span id="Demo_Area_Hulbr_B_outline">呼伦贝尔农垦地块B</span>
+            <span class="glyphicon glyphicon-chevron-down" data-toggle="collapse" data-parent="#panel-blocklist"
+                  data-target="#panel-element-demo-Hulbr_B" style="float: right"></span>
+        </div>
+        <div id="panel-element-demo-Hulbr_B" class="panel-collapse collapse">
+            <div id="Demo_Comprt_Hulbr_B_03" class="Blockname panel-body">
+                <span id="Demo_Comprt_Hulbr_B_03_loc" class="glyphicon glyphicon-map-marker" style="cursor: pointer"></span>
+                区划03|农场C
+            </div>
+            <div id="Demo_Comprt_Hulbr_B_04" class="Blockname panel-body">
+                <span id="Demo_Comprt_Hulbr_B_04_loc" class="glyphicon glyphicon-map-marker" style="cursor: pointer"></span>
+                区划04|农场D
+            </div>
+        </div>
+        -->
+    </div>
+</div>
+
+
+
+<!--重庆-->
+<div class="panel-group blocklist" id="panel-blocklist">
+    <div class="blocklist-heading-Area">
+         <a href="{% url 'demo:demomap' 2 %}" target="_blank"><span id="Demo_Area_Chongqing" class="glyphicon glyphicon-map-marker" onclick="" style="cursor: pointer"></span></a>
+        <span id="Demo_Area_Chongqing_loc" style="cursor: pointer">重庆市林业防治</span>
+        <span class="glyphicon glyphicon-chevron-down" data-toggle="collapse" data-parent="#listBar"
+              data-target="#panel-element-demo-Chongqing" style="float: right;cursor: pointer"></span>
+    </div>
+    <!--地块列表|重庆1-5块-->
+    <div id="panel-element-demo-Chongqing" class="panel-collapse collapse">
+        <div class="blocklist-heading">
+            <span id="Demo_Area_Chongqing_A" class="glyphicon glyphicon-tree-conifer" onclick=""></span>
+            <span id="Demo_Area_Chongqing_A_outline">A</span>
+            <span class="glyphicon glyphicon-chevron-down" data-toggle="collapse" data-parent="#panel-blocklist"
+                  data-target="#panel-element-demo-Chongqing_A" style="float: right"></span>
+        </div>
+        <div id="panel-element-demo-Chongqing_A" class="panel-collapse collapse">
+            <div id="Demo_Comprt_Chongqing_A_00" class="Blockname panel-body" >
+                <span id="Demo_Comprt_Chongqing_A_01_loc" class="glyphicon glyphicon-leaf" style="cursor: pointer"></span>
+                示例区
+            </div>
+            <div id="Demo_Comprt_Chongqing_A_01" class="Blockname panel-body" >
+                <span id="Demo_Comprt_Chongqing_A_02_loc" class="glyphicon glyphicon-info-sign" style="cursor: pointer"></span>
+                功能
+            </div>
+        </div>
+
+            <div class="blocklist-heading">
+            <span id="Demo_Area_Chongqing_B" class="glyphicon glyphicon-tree-conifer" onclick=""></span>
+            <span id="Demo_Area_Chongqing_B_outline">B</span>
+            <span class="glyphicon glyphicon-chevron-down" data-toggle="collapse" data-parent="#panel-blocklist"
+                  data-target="#panel-element-demo-Chongqing_B" style="float: right"></span>
+        </div>
+        <div id="panel-element-demo-Chongqing_B" class="panel-collapse collapse">
+            <div id="Demo_Comprt_Chongqing_B_00" class="Blockname panel-body" >
+                <span id="Demo_Comprt_Chongqing_B_01_loc" class="glyphicon glyphicon-leaf" style="cursor: pointer"></span>
+                示例区
+            </div>
+            <div id="Demo_Comprt_Chongqing_B_01" class="Blockname panel-body" >
+                <span id="Demo_Comprt_Chongqing_B_02_loc" class="glyphicon glyphicon-info-sign" style="cursor: pointer"></span>
+                功能
+            </div>
+        </div>
+
+            <div class="blocklist-heading">
+            <span id="Demo_Area_Chongqing_C" class="glyphicon glyphicon-tree-conifer" onclick=""></span>
+            <span id="Demo_Area_Chongqing_C_outline">C</span>
+            <span class="glyphicon glyphicon-chevron-down" data-toggle="collapse" data-parent="#panel-blocklist"
+                  data-target="#panel-element-demo-Chongqing_C" style="float: right"></span>
+        </div>
+        <div id="panel-element-demo-Chongqing_C" class="panel-collapse collapse">
+            <div id="Demo_Comprt_Chongqing_C_00" class="Blockname panel-body" >
+                <span id="Demo_Comprt_Chongqing_C_01_loc" class="glyphicon glyphicon-leaf" style="cursor: pointer"></span>
+                示例区
+            </div>
+            <div id="Demo_Comprt_Chongqing_C_01" class="Blockname panel-body" >
+                <span id="Demo_Comprt_Chongqing_C_02_loc" class="glyphicon glyphicon-info-sign" style="cursor: pointer"></span>
+                功能
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+<!--大连-->
+<div class="panel-group blocklist" id="panel-blocklist">
+    <div class="blocklist-heading-Area">
+         <a href="{% url 'demo:demomap' 3 %}" target="_blank"><span id="Demo_Area_Dalian" class="glyphicon glyphicon-map-marker" onclick="" style="cursor: pointer"></span></a>
+        <span id="Demo_Area_Dalian_loc" style="cursor: pointer">大连市林业防治</span>
+        <span class="glyphicon glyphicon-chevron-down" data-toggle="collapse" data-parent="#listBar"
+              data-target="#panel-element-demo-Dalian"  style="float: right;cursor: pointer"></span>
+    </div>
+    <!--地块列表|大连1-6块-->
+    <div id="panel-element-demo-Dalian" class="panel-collapse collapse">
+        <div class="blocklist-heading">
+            <span id="Demo_Area_Dalian_P" class="glyphicon glyphicon-plane" onclick=""></span>
+            <span id="Demo_Area_Dalian_P_outline">大连机场(下拉选择显示范围)</span>
+            <span class="glyphicon glyphicon-chevron-down" data-toggle="collapse" data-parent="#panel-blocklist"
+                  data-target="#panel-element-demo-Dalian_P" style="float: right"></span>
+        </div>
+        <div id="panel-element-demo-Dalian_P" class="panel-collapse collapse">
+            <div id="Demo_Comprt_Dalian_P_01" class="Blockname panel-body" >
+                <span id="Demo_Comprt_Dalian_P_01_alt" class="glyphicon glyphicon-send" style="cursor: pointer"></span>
+                净空区范围
+            </div>
+            <div id="Demo_Comprt_Dalian_P_02" class="Blockname panel-body" >
+                <span id="Demo_Comprt_Dalian_P_02_alt" class="glyphicon glyphicon-send" style="cursor: pointer"></span>
+                立方体显示
+            </div>
+        </div>
+        <div class="blocklist-heading">
+            <span id="Demo_Area_Dalian_A" class="glyphicon glyphicon-plane" onclick=""></span>
+            <span id="Demo_Area_Dalian_A_outline">金普新区</span>
+            <span class="glyphicon glyphicon-chevron-down" data-toggle="collapse" data-parent="#panel-blocklist"
+                  data-target="#panel-element-demo-Dalian_A" style="float: right"></span>
+        </div>
+        <div id="panel-element-demo-Dalian_A" class="panel-collapse collapse">
+            <div id="Demo_Comprt_Dalian_A_01" class="Blockname panel-body" >
+                <span id="Demo_Comprt_Dalian_A_01_alt" class="glyphicon glyphicon-send" style="cursor: pointer"></span>
+                500米高度平面
+            </div>
+            <div id="Demo_Comprt_Dalian_A_02" class="Blockname panel-body" >
+                <span id="Demo_Comprt_Dalian_A_02_alt" class="glyphicon glyphicon-send" style="cursor: pointer"></span>
+                800米高度平面
+            </div>
+        </div>
+
+        <div class="blocklist-heading">
+            <span id="Demo_Area_Dalian_B" class="glyphicon glyphicon-plane" onclick=""></span>
+            <span id="Demo_Area_Dalian_B_outline">主城区</span>
+            <span class="glyphicon glyphicon-chevron-down" data-toggle="collapse" data-parent="#panel-blocklist"
+                  data-target="#panel-element-demo-Dalian_B" style="float: right"></span>
+        </div>
+        <div id="panel-element-demo-Dalian_B" class="panel-collapse collapse">
+            <div id="Demo_Comprt_Dalian_B_01" class="Blockname panel-body" >
+                <span id="Demo_Comprt_Dalian_B_01_alt" class="glyphicon glyphicon-send" style="cursor: pointer"></span>
+                海拔500米平面
+            </div>
+        </div>
+
+        <div class="blocklist-heading">
+            <span id="Demo_Area_Dalian_C" class="glyphicon glyphicon-plane" onclick=""></span>
+            <span id="Demo_Area_Dalian_C_outline">甘井子区</span>
+            <span class="glyphicon glyphicon-chevron-down" data-toggle="collapse" data-parent="#panel-blocklist"
+                  data-target="#panel-element-demo-Dalian_C" style="float: right"></span>
+        </div>
+        <div id="panel-element-demo-Dalian_C" class="panel-collapse collapse">
+            <div id="Demo_Comprt_Dalian_C_01" class="Blockname panel-body" >
+                <span id="Demo_Comprt_Dalian_C_01_alt" class="glyphicon glyphicon-send" style="cursor: pointer"></span>
+                海拔500米平面
+            </div>
+        </div>
+
+        <div class="blocklist-heading">
+            <span id="Demo_Area_Dalian_D" class="glyphicon glyphicon-plane" onclick=""></span>
+            <span id="Demo_Area_Dalian_D_outline">高新技术园区</span>
+            <span class="glyphicon glyphicon-chevron-down" data-toggle="collapse" data-parent="#panel-blocklist"
+                  data-target="#panel-element-demo-Dalian_D" style="float: right"></span>
+        </div>
+        <div id="panel-element-demo-Dalian_D" class="panel-collapse collapse">
+            <div id="Demo_Comprt_Dalian_D_01" class="Blockname panel-body" >
+                <span id="Demo_Comprt_Dalian_D_01_alt" class="glyphicon glyphicon-send" style="cursor: pointer"></span>
+                海拔500米平面
+            </div>
+        </div>
+
+        <div class="blocklist-heading">
+            <span id="Demo_Area_Dalian_E" class="glyphicon glyphicon-plane" onclick=""></span>
+            <span id="Demo_Area_Dalian_E_outline">旅顺口区</span>
+            <span class="glyphicon glyphicon-chevron-down" data-toggle="collapse" data-parent="#panel-blocklist"
+                  data-target="#panel-element-demo-Dalian_E" style="float: right"></span>
+        </div>
+        <div id="panel-element-demo-Dalian_E" class="panel-collapse collapse">
+            <div id="Demo_Comprt_Dalian_E_01" class="Blockname panel-body" >
+                <span id="Demo_Comprt_Dalian_E_01_alt" class="glyphicon glyphicon-send" style="cursor: pointer"></span>
+                海拔500米平面
+            </div>
+        </div>
+
+        <div class="blocklist-heading">
+            <span id="Demo_Area_Dalian_F" class="glyphicon glyphicon-plane" onclick=""></span>
+            <span id="Demo_Area_Dalian_F_outline">长海县</span>
+            <span class="glyphicon glyphicon-chevron-down" data-toggle="collapse" data-parent="#panel-blocklist"
+                  data-target="#panel-element-demo-Dalian_F" style="float: right"></span>
+        </div>
+        <div id="panel-element-demo-Dalian_F" class="panel-collapse collapse">
+            <div id="Demo_Comprt_Dalian_F_01" class="Blockname panel-body" >
+                <span id="Demo_Comprt_Dalian_F_01_alt" class="glyphicon glyphicon-send" style="cursor: pointer"></span>
+                岛群1
+            </div>
+            <div id="Demo_Comprt_Dalian_F_01" class="Blockname panel-body" >
+                <span id="Demo_Comprt_Dalian_F_02_alt" class="glyphicon glyphicon-send" style="cursor: pointer"></span>
+                岛群2
+            </div>
+            <div id="Demo_Comprt_Dalian_F_01" class="Blockname panel-body" >
+                <span id="Demo_Comprt_Dalian_F_03_alt" class="glyphicon glyphicon-send" style="cursor: pointer"></span>
+                岛群3
+            </div>
+            <div id="Demo_Comprt_Dalian_F_01" class="Blockname panel-body" >
+                <span id="Demo_Comprt_Dalian_F_04_alt" class="glyphicon glyphicon-send" style="cursor: pointer"></span>
+                岛群4
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!--青岛-->
+<div class="panel-group blocklist" id="panel-blocklist">
+    <div class="blocklist-heading-Area">
+        <a href="{% url 'demo:demomap' 4 %}" target="_blank"><span id="Demo_Area_Qingdao" class="glyphicon glyphicon-map-marker" onclick="" style="cursor: pointer"></span></a>
+        <span id="Demo_Area_Qingdao_loc" style="cursor: pointer">青岛市林业防治</span>
+        <span class="glyphicon glyphicon-chevron-down" data-toggle="collapse" data-parent="#listBar"
+              data-target="#panel-element-demo-Qingdao"  style="float: right;cursor: pointer"></span>
+    </div>
+    <!--地块列表|青岛-->
+    <div id="panel-element-demo-Qingdao" class="panel-collapse collapse">
+        <div class="blocklist-heading">
+            <span id="Demo_Area_Qingdao_A" class="glyphicon glyphicon-plane" onclick=""></span>
+            <span id="Demo_Area_Qingdao_A_outline">崂山区</span>
+            <span class="glyphicon glyphicon-chevron-down" data-toggle="collapse" data-parent="#panel-blocklist"
+                  data-target="#panel-element-demo-Qingdao_A" style="float: right"></span>
+        </div>
+        <div id="panel-element-demo-Qingdao_A" class="panel-collapse collapse">
+            <div id="Demo_Comprt_Qingdao_A_00" class="Blockname panel-body" >
+                <span id="Demo_Comprt_Qingdao_A_00_loc" class="glyphicon glyphicon-send" style="cursor: pointer"></span>
+                600米高度平面
+            </div>
+            <div id="Demo_Comprt_Qingdao_A_01" class="Blockname panel-body" >
+                <span id="Demo_Comprt_Qingdao_A_01_loc" class="glyphicon glyphicon-send" style="cursor: pointer"></span>
+                800米高度平面
+            </div>
+        </div>
+
+        <div class="blocklist-heading">
+            <span id="Demo_Area_Qingdao_C" class="glyphicon glyphicon-plane" onclick=""></span>
+            <span id="Demo_Area_Qingdao_C_outline">城阳区</span>
+            <span class="glyphicon glyphicon-chevron-down" data-toggle="collapse" data-parent="#panel-blocklist"
+                  data-target="#panel-element-demo-Qingdao_C" style="float: right"></span>
+        </div>
+        <div id="panel-element-demo-Qingdao_C" class="panel-collapse collapse">
+            <div id="Demo_Comprt_Qingdao_C_01" class="Blockname panel-body" >
+                <span id="Demo_Comprt_Qingdao_C_01_loc" class="glyphicon glyphicon-exclamation-sign" style="cursor: pointer"></span>
+                与崂山区共同规划航线
+            </div>
+        </div>
+
+        <div class="blocklist-heading">
+            <span id="Demo_Area_Qingdao_D" class="glyphicon glyphicon-plane" onclick=""></span>
+            <span id="Demo_Area_Qingdao_D_outline">黄岛区</span>
+            <span class="glyphicon glyphicon-chevron-down" data-toggle="collapse" data-parent="#panel-blocklist"
+                  data-target="#panel-element-demo-Qingdao_D" style="float: right"></span>
+        </div>
+        <div id="panel-element-demo-Qingdao_D" class="panel-collapse collapse">
+            <div id="Demo_Comprt_Qingdao_D_01" class="Blockname panel-body" >
+                <span id="Demo_Comprt_Qingdao_D_00_loc" class="glyphicon glyphicon-send" style="cursor: pointer"></span>
+                海拔650米平面
+            </div>
+            <div id="Demo_Comprt_Qingdao_D_01" class="Blockname panel-body" >
+                <span id="Demo_Comprt_Qingdao_D_01_loc" class="glyphicon glyphicon-send" style="cursor: pointer"></span>
+                海拔800米平面
+            </div>
+        </div>
+
+        <div class="blocklist-heading">
+            <span id="Demo_Area_Qingdao_E" class="glyphicon glyphicon-plane" onclick=""></span>
+            <span id="Demo_Area_Qingdao_E_outline">即墨市</span>
+            <span class="glyphicon glyphicon-chevron-down" data-toggle="collapse" data-parent="#panel-blocklist"
+                  data-target="#panel-element-demo-Qingdao_E" style="float: right"></span>
+        </div>
+        <div id="panel-element-demo-Qingdao_E" class="panel-collapse collapse">
+            <div id="Demo_Comprt_Qingdao_E_01" class="Blockname panel-body" >
+                <span id="Demo_Comprt_Qingdao_E_01_loc" class="glyphicon glyphicon-exclamation-sign" style="cursor: pointer"></span>
+                最高海拔不超过300米
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--博罗-->
+<div class="panel-group blocklist" id="panel-blocklist">
+    <div class="blocklist-heading-Area">
+        <a href="{% url 'demo:demomap' 5 %}" target="_blank" data-toggle="tooltip" title="点击图标显示详细数据" ><span id="Demo_Area_Boluo" class="glyphicon glyphicon-fullscreen"  style="cursor: pointer"></span></a>
+        <span id="Demo_Area_Boluo_loc" style="cursor: pointer" onclick="change_intro('BL')">博罗县罗阳镇</span>
+        <span class="glyphicon glyphicon-chevron-down" data-toggle="collapse" data-parent="#listBar"
+              data-target="#panel-element-demo-Boluo"  style="float: right;cursor: pointer"></span>
+    </div>
+    <!--地块列表|博罗县罗阳镇细1-3块-->
+    <div id="panel-element-demo-Boluo" class="panel-collapse collapse">
+        <div class="blocklist-heading">
+            <a href="{% url 'demo:demomap' 50001 %}" target="_blank" data-toggle="tooltip" title="点击图标显示详细数据" ><span id="Demo_Area_Boluo_A" class="glyphicon glyphicon-fullscreen" onclick=""></span></a>
+            <span id="Demo_Block_Boluo_A_outline" onclick="change_intro('BL_0001')" >博罗县罗阳镇示例林业区域甲</span>
+            <span class="glyphicon glyphicon-chevron-down" data-toggle="collapse" data-parent="#panel-blocklist"
+                  data-target="#panel-element-demo-Boluo_A" style="float: right" ></span>
+
+        </div>
+        <div id="panel-element-demo-Boluo_A" class="panel-collapse collapse">
+            <div id="Demo_Comprt_Boluo_A_01" class="Blockname panel-body ">
+                <a href="{% url 'demo:demomap' 500010001 %}" target="_blank" data-toggle="tooltip" title="点击图标显示详细数据" ><span id="Demo_Comprt_Boluo_A_01_info" class="glyphicon glyphicon-fullscreen" style="cursor: pointer"></span></a>
+                <span id="Demo_Comprt_Boluo_A_01_loc" style="cursor: pointer" onclick="change_intro('BL_0001_0001')">示例林班0001小班0001</span>
+            </div>
+            <div id="Demo_Comprt_Boluo_A_02" class="Blockname panel-body">
+                <a href="{% url 'demo:demomap' 500010002 %}" target="_blank" data-toggle="tooltip" title="点击图标显示详细数据" ><span id="Demo_Comprt_Boluo_A_02_info" class="glyphicon glyphicon-fullscreen" style="cursor: pointer"></span></a>
+                <span id="Demo_Comprt_Boluo_A_02_loc" style="cursor: pointer" onclick="change_intro('BL_0001_0002')">示例林班0001小班0002</span>
+            </div>
+            <div id="Demo_Comprt_Boluo_A_03" class="Blockname panel-body">
+                <a href="{% url 'demo:demomap' 500010003 %}" target="_blank" data-toggle="tooltip" title="点击图标显示详细数据" ><span id="Demo_Comprt_Boluo_A_03_info" class="glyphicon glyphicon-fullscreen"  style="cursor: pointer"></span></a>
+                <span id="Demo_Comprt_Boluo_A_03_loc" style="cursor: pointer" onclick="change_intro('BL_0001_0003')">示例林班0001小班0003</span>
+            </div>
+        </div>
+
+        <!--地块列表|博罗县罗阳镇细2-2块-->
+        <div class="blocklist-heading">
+            <a href="{% url 'demo:demomap' 50002 %}" target="_blank" data-toggle="tooltip" title="点击图标显示详细数据" ><span id="Demo_Area_Boluo_B" class="glyphicon glyphicon-fullscreen" onclick=""></span></a>
+            <span id="Demo_Block_Boluo_B_outline" onclick="change_intro('BL_0002')">博罗县罗阳镇示例林业区域乙</span>
+            <span class="glyphicon glyphicon-chevron-down" data-toggle="collapse" data-parent="#panel-blocklist"
+                  data-target="#panel-element-demo-Boluo_B" style="float: right" ></span>
+        </div>
+        <div id="panel-element-demo-Boluo_B" class="panel-collapse collapse">
+            <div id="Demo_Comprt_Boluo_B_01" class="Blockname panel-body">
+                <a href="{% url 'demo:demomap' 500020001 %}" target="_blank" data-toggle="tooltip" title="点击图标显示详细数据" ><span id="Demo_Comprt_Boluo_B_01_info" class="glyphicon glyphicon-fullscreen" style="cursor: pointer"></span></a>
+                <span id="Demo_Comprt_Boluo_B_01_loc" style="cursor: pointer" onclick="change_intro('BL_0002_0001')">示例林班0002小班0001</span>
+            </div>
+            <div id="Demo_Comprt_Boluo_B_02" class="Blockname panel-body">
+                <a href="{% url 'demo:demomap' 500020002 %}" target="_blank" data-toggle="tooltip" title="点击图标显示详细数据" ><span id="Demo_Comprt_Boluo_B_02_info" class="glyphicon glyphicon-fullscreen" style="cursor: pointer"></span></a>
+                <span id="Demo_Comprt_Boluo_B_02_loc" style="cursor: pointer" onclick="change_intro('BL_0002_0002')">示例林班0002小班0002</span>
+            </div>
+            <div id="Demo_Comprt_Boluo_B_03" class="Blockname panel-body">
+                <a href="{% url 'demo:demomap' 500020003 %}" target="_blank" data-toggle="tooltip" title="点击图标显示详细数据" ><span id="Demo_Comprt_Boluo_B_03_info" class="glyphicon glyphicon-fullscreen" style="cursor: pointer"></span></a>
+                <span id="Demo_Comprt_Boluo_B_03_loc" style="cursor: pointer" onclick="change_intro('BL_0002_0003')">示例林班0002小班0003</span>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+<!--新疆-->
+<div class="panel-group blocklist" id="panel-blocklist">
+    <div class="blocklist-heading-Area">
+        <a href="{% url 'demo:demomap' 7 %}" target="_blank"><span id="Demo_Area_Xinjiang" class="glyphicon glyphicon-map-marker" onclick="" style="cursor: pointer"></span></a>
+        <span id="Demo_Area_Xinjiang_loc" style="cursor: pointer">新疆农垦</span>
+        <span class="glyphicon glyphicon-chevron-down" data-toggle="collapse" data-parent="#listBar"
+              data-target="#panel-element-demo-Xinjiang"  style="float: right;cursor: pointer"></span>
+    </div>
+    <!--地块列表|新疆农垦-4块-->
+    <div id="panel-element-demo-Xinjiang" class="panel-collapse collapse">
+        <div class="blocklist-heading">
+            <span id="Demo_Area_Xinjiang_A" class="glyphicon glyphicon-map-marker" onclick=""></span>
+            <span id="Demo_Area_Xinjiang_A_outline">新疆农垦地块A</span>
+            <span class="glyphicon glyphicon-chevron-down" data-toggle="collapse" data-parent="#panel-blocklist"
+                  data-target="#panel-element-demo-Xinjiang_A" style="float: right"></span>
+        </div>
+        <div id="panel-element-demo-Xinjiang_A" class="panel-collapse collapse">
+            <div id="Demo_Comprt_Xinjiang_A_01" class="Blockname panel-body">
+                <span id="Demo_Comprt_Xinjiang_A_01_loc" class="glyphicon glyphicon-map-marker" style="cursor: pointer"></span>
+                区划01|东区
+            </div>
+            <div id="Demo_Comprt_Xinjiang_A_02" class="Blockname panel-body">
+                <span id="Demo_Comprt_Xinjiang_A_02_loc" class="glyphicon glyphicon-map-marker" style="cursor: pointer"></span>
+                区划02|西区
+            </div>
+            <div id="Demo_Comprt_Xinjiang_A_03" class="Blockname panel-body">
+                <span id="Demo_Comprt_Xinjiang_A_03_loc" class="glyphicon glyphicon-map-marker" style="cursor: pointer"></span>
+                区划03|北区
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--张家口-->
+<div class="panel-group blocklist" id="panel-blocklist">
+    <div class="blocklist-heading-Area">
+        <a href="{% url 'demo:demomap' 8 %}" target="_blank"><span id="Demo_Area_Zhangjk" class="glyphicon glyphicon-map-marker" onclick="" style="cursor: pointer"></span></a>
+        <span id="Demo_Area_Zhangjk_loc" style="cursor: pointer">张家口市崇礼县</span>
+        <span class="glyphicon glyphicon-chevron-down" data-toggle="collapse" data-parent="#listBar"
+              data-target="#panel-element-demo-Zhangjk"  style="float: right;cursor: pointer"></span>
+    </div>
+    <!--地块列表|张家口1-4块-->
+    <div id="panel-element-demo-Zhangjk" class="panel-collapse collapse">
+        <div class="blocklist-heading">
+            <span id="Demo_Area_Zhangjk_A" class="glyphicon glyphicon-map-marker" onclick=""></span>
+            <span id="Demo_Area_Zhangjk_A_outline">张家口市崇礼县地块A</span>
+            <span class="glyphicon glyphicon-chevron-down" data-toggle="collapse" data-parent="#panel-blocklist"
+                  data-target="#panel-element-demo-Zhangjk_A" style="float: right"></span>
+        </div>
+        <div id="panel-element-demo-Zhangjk_A" class="panel-collapse collapse">
+            <div id="Demo_Comprt_Zhangjk_A_01" class="Blockname panel-body" >
+                <span id="Demo_Comprt_Zhangjk_A_01_loc" class="glyphicon glyphicon-map-marker" style="cursor: pointer"></span>
+                区划01|北山林区
+            </div>
+            <div id="Demo_Comprt_Zhangjk_A_02" class="Blockname panel-body">
+                <span id="Demo_Comprt_Zhangjk_A_02_loc" class="glyphicon glyphicon-map-marker" style="cursor: pointer"></span>
+                区划02|东山林区
+            </div>
+            <div id="Demo_Comprt_Zhangjk_A_03" class="Blockname panel-body">
+                <span id="Demo_Comprt_Zhangjk_A_03_loc" class="glyphicon glyphicon-map-marker" style="cursor: pointer"></span>
+                区划03|南山林区
+            </div>
+            <div id="Demo_Comprt_Zhangjk_A_04" class="Blockname panel-body">
+                <span id="Demo_Comprt_Zhangjk_A_04_loc" class="glyphicon glyphicon-map-marker" style="cursor: pointer"></span>
+                区划04|西山林区
+            </div>
+        </div>
+    </div>
+</div>
