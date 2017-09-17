@@ -7,9 +7,9 @@
         <div class="intro">
             <h4>数据显示示例</h4>
             <table border="1" width="100%">
-                <tr><th>ID</th><th>经纬度</th><th>范围</th><th>株数</th></tr>
+                <tr><th>ID</th><th>经纬度</th><th>范围</th><th>数量</th><th>问题</th></tr>
                 {% for tree in illtrees %}
-                     <tr><td>{{ tree.index }}</td><td>{{ tree.lng }},{{ tree.lat }}</td><td>{{ tree.area }} ha</td><td>{{ tree.count }}</td></tr>
+                     <tr><td>{{ tree.index }}</td><td>{{ tree.lng }},{{ tree.lat }}</td><td>{{ tree.area }} </td><td>{{ tree.count }}</td><th>倒伏</th></tr>
                 {% endfor %}
             </table>
         </div>

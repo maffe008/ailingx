@@ -88,6 +88,9 @@
 
 
         // 1-1.Create a point
+        var areapoint_JSJ = new Point(
+                {longitude: 132.62733, latitude: 47.26818}
+        );
         var areapoint_BL = new Point(
                 {longitude: 114.1970, latitude: 23.1257}
         );
@@ -165,6 +168,16 @@
 
 
         // Create attributes
+        var attr_JSJ = {
+            Area: "建三江农垦",
+            Hectare: "124万公顷",
+            Info: "建三江地处三江平原腹地，总控制面积1.23万平方公里，耕地572万亩，" +
+            "尚有可垦荒地300万亩，林地196万亩，牧草地70万亩，水面76万亩。年平均无霜期120天。" +
+            "属寒温带湿润季风气候区，年平均气温1°C~2°C，有效积温20°C~24°C，" +
+            "日照时数为2260~2449小时，平均降水量为550~600毫米，无霜期为110~135天。" +
+            "这里的雨量、热量、日照时数是水稻、豆类及其他经济作物的最佳生长区带。" +
+            "黑龙江农垦建三江管理局由十五个农场组成：七星、大兴、创业、前进、洪河、前锋、八五九、胜利、勤得利、青龙山、红卫、前哨、二道河、鸭绿河、浓江。"
+        };
         var attr_BL = {
             Area: "博罗县罗阳镇",
             Hectare: "8920公顷",
@@ -221,6 +234,11 @@
 
 
         // Create pop-up template
+        var popupTemp_JSJ = {
+            title: "{Area}",
+            content: "<h3>面积：<b>{Hectare}</b></h3>"+
+                    "相关信息：<p>{Info}</p>"
+        };
         var popupTemp_BL = {
             title: "{Area}",
             content: "<h3>林地面积：<b>{Hectare}</b></h3>"+
@@ -263,6 +281,12 @@
         };
 
         // 1-3.Create a graphic and add the geometry and symbol to it
+        var pointGraphic_JSJ = new Graphic({
+            geometry: areapoint_JSJ,
+            symbol: markerSymbol,
+            attributes: attr_JSJ,
+            popupTemplate: popupTemp_JSJ
+        });
         var pointGraphic_BL = new Graphic({
             geometry: areapoint_BL,
             symbol: markerSymbol,
@@ -313,6 +337,7 @@
         });
 
         // 1-4.Add the graphic to the view
+        mainView.graphics.add(pointGraphic_JSJ);
         mainView.graphics.add(pointGraphic_BL);
         mainView.graphics.add(pointGraphic_ZJK);
         mainView.graphics.add(pointGraphic_ZG);
@@ -409,30 +434,91 @@
             [114.19943, 23.12211]
         ];
 
-	    var Comprt_BL_00010001 = [
+	    var Cell_BL_00010001 = [
             [114.19974, 23.12347], [114.20036, 23.12356], [114.2005, 23.12392], [114.20213, 23.12321],
             [114.20105, 23.12264], [114.19989, 23.12287]
 		];
-        var Comprt_BL_00010002 = [
+        var Cell_BL_00010002 = [
             [114.19989, 23.12287], [114.20105, 23.12264], [114.20111, 23.12221], [114.20105, 23.12193],
             [114.20047, 23.12205], [114.19982, 23.12235]
 
 		];
-        var Comprt_BL_00010003 = [
+        var Cell_BL_00010003 = [
             [114.1982, 23.1218], [114.19857, 23.12234], [114.19982, 23.12235], [114.20047, 23.12205], [114.19852, 23.12118]
 
 		];
-        var Comprt_BL_00020001 = [
+        var Cell_BL_00020001 = [
             [114.19189, 23.12921], [114.19278, 23.12945], [114.19372, 23.12843], [114.19216, 23.12827]
         ];
-        var Comprt_BL_00020002 = [
+        var Cell_BL_00020002 = [
             [114.19163, 23.12834], [114.19216, 23.12827], [114.19372, 23.12843], [114.19288, 23.12779],
             [114.19295, 23.12729], [114.19259, 23.12709], [114.19273, 23.12677], [114.19208, 23.12647]
         ];
-        var Comprt_BL_00020003 = [
+        var Cell_BL_00020003 = [
             [114.19354, 23.12983], [114.19365, 23.13013], [114.19442, 23.13009], [114.19512, 23.12992],
             [114.19444, 23.12902]
         ];
+
+
+		var p_QX_16eg =[[132,47],
+			[132.90018, 47.25785], [132.9018, 47.25842],[132.90273, 47.25875], [132.90368, 47.2591], [132.90463, 47.25945],
+			[132.90528, 47.25969],[132.90681, 47.25771], [132.90811, 47.25603], [132.90854, 47.25547],[132.90788, 47.25522],
+			[132.90694, 47.25489], [132.90594, 47.25457], [132.90503, 47.25422], [132.9041, 47.2539], [132.90335, 47.25364],
+			[132.90288, 47.25427], [132.90161, 47.25596],[132.90097, 47.25679], [132.9017, 47.25703], [132.90261, 47.25734],
+			[132.90234, 47.25619], [132.90326, 47.25651], [132.90422, 47.25682], [132.90518, 47.25715],  [132.90612, 47.25748],
+			[132.90742, 47.2558], [132.90647, 47.25547], [132.90552, 47.25516], [132.90456, 47.25481], [132.90363, 47.2545]
+		];
+        var block_QX_16eg = [ [132.90018, 47.25784],  [132.90538, 47.25971],  [132.90859, 47.25544], [132.90336, 47.25366]];
+        var Cell_QX_16eg = [block_QX_16eg,
+			[p_QX_16eg[1], p_QX_16eg[2], p_QX_16eg[20],p_QX_16eg[18]],//1
+            [p_QX_16eg[18],p_QX_16eg[19],p_QX_16eg[21],p_QX_16eg[17]],//2
+			[p_QX_16eg[19],p_QX_16eg[20],p_QX_16eg[22],p_QX_16eg[21]],//3
+			[p_QX_16eg[2], p_QX_16eg[3], p_QX_16eg[23],p_QX_16eg[22]],//4
+			[p_QX_16eg[3], p_QX_16eg[4], p_QX_16eg[24],p_QX_16eg[23]],//5
+            [p_QX_16eg[4], p_QX_16eg[5], p_QX_16eg[25],p_QX_16eg[24]],//6
+            [p_QX_16eg[5], p_QX_16eg[6], p_QX_16eg[7], p_QX_16eg[25]],//7
+			[p_QX_16eg[17],p_QX_16eg[21],p_QX_16eg[30],p_QX_16eg[16]],//8
+			[p_QX_16eg[21],p_QX_16eg[22],p_QX_16eg[29],p_QX_16eg[30]],//9
+			[p_QX_16eg[22],p_QX_16eg[23],p_QX_16eg[28],p_QX_16eg[29]],//10
+            [p_QX_16eg[23],p_QX_16eg[24],p_QX_16eg[27],p_QX_16eg[28]],//11
+			[p_QX_16eg[24],p_QX_16eg[25],p_QX_16eg[26],p_QX_16eg[27]],//12
+			[p_QX_16eg[25],p_QX_16eg[7], p_QX_16eg[8], p_QX_16eg[26]],//13
+			[p_QX_16eg[16],p_QX_16eg[30],p_QX_16eg[14],p_QX_16eg[15]],//14
+			[p_QX_16eg[30],p_QX_16eg[29],p_QX_16eg[13],p_QX_16eg[14]],//15
+            [p_QX_16eg[29],p_QX_16eg[28],p_QX_16eg[12],p_QX_16eg[13]],//16
+            [p_QX_16eg[28],p_QX_16eg[27],p_QX_16eg[11],p_QX_16eg[12]],//17
+			[p_QX_16eg[27],p_QX_16eg[26],p_QX_16eg[10],p_QX_16eg[11]],//18
+			[p_QX_16eg[26],p_QX_16eg[8], p_QX_16eg[9], p_QX_16eg[10]]//19
+        ];
+
+
+        var p_QX_16 =[[132,47],
+            [132.93743, 47.27091],[132.94499, 47.25488], [132.9457, 47.25257], [132.95189, 47.24791], [132.96302, 47.23959],//5
+            [132.92302, 47.22718], [132.921, 47.22955], [132.90632, 47.22435], [132.91105, 47.21823], [132.88903, 47.2119],//10
+            [132.88895, 47.21474], [132.88582, 47.21727], [132.87611, 47.2249], [132.87127, 47.22856], [132.87152, 47.23531],//15
+            [132.87175, 47.24822], [132.87562, 47.24955], [132.88421, 47.2525], [132.89984, 47.25785], [132.92141, 47.26544],//20
+            [132.93185, 47.25169], [132.93827, 47.24306], [132.91681, 47.23557], [132.91461, 47.23835], [132.90145, 47.23393],//25
+            [132.89191, 47.23051], [132.8774, 47.23701], [132.88547, 47.23927], [132.8928, 47.24166], [132.8951, 47.24223],//30
+            [132.90494, 47.24508], [132.90192, 47.24927], [132.90549, 47.25037], [132.90856, 47.24615], [132.90959, 47.24496],//35
+            [132.90577, 47.24403]
+        ];
+        var block_QX_16 = [p_QX_16[14],p_QX_16[16],p_QX_16[1],p_QX_16[3],p_QX_16[5],p_QX_16[6],p_QX_16[7],p_QX_16[8], p_QX_16[9],p_QX_16[10],p_QX_16[11],p_QX_16[12]];
+        var Cell_QX_16 = [
+			[p_QX_16[12],p_QX_16[8],p_QX_16[9],p_QX_16[10],p_QX_16[11]],//0
+            [p_QX_16[18],p_QX_16[19],p_QX_16[33],p_QX_16[32],p_QX_16[31],p_QX_16[29]],//1
+			[p_QX_16[13],p_QX_16[24],p_QX_16[7],p_QX_16[12]],//2
+			[p_QX_16[28],p_QX_16[29],p_QX_16[25],p_QX_16[26]],//3
+			[p_QX_16[14],p_QX_16[15],p_QX_16[28],p_QX_16[26],p_QX_16[13]],//4
+            [p_QX_16[17],p_QX_16[18],p_QX_16[29],p_QX_16[27]],//5
+            [p_QX_16[19],p_QX_16[20],p_QX_16[21],p_QX_16[34]],//6
+			[p_QX_16[34],p_QX_16[21],p_QX_16[22],p_QX_16[23]],//7
+			[p_QX_16[23],p_QX_16[4],p_QX_16[5],p_QX_16[6]],//8
+			[p_QX_16[21],p_QX_16[2],p_QX_16[3],p_QX_16[4],p_QX_16[22]],//9
+            [p_QX_16[20],p_QX_16[1],p_QX_16[2],p_QX_16[21]],//10
+			[p_QX_16[15],p_QX_16[16],p_QX_16[17],p_QX_16[27]]//11
+        ];
+
+
 
         var area_ZJK=[
                     [114.91556, 40.83407], [114.9206, 40.82907], [114.93481, 40.82892], [114.9395, 40.81355],
@@ -446,7 +532,7 @@
         ];
         var block_ZJK_A = [ [114.9272, 40.82804],[114.92915, 40.82825],[114.929, 40.82898],[114.93463, 40.82889],
             [114.9324, 40.828],[114.93104, 40.82845],[114.92908, 40.82599],[114.92571, 40.82519],[ 114.92603, 40.8269]];
-        var Comprt_ZJK_A = [
+        var Cell_ZJK_A = [
             [p_ZJK_A[8],p_ZJK_A[9],p_ZJK_A[10],p_ZJK_A[5],p_ZJK_A[2]],
 			[p_ZJK_A[2],p_ZJK_A[5],p_ZJK_A[10],p_ZJK_A[6],p_ZJK_A[3]],
             [p_ZJK_A[4],p_ZJK_A[3],p_ZJK_A[6],p_ZJK_A[7]],
@@ -463,7 +549,7 @@
         ];
         var block_ZG_A = [p_ZG_A[1],p_ZG_A[2],p_ZG_A[3],p_ZG_A[13],p_ZG_A[4],p_ZG_A[5],p_ZG_A[6],
             p_ZG_A[7],p_ZG_A[12],p_ZG_A[8],p_ZG_A[10],p_ZG_A[9],p_ZG_A[14]];
-        var Comprt_ZG_A = [
+        var Cell_ZG_A = [
             [p_ZG_A[1],p_ZG_A[2],p_ZG_A[11],p_ZG_A[10],p_ZG_A[9],p_ZG_A[14]],
             [p_ZG_A[2],p_ZG_A[3],p_ZG_A[13],p_ZG_A[4],p_ZG_A[11]],
             [p_ZG_A[8],p_ZG_A[10],p_ZG_A[12]],
@@ -476,7 +562,7 @@
             [ 126.44235, 48.04651],[ 126.44607, 48.04612],[126.45114, 48.04537],[126.45737, 48.04428]
         ];
         var block_ZG_B = [p_ZG_B[1],p_ZG_B[2],p_ZG_B[3],p_ZG_B[4],p_ZG_B[8],p_ZG_B[7],p_ZG_B[6],p_ZG_B[5]];
-        var Comprt_ZG_B = [
+        var Cell_ZG_B = [
             [p_ZG_B[1],p_ZG_B[2],p_ZG_B[6],p_ZG_B[5]],
             [p_ZG_B[2],p_ZG_B[3],p_ZG_B[7],p_ZG_B[6]],
             [p_ZG_B[3],p_ZG_B[4],p_ZG_B[8],p_ZG_B[7]]
@@ -489,7 +575,7 @@
             [87.31095, 43.90375],[87.30879, 43.8999],[87.31384, 43.90316],[87.3119, 43.8996],[ 87.30158, 43.90432]
         ];
         var block_XJ_A = [p_XJ_A[1],p_XJ_A[2],p_XJ_A[4],p_XJ_A[5],p_XJ_A[7],p_XJ_A[8],p_XJ_A[6],p_XJ_A[3],p_XJ_A[9]];
-        var Comprt_XJ_A = [
+        var Cell_XJ_A = [
             [p_XJ_A[1],p_XJ_A[2],p_XJ_A[3],p_XJ_A[9]],
             [p_XJ_A[2],p_XJ_A[4],p_XJ_A[5],p_XJ_A[6],p_XJ_A[3]],
             [p_XJ_A[5],p_XJ_A[7],p_XJ_A[8],p_XJ_A[6]]
@@ -666,8 +752,8 @@
 
             mainView.graphics.add(temp_polygonGraphic_block);
         }
-        function add_polygon_comprt(cur_block,cur_comprt,area,block,comprt){
-            var fillSymbol_comprt = new SimpleFillSymbol({
+        function add_polygon_Cell(cur_block,cur_Cell,area,block,Cell){
+            var fillSymbol_Cell = new SimpleFillSymbol({
                 color: [0, 255, 127, 0.2],
                 outline: {
                     color: [0, 255, 127],
@@ -681,8 +767,8 @@
                     width: 2
                 }
             });
-            var temp_polygon_comprt = new Polygon({
-                rings: [cur_comprt]
+            var temp_polygon_Cell = new Polygon({
+                rings: [cur_Cell]
             });
             var temp_polygon_block = new Polygon({
                 rings: [cur_block]
@@ -690,36 +776,36 @@
             var trees = Math.round(Math.random()*1000)+1500;
             var ill_trees = Math.round(Math.random()*10);
             var pertemp = Math.round((ill_trees/trees)*100)/100;
-            var nwp = cur_comprt[0],sep = cur_comprt[2];
+            var nwp = cur_Cell[0],sep = cur_Cell[2];
             //alert(nwp+"|"+nwp[0]+","+nwp[1]);
-            var attr_Comprt = {
+            var attr_Cell = {
                 Area: area,
                 Block: block,
-                Comprt: comprt,
+                Cell: Cell,
                 Tree_name: "棕榈树",
                 Tree_count: trees,
                 Ill_Tree_count: ill_trees,
                 ILL_percent: pertemp+"%",
                 north:Math.round(nwp[1]*10000)/10000,
                 south:Math.round(sep[1]*10000)/10000,
-                west:Math.round(nwp[0]*10000)/10000,
+                west:Math.round(nwp[0]*10000)/10000, 
                 east:Math.round(sep[0]*10000)/10000
             };
 
-            var popupTemp_Comprt = {
-                title: "{Area}地块{Block}区域{Comprt}",
+            var popupTemp_Cell = {
+                title: "{Area}地块{Block}区域{Cell}",
                 content: "<h5>树种：{Tree_name}</h5>" +
-                "<h5>总数：{Tree_count}</h5>" +
+                "<h5>程度：{Tree_count}</h5>" +
                 "<h5>病数：{Ill_Tree_count}</h5>" +
                 "<h5>比例：{ILL_percent}</h5>" +
                 "<h5>经度范围：{west} —— {east}</h5>" +
                 "<h5>纬度范围：{south} —— {north}</h5>"
             };
-            var temp_polygonGraphic_comprt = new Graphic({
-                geometry: temp_polygon_comprt,
-                symbol: fillSymbol_comprt,
-                attributes: attr_Comprt,
-                popupTemplate: popupTemp_Comprt
+            var temp_polygonGraphic_Cell = new Graphic({
+                geometry: temp_polygon_Cell,
+                symbol: fillSymbol_Cell,
+                attributes: attr_Cell,
+                popupTemplate: popupTemp_Cell
             });
             var temp_polygonGraphic_block = new Graphic({
                 geometry: temp_polygon_block,
@@ -727,41 +813,76 @@
             });
             mainView.graphics.removeAll();
             mainView.graphics.add(temp_polygonGraphic_block);
-            mainView.graphics.add(temp_polygonGraphic_comprt);
+            mainView.graphics.add(temp_polygonGraphic_Cell);
         }
 
 
-        function add_polygon_comprt_eg(cur_block,cur_comprt,area,block,comprt){
-            var fillSymbol_comprt = new SimpleFillSymbol({
-                color: [0, 255, 127, 0.2],
+        function add_polygon_Cell_a(cur_block,cur_Cell,stat,sq,illsq,area,block,Cell){
+            var fillSymbol_Cell_ok = new SimpleFillSymbol({
+                color: [0, 255, 127, 0.6],
                 outline: {
                     color: [0, 255, 127],
                     width: 1
                 }
             });
-            var fillSymbol_block = new SimpleFillSymbol({
-                color: [0, 0, 0, 0],
+            var fillSymbol_Cell_ng = new SimpleFillSymbol({
+                color: [255, 255, 0, 0.6],
                 outline: {
-                    color: [65, 105, 225],
+                    color: [255, 255, 0],
+                    width: 1
+                }
+            });
+            var fillSymbol_Cell_warn = new SimpleFillSymbol({
+                color: [255, 128, 0, 0.6],
+                outline: {
+                    color: [255, 128, 0],
+                    width: 1
+                }
+            });
+            var fillSymbol_Cell_danger = new SimpleFillSymbol({
+                color: [255, 0, 0, 0.6],
+                outline: {
+                    color: [255, 0, 0],
+                    width: 1
+                }
+            });
+            var fillSymbol_block = new SimpleFillSymbol({
+                color: [127, 255, 127, 0.4],
+                outline: {
+                    color: [255, 255, 255],
                     width: 2
                 }
             });
-            var temp_polygon_comprt = new Polygon({
-                rings: [cur_comprt]
+
+            var temp_polygon_Cell = new Polygon({
+                rings: [cur_Cell]
             });
             var temp_polygon_block = new Polygon({
                 rings: [cur_block]
             });
-            var trees = Math.round(Math.random()*1000)+1500;
-            var ill_trees = Math.round(Math.random()*100);
-            var pertemp = Math.round((ill_trees/trees)*100)/100;
-            var nwp = cur_comprt[0],sep = cur_comprt[2];
+            var trees = Math.round(sq*0.015);
+            var ill_trees = Math.round(illsq*0.015);
+            var pertemp = Math.round((ill_trees/trees)*10000)/100;
+            var fillSymbol_Cell;
+            if(pertemp>=70){
+                fillSymbol_Cell = fillSymbol_Cell_danger
+            }
+            else if(pertemp >= 50){
+                fillSymbol_Cell = fillSymbol_Cell_warn
+            }
+            else if(pertemp >= 30){
+                fillSymbol_Cell = fillSymbol_Cell_ng
+            }
+            else{
+                fillSymbol_Cell = fillSymbol_Cell_ok
+            }
+            var nwp = cur_Cell[0],sep = cur_Cell[2];
             //alert(nwp+"|"+nwp[0]+","+nwp[1]);
-            var attr_Comprt = {
+            var attr_Cell = {
                 Area: area,
                 Block: block,
-                Comprt: comprt,
-                Tree_name: "棕榈树",
+                Cell: Cell,
+                Tree_name: "水稻",
                 Tree_count: trees,
                 Ill_Tree_count: ill_trees,
                 ILL_percent: pertemp+"%",
@@ -770,36 +891,21 @@
                 west:Math.round(nwp[0]*10000)/10000,
                 east:Math.round(sep[0]*10000)/10000
             };
-            var w4 = ' width="150"';
-            var w1 = ' width="40"';
-            var popupTemp_Comprt = {
-                title: "{Area}地块{Block}区域{Comprt}",
-                content: "<h5>树种：{Tree_name}</h5>" +
-                "<h5>总数：{Tree_count}</h5>" +
-                "<h5>病数：{Ill_Tree_count}</h5>" +
+
+            var popupTemp_Cell = {
+                title: "{Area}地块{Block}区域{Cell}",
+                content: "<h5>作物：{Tree_name}</h5>" +
+                "<h5>单元面积：{Tree_count}亩</h5>" +
+                "<h5>异常面积：{Ill_Tree_count}亩</h5>" +
                 "<h5>比例：{ILL_percent}</h5>" +
                 "<h5>经度范围：{west} —— {east}</h5>" +
-                "<h5>纬度范围：{south} —— {north}</h5>" +
-				"<table><tr><td"+w1+">Fid</td><td"+w4+">经度</td><td"+w4+">纬度</td><td"+w1+">健康度</td></tr>" +
-                "<tr><td>1</td><td>114.20167</td><td>23.12316</td><td>17%</td></tr>" +
-                "<tr><td>2</td><td>114.20154</td><td>23.12317</td><td>10%</td></tr>" +
-                "<tr><td>3</td><td>114.20139</td><td>23.12308</td><td>11%</td></tr>" +
-                "<tr><td>4</td><td>114.20134</td><td>23.12311</td><td>5%</td></tr>" +
-                "<tr><td>5</td><td>114.20076</td><td>23.12319</td><td>5%</td></tr>" +
-                "<tr><td>6</td><td>114.20009</td><td>23.12334</td><td>0%</td></tr>" +
-                "<tr><td>7</td><td>114.19998</td><td>23.12339</td><td>1%</td></tr>" +
-                "<tr><td>8</td><td>114.20186</td><td>23.12354</td><td>0%</td></tr>" +
-                "<tr><td>9</td><td>114.20075</td><td>23.12297</td><td>3%</td></tr>" +
-                "<tr><td>10</td><td>114.20071</td><td>23.12284</td><td>14%</td></tr>" +
-                "<tr><td>11</td><td>114.20014</td><td>23.12313</td><td>13%</td></tr>" +
-                "<tr><td>12</td><td>114.20147</td><td>23.12393</td><td>9%</td></tr>" +
-                "<tr><td>13</td><td>114.20024</td><td>23.12403</td><td>8%</td></tr> </table>"
+                "<h5>纬度范围：{south} —— {north}</h5>"
             };
-            var temp_polygonGraphic_comprt = new Graphic({
-                geometry: temp_polygon_comprt,
-                symbol: fillSymbol_comprt,
-                attributes: attr_Comprt,
-                popupTemplate: popupTemp_Comprt
+            var temp_polygonGraphic_Cell = new Graphic({
+                geometry: temp_polygon_Cell,
+                symbol: fillSymbol_Cell,
+                attributes: attr_Cell,
+                popupTemplate: popupTemp_Cell
             });
             var temp_polygonGraphic_block = new Graphic({
                 geometry: temp_polygon_block,
@@ -807,7 +913,7 @@
             });
             mainView.graphics.removeAll();
             mainView.graphics.add(temp_polygonGraphic_block);
-            mainView.graphics.add(temp_polygonGraphic_comprt);
+            mainView.graphics.add(temp_polygonGraphic_Cell);
         }
 
 
@@ -1148,10 +1254,10 @@
             add_polygon_block_ng(block_BL_0002_ng2);
         });
 
-        on(dojo.query("#Demo_Comprt_Boluo_A_01_loc"), "click", function() {
+        on(dojo.query("#Demo_Cell_Boluo_A_01_loc"), "click", function() {
             mainView.goTo({position: [114.20075, 23.12321,500], heading: 0, tilt: 0});
-            add_polygon_comprt(block_BL_0001,Comprt_BL_00010001,"博罗县罗阳镇","A","01");
-            show_comprt_info('A01');
+            add_polygon_Cell(block_BL_0001,Cell_BL_00010001,"博罗县罗阳镇","A","01");
+            show_Cell_info('A01');
             add_ill_tree(114.201, 23.12307);
             add_ill_tree(114.20057, 23.12306);
             add_ill_tree(114.19991, 23.12343);
@@ -1160,39 +1266,39 @@
             add_ill_tree(114.20084, 23.12343);
             add_ill_tree(114.20076, 23.12274);
         });
-        on(dojo.query("#Demo_Comprt_Boluo_A_02_loc"), "click", function() {
+        on(dojo.query("#Demo_Cell_Boluo_A_02_loc"), "click", function() {
             mainView.goTo({position: [114.20046, 23.12244,500], heading: 0, tilt: 0});
-            add_polygon_comprt(block_BL_0001,Comprt_BL_00010002,"博罗县罗阳镇","A","02");
-            show_comprt_info('A02');
+            add_polygon_Cell(block_BL_0001,Cell_BL_00010002,"博罗县罗阳镇","A","02");
+            show_Cell_info('A02');
             add_ill_tree(114.19987, 23.12238);
             add_ill_tree(114.20029, 23.12267);
             add_ill_tree(114.20091, 23.12235);
         });
-        on(dojo.query("#Demo_Comprt_Boluo_A_03_loc"), "click", function() {
+        on(dojo.query("#Demo_Cell_Boluo_A_03_loc"), "click", function() {
             mainView.goTo({position: [114.1992, 23.12193 ,500], heading: 0, tilt: 0});
-            add_polygon_comprt(block_BL_0001,Comprt_BL_00010003,"博罗县罗阳镇","A","03");
-            show_comprt_info('A03');
+            add_polygon_Cell(block_BL_0001,Cell_BL_00010003,"博罗县罗阳镇","A","03");
+            show_Cell_info('A03');
             add_ill_tree(114.19856, 23.1218);
         });
 
-        on(dojo.query("#Demo_Comprt_Boluo_B_01_loc"), "click", function() {
+        on(dojo.query("#Demo_Cell_Boluo_B_01_loc"), "click", function() {
             mainView.goTo({position: [114.1927, 23.12885 ,500], heading: 0, tilt: 0});
-            add_polygon_comprt(block_BL_0002,Comprt_BL_00020001,"博罗县罗阳镇","B","01");
-            show_comprt_info('B01');
+            add_polygon_Cell(block_BL_0002,Cell_BL_00020001,"博罗县罗阳镇","B","01");
+            show_Cell_info('B01');
             add_ill_tree(114.19265, 23.12909);
         });
-        on(dojo.query("#Demo_Comprt_Boluo_B_02_loc"), "click", function() {
+        on(dojo.query("#Demo_Cell_Boluo_B_02_loc"), "click", function() {
             mainView.goTo({position: [114.19235, 23.12759 ,500], heading: 0, tilt: 0});
-            add_polygon_comprt(block_BL_0002,Comprt_BL_00020002,"博罗县罗阳镇","B","02");
-            show_comprt_info('B02');
+            add_polygon_Cell(block_BL_0002,Cell_BL_00020002,"博罗县罗阳镇","B","02");
+            show_Cell_info('B02');
             add_ill_tree(114.19176, 23.12826);
             add_ill_tree(114.19192, 23.12826);
             add_ill_tree(114.19213, 23.1282);
         });
-        on(dojo.query("#Demo_Comprt_Boluo_B_03_loc"), "click", function() {
+        on(dojo.query("#Demo_Cell_Boluo_B_03_loc"), "click", function() {
             mainView.goTo({position: [114.19417, 23.12981 ,500], heading: 0, tilt: 0});
-            add_polygon_comprt(block_BL_0002,Comprt_BL_00020003,"博罗县罗阳镇","B","03");
-            show_comprt_info('B03');
+            add_polygon_Cell(block_BL_0002,Cell_BL_00020003,"博罗县罗阳镇","B","03");
+            show_Cell_info('B03');
             add_ill_tree(114.19393, 23.12998);
             add_ill_tree(114.19415, 23.12978);
             add_ill_tree(114.19452, 23.12952);
@@ -1223,6 +1329,115 @@
             //add_polygon_area(area_CQ);
         });
 
+        on(dojo.query("#Demo_Area_Qixing_16eg_outline"), "click", function() {
+            add_polygon_block(block_QX_16eg);
+            mainView.goTo({position: [132.90393, 47.25628,2000], heading: 0, tilt: 0});
+        });
+		on(dojo.query("#Demo_Area_Qixing_16eg"), "click", function() {
+            add_polygon_block_nocolor(block_QX_16eg);
+        });
+        on(dojo.query("#Demo_Cell_Qixing_16eg_01_loc"), "click", function() {
+            add_polygon_Cell_a(block_QX_16eg,Cell_QX_16eg[1],1,19261,10714);
+        });
+        on(dojo.query("#Demo_Cell_Qixing_16eg_02_loc"), "click", function() {
+            add_polygon_Cell_a(block_QX_16eg,Cell_QX_16eg[2],4,6353,3888);
+        });
+        on(dojo.query("#Demo_Cell_Qixing_16eg_03_loc"), "click", function() {
+            add_polygon_Cell_a(block_QX_16eg,Cell_QX_16eg[3],2,8323,771);
+        });
+        on(dojo.query("#Demo_Cell_Qixing_16eg_04_loc"), "click", function() {
+            add_polygon_Cell_a(block_QX_16eg,Cell_QX_16eg[4],2,18986,12379);
+        });
+        on(dojo.query("#Demo_Cell_Qixing_16eg_05_loc"), "click", function() {
+            add_polygon_Cell_a(block_QX_16eg,Cell_QX_16eg[5],4,19154,5736);
+        });
+        on(dojo.query("#Demo_Cell_Qixing_16eg_06_loc"), "click", function() {
+            add_polygon_Cell_a(block_QX_16eg,Cell_QX_16eg[6],4,19338,896);
+        });
+        on(dojo.query("#Demo_Cell_Qixing_16eg_07_loc"), "click", function() {
+            add_polygon_Cell_a(block_QX_16eg,Cell_QX_16eg[7],3,13704,1533);
+        });
+        on(dojo.query("#Demo_Cell_Qixing_16eg_08_loc"), "click", function() {
+            add_polygon_Cell_a(block_QX_16eg,Cell_QX_16eg[8],1,13312,6190);
+        });
+        on(dojo.query("#Demo_Cell_Qixing_16eg_09_loc"), "click", function() {
+            add_polygon_Cell_a(block_QX_16eg,Cell_QX_16eg[9],1,16719,8768);
+        });
+        on(dojo.query("#Demo_Cell_Qixing_16eg_10_loc"), "click", function() {
+            add_polygon_Cell_a(block_QX_16eg,Cell_QX_16eg[10],1,16919,8065);
+        });
+        on(dojo.query("#Demo_Cell_Qixing_16eg_11_loc"), "click", function() {
+            add_polygon_Cell_a(block_QX_16eg,Cell_QX_16eg[11],1,16799,8135);
+        });
+        on(dojo.query("#Demo_Cell_Qixing_16eg_12_loc"), "click", function() {
+            add_polygon_Cell_a(block_QX_16eg,Cell_QX_16eg[12],1,16819,13786);
+        });
+        on(dojo.query("#Demo_Cell_Qixing_16eg_13_loc"), "click", function() {
+            add_polygon_Cell_a(block_QX_16eg,Cell_QX_16eg[13],1,11789,5518);
+        });
+        on(dojo.query("#Demo_Cell_Qixing_16eg_14_loc"), "click", function() {
+            add_polygon_Cell_a(block_QX_16eg,Cell_QX_16eg[14],1,4832,2470);
+        });
+        on(dojo.query("#Demo_Cell_Qixing_16eg_15_loc"), "click", function() {
+            add_polygon_Cell_a(block_QX_16eg,Cell_QX_16eg[15],1,5905,3397);
+        });
+        on(dojo.query("#Demo_Cell_Qixing_16eg_16_loc"), "click", function() {
+            add_polygon_Cell_a(block_QX_16eg,Cell_QX_16eg[16],1,5805,3398);
+        });
+        on(dojo.query("#Demo_Cell_Qixing_16eg_17_loc"), "click", function() {
+            add_polygon_Cell_a(block_QX_16eg,Cell_QX_16eg[17],3,6005,417);
+        });
+        on(dojo.query("#Demo_Cell_Qixing_16eg_18_loc"), "click", function() {
+            add_polygon_Cell_a(block_QX_16eg,Cell_QX_16eg[18],1,5955,4540);
+        });
+        on(dojo.query("#Demo_Cell_Qixing_16eg_19_loc"), "click", function() {
+            add_polygon_Cell_a(block_QX_16eg,Cell_QX_16eg[19],1,4119,1589);
+        });
+        
+        on(dojo.query("#Demo_Area_Qixing_16_outline"), "click", function() {
+            add_polygon_block(block_QX_16);
+            mainView.goTo({position: [132.90856, 47.24615,20000], heading: 0, tilt: 0});
+        });
+		on(dojo.query("#Demo_Area_Qixing_16"), "click", function() {
+            add_polygon_block_nocolor(block_QX_16);
+        });
+        on(dojo.query("#Demo_Cell_Qixing_16_00_loc"), "click", function() {
+            add_polygon_Cell_a(block_QX_16,Cell_QX_16[0]);
+        });
+        on(dojo.query("#Demo_Cell_Qixing_16_01_loc"), "click", function() {
+            add_polygon_Cell_a(block_QX_16,Cell_QX_16[1]);
+        });
+        on(dojo.query("#Demo_Cell_Qixing_16_02_loc"), "click", function() {
+            add_polygon_Cell_a(block_QX_16,Cell_QX_16[2]);
+        });
+        on(dojo.query("#Demo_Cell_Qixing_16_03_loc"), "click", function() {
+            add_polygon_Cell_a(block_QX_16,Cell_QX_16[3]);
+        });
+        on(dojo.query("#Demo_Cell_Qixing_16_04_loc"), "click", function() {
+            add_polygon_Cell_a(block_QX_16,Cell_QX_16[4]);
+        });
+        on(dojo.query("#Demo_Cell_Qixing_16_05_loc"), "click", function() {
+            add_polygon_Cell_a(block_QX_16,Cell_QX_16[5]);
+        });
+        on(dojo.query("#Demo_Cell_Qixing_16_06_loc"), "click", function() {
+            add_polygon_Cell_a(block_QX_16,Cell_QX_16[6]);
+        });
+        on(dojo.query("#Demo_Cell_Qixing_16_07_loc"), "click", function() {
+            add_polygon_Cell_a(block_QX_16,Cell_QX_16[7]);
+        });
+        on(dojo.query("#Demo_Cell_Qixing_16_08_loc"), "click", function() {
+            add_polygon_Cell_a(block_QX_16,Cell_QX_16[8]);
+        });
+        on(dojo.query("#Demo_Cell_Qixing_16_09_loc"), "click", function() {
+            add_polygon_Cell_a(block_QX_16,Cell_QX_16[9]);
+        });
+        on(dojo.query("#Demo_Cell_Qixing_16_10_loc"), "click", function() {
+            add_polygon_Cell_a(block_QX_16,Cell_QX_16[10]);
+        });
+        on(dojo.query("#Demo_Cell_Qixing_16_11_loc"), "click", function() {
+            add_polygon_Cell_a(block_QX_16,Cell_QX_16[11]);
+        });
+
 
         on(dojo.query("#Demo_Area_Hulbr_loc"), "click", function() {
             mainView.goTo({position: [ 119.76421, 48.698,20000], heading: 0, tilt: 70});
@@ -1237,11 +1452,11 @@
             mainView.goTo({position: [119.91127, 49.29892,100000], heading: 0, tilt: 0});
             add_polygon_area(Hulbr_X);
         });
-        on(dojo.query("#Demo_Comprt_Hulbr_X_01_loc"), "click", function() {
+        on(dojo.query("#Demo_Cell_Hulbr_X_01_loc"), "click", function() {
             mainView.goTo({position: [120.15175, 49.27933,10000], heading: 0, tilt: 0});
             add_polygon_block(Hulbr_X_01);
         });
-        on(dojo.query("#Demo_Comprt_Hulbr_X_01_info"), "click", function() {
+        on(dojo.query("#Demo_Cell_Hulbr_X_01_info"), "click", function() {
             remove_polygon_all();
             add_polygon_block_ok(Hulbr_X_01);
             add_polygon_block_warn(Hulbr_X_01_warn_01);
@@ -1253,22 +1468,22 @@
             add_polygon_block_ng(Hulbr_X_01_ng_05);
             add_polygon_block_ng(Hulbr_X_01_ng_06);
         });
-        on(dojo.query("#Demo_Comprt_Hulbr_X_02_loc"), "click", function() {
+        on(dojo.query("#Demo_Cell_Hulbr_X_02_loc"), "click", function() {
             mainView.goTo({position: [120.12776, 49.21268,10000], heading: 0, tilt: 0});
             add_polygon_block(Hulbr_X_02);
         });
-        on(dojo.query("#Demo_Comprt_Hulbr_X_02_info"), "click", function() {
+        on(dojo.query("#Demo_Cell_Hulbr_X_02_info"), "click", function() {
             remove_polygon_all();
             add_polygon_block_ok(Hulbr_X_02);
             add_polygon_block_warn(Hulbr_X_02_warn_01);
             add_polygon_block_ng(Hulbr_X_02_ng_01);
 
         });
-        on(dojo.query("#Demo_Comprt_Hulbr_X_03_loc"), "click", function() {
+        on(dojo.query("#Demo_Cell_Hulbr_X_03_loc"), "click", function() {
             mainView.goTo({position: [120.03562, 49.30868,10000], heading: 0, tilt: 0});
             add_polygon_block(Hulbr_X_03);
         });
-        on(dojo.query("#Demo_Comprt_Hulbr_X_03_info"), "click", function() {
+        on(dojo.query("#Demo_Cell_Hulbr_X_03_info"), "click", function() {
             remove_polygon_all();
             add_polygon_block_ok(Hulbr_X_03);
             add_polygon_block_warn(Hulbr_X_03_warn_01);
@@ -1290,12 +1505,12 @@
             add_polygon_block_warn(QD_Airport4);
 
         });
-        on(dojo.query("#Demo_Comprt_Qingdao_A_00_loc"), "click", function() {
+        on(dojo.query("#Demo_Cell_Qingdao_A_00_loc"), "click", function() {
             mainView.goTo({position: [120.565922,36.328220,100000], heading: 0, tilt: 0});
             add_polygon_block(QD_laoshan);
             add_polygon_block_500(QD_laoshan600);
         });
-        on(dojo.query("#Demo_Comprt_Qingdao_A_01_loc"), "click", function() {
+        on(dojo.query("#Demo_Cell_Qingdao_A_01_loc"), "click", function() {
             mainView.goTo({position: [120.565922,36.328220,100000], heading: 0, tilt: 0});
             add_polygon_block(QD_laoshan);
             add_polygon_block_500(QD_laoshan600);
@@ -1322,12 +1537,12 @@
             mainView.goTo({position: [120.056561,36.066085,100000], heading: 0, tilt: 0});
             add_polygon_block(QD_huangdao);
         });
-        on(dojo.query("#Demo_Comprt_Qingdao_D_00_loc"), "click", function() {
+        on(dojo.query("#Demo_Cell_Qingdao_D_00_loc"), "click", function() {
             mainView.goTo({position: [120.056561,36.066085,100000], heading: 0, tilt: 0});
             add_polygon_block(QD_huangdao);
             add_polygon_block_500(QD_huangdao650);
         });
-        on(dojo.query("#Demo_Comprt_Qingdao_D_01_loc"), "click", function() {
+        on(dojo.query("#Demo_Cell_Qingdao_D_01_loc"), "click", function() {
             mainView.goTo({position: [120.056561,36.066085,100000], heading: 0, tilt: 0});
             add_polygon_block(QD_huangdao);
             add_polygon_block_500(QD_huangdao650);
@@ -1347,11 +1562,11 @@
         });
 
 
-        on(dojo.query("#Demo_Comprt_Dalian_P_01_alt"), "click", function() {
+        on(dojo.query("#Demo_Cell_Dalian_P_01_alt"), "click", function() {
             mainView.goTo({position: [121.45423, 38.54076,20000], heading: 0, tilt: 70});
             add_polygon_block_warn(DL_Airport);
         });
-        on(dojo.query("#Demo_Comprt_Dalian_P_02_alt"), "click", function() {
+        on(dojo.query("#Demo_Cell_Dalian_P_02_alt"), "click", function() {
             mainView.goTo({position: [121.45423, 38.54076,20000], heading: 0, tilt: 70});
             add_polygon_block_warn(DL_Airport);
             add_polygon_block_warn(DL_Airport1);
@@ -1365,11 +1580,11 @@
             mainView.goTo({position: [121.7816, 39.09946,100000], heading: 0, tilt: 0});
             add_polygon_block(DL_jinpu);
         });
-        on(dojo.query("#Demo_Comprt_Dalian_A_01_alt"), "click", function() {
+        on(dojo.query("#Demo_Cell_Dalian_A_01_alt"), "click", function() {
             mainView.goTo({position: [121.7816, 39.09946,100000], heading: 0, tilt: 0});
             add_polygon_block_500(DL_jinpu500);
         });
-        on(dojo.query("#Demo_Comprt_Dalian_A_02_alt"), "click", function() {
+        on(dojo.query("#Demo_Cell_Dalian_A_02_alt"), "click", function() {
             mainView.goTo({position: [121.7816, 39.09946,100000], heading: 0, tilt: 0});
             add_polygon_block_500(DL_jinpu500);
             add_polygon_block_800(DL_jinpu800);
@@ -1379,7 +1594,7 @@
             mainView.goTo({position: [121.6452, 38.88914,50000], heading: 0, tilt: 0});
             add_polygon_block(DL_Maincity);
         });
-        on(dojo.query("#Demo_Comprt_Dalian_B_01_alt"), "click", function() {
+        on(dojo.query("#Demo_Cell_Dalian_B_01_alt"), "click", function() {
             mainView.goTo({position: [121.6452, 38.88914,100000], heading: 0, tilt: 0});
             add_polygon_block_500(DL_Maincity500);
         });
@@ -1387,7 +1602,7 @@
             mainView.goTo({position: [ 121.46645, 38.96023,100000], heading: 0, tilt: 0});
             add_polygon_block(DL_Ganjingzi);
         });
-        on(dojo.query("#Demo_Comprt_Dalian_C_01_alt"), "click", function() {
+        on(dojo.query("#Demo_Cell_Dalian_C_01_alt"), "click", function() {
             mainView.goTo({position: [121.46645, 38.96023,100000], heading: 0, tilt: 0});
             add_polygon_block_500(DL_Ganjingzi500);
         });
@@ -1395,7 +1610,7 @@
             mainView.goTo({position: [ 121.50132, 38.86352,100000], heading: 0, tilt: 0});
             add_polygon_block(DL_Gaoxin);
         });
-        on(dojo.query("#Demo_Comprt_Dalian_D_01_alt"), "click", function() {
+        on(dojo.query("#Demo_Cell_Dalian_D_01_alt"), "click", function() {
             mainView.goTo({position: [ 121.50132, 38.86352,100000], heading: 0, tilt: 0});
             add_polygon_block_500(DL_Gaoxin500);
         });
@@ -1403,7 +1618,7 @@
             mainView.goTo({position: [ 121.23174, 38.863496,100000], heading: 0, tilt: 0});
             add_polygon_block(DL_Lvshunkou);
         });
-        on(dojo.query("#Demo_Comprt_Dalian_E_01_alt"), "click", function() {
+        on(dojo.query("#Demo_Cell_Dalian_E_01_alt"), "click", function() {
             mainView.goTo({position: [121.23174, 38.863496,100000], heading: 0, tilt: 0});
             add_polygon_block_500(DL_Lvshunkou500);
         });
@@ -1411,19 +1626,19 @@
             mainView.goTo({position: [122.89325, 39.27759,200000], heading: 0, tilt: 0});
             add_polygon_block(DL_Changhai);
         });
-        on(dojo.query("#Demo_Comprt_Dalian_F_01_alt"), "click", function() {
+        on(dojo.query("#Demo_Cell_Dalian_F_01_alt"), "click", function() {
             mainView.goTo({position: [122.533, 39.2214,50000], heading: 0, tilt: 0});
             add_polygon_block(DL_Changhai1);
         });
-        on(dojo.query("#Demo_Comprt_Dalian_F_02_alt"), "click", function() {
+        on(dojo.query("#Demo_Cell_Dalian_F_02_alt"), "click", function() {
             mainView.goTo({position: [122.78334, 39.04506,20000], heading: 0, tilt: 0});
             add_polygon_block(DL_Changhai2);
         });
-        on(dojo.query("#Demo_Comprt_Dalian_F_03_alt"), "click", function() {
+        on(dojo.query("#Demo_Cell_Dalian_F_03_alt"), "click", function() {
             mainView.goTo({position: [123.0367, 39.49498,40000], heading: 0, tilt: 0});
             add_polygon_block(DL_Changhai3);
         });
-        on(dojo.query("#Demo_Comprt_Dalian_F_04_alt"), "click", function() {
+        on(dojo.query("#Demo_Cell_Dalian_F_04_alt"), "click", function() {
             mainView.goTo({position: [123.17197, 39.05912,20000], heading: 0, tilt: 0});
             add_polygon_block(DL_Changhai4);
         });
@@ -1437,17 +1652,17 @@
 		on(dojo.query("#Demo_Area_Zhangjk_A"), "click", function() {
             add_polygon_block_nocolor(block_ZJK_A);
         });
-        on(dojo.query("#Demo_Comprt_Zhangjk_A_01_loc"), "click", function() {
-            add_polygon_comprt(block_ZJK_A,Comprt_ZJK_A[0]);
+        on(dojo.query("#Demo_Cell_Zhangjk_A_01_loc"), "click", function() {
+            add_polygon_Cell(block_ZJK_A,Cell_ZJK_A[0]);
         });
-        on(dojo.query("#Demo_Comprt_Zhangjk_A_02_loc"), "click", function() {
-            add_polygon_comprt(block_ZJK_A,Comprt_ZJK_A[1]);
+        on(dojo.query("#Demo_Cell_Zhangjk_A_02_loc"), "click", function() {
+            add_polygon_Cell(block_ZJK_A,Cell_ZJK_A[1]);
         });
-        on(dojo.query("#Demo_Comprt_Zhangjk_A_03_loc"), "click", function() {
-            add_polygon_comprt(block_ZJK_A,Comprt_ZJK_A[2]);
+        on(dojo.query("#Demo_Cell_Zhangjk_A_03_loc"), "click", function() {
+            add_polygon_Cell(block_ZJK_A,Cell_ZJK_A[2]);
         });
-        on(dojo.query("#Demo_Comprt_Zhangjk_A_04_loc"), "click", function() {
-            add_polygon_comprt(block_ZJK_A,Comprt_ZJK_A[3]);
+        on(dojo.query("#Demo_Cell_Zhangjk_A_04_loc"), "click", function() {
+            add_polygon_Cell(block_ZJK_A,Cell_ZJK_A[3]);
         });
 
 
@@ -1458,20 +1673,20 @@
 		on(dojo.query("#Demo_Area_Zhaoguang_A"), "click", function() {
             add_polygon_block_nocolor(block_ZG_A);
         });
-        on(dojo.query("#Demo_Comprt_Zhaoguang_A_01_loc"), "click", function() {
-            add_polygon_comprt(block_ZG_A,Comprt_ZG_A[0]);
+        on(dojo.query("#Demo_Cell_Zhaoguang_A_01_loc"), "click", function() {
+            add_polygon_Cell(block_ZG_A,Cell_ZG_A[0]);
         });
-        on(dojo.query("#Demo_Comprt_Zhaoguang_A_02_loc"), "click", function() {
-            add_polygon_comprt(block_ZG_A,Comprt_ZG_A[1]);
+        on(dojo.query("#Demo_Cell_Zhaoguang_A_02_loc"), "click", function() {
+            add_polygon_Cell(block_ZG_A,Cell_ZG_A[1]);
         });
-        on(dojo.query("#Demo_Comprt_Zhaoguang_A_03_loc"), "click", function() {
-            add_polygon_comprt(block_ZG_A,Comprt_ZG_A[2]);
+        on(dojo.query("#Demo_Cell_Zhaoguang_A_03_loc"), "click", function() {
+            add_polygon_Cell(block_ZG_A,Cell_ZG_A[2]);
         });
-        on(dojo.query("#Demo_Comprt_Zhaoguang_A_04_loc"), "click", function() {
-            add_polygon_comprt(block_ZG_A,Comprt_ZG_A[3]);
+        on(dojo.query("#Demo_Cell_Zhaoguang_A_04_loc"), "click", function() {
+            add_polygon_Cell(block_ZG_A,Cell_ZG_A[3]);
         });
-        on(dojo.query("#Demo_Comprt_Zhaoguang_A_05_loc"), "click", function() {
-            add_polygon_comprt(block_ZG_A,Comprt_ZG_A[4]);
+        on(dojo.query("#Demo_Cell_Zhaoguang_A_05_loc"), "click", function() {
+            add_polygon_Cell(block_ZG_A,Cell_ZG_A[4]);
         });
 
         on(dojo.query("#Demo_Area_Zhaoguang_B_outline"), "click", function() {
@@ -1481,14 +1696,31 @@
 		on(dojo.query("#Demo_Area_Zhaoguang_B"), "click", function() {
             add_polygon_block_nocolor(block_ZG_B);
         });
-        on(dojo.query("#Demo_Comprt_Zhaoguang_B_01_loc"), "click", function() {
-            add_polygon_comprt(block_ZG_B,Comprt_ZG_B[0]);
+        on(dojo.query("#Demo_Cell_Zhaoguang_B_01_loc"), "click", function() {
+            add_polygon_Cell(block_ZG_B,Cell_ZG_B[0]);
         });
-        on(dojo.query("#Demo_Comprt_Zhaoguang_B_02_loc"), "click", function() {
-            add_polygon_comprt(block_ZG_B,Comprt_ZG_B[1]);
+        on(dojo.query("#Demo_Cell_Zhaoguang_B_02_loc"), "click", function() {
+            add_polygon_Cell(block_ZG_B,Cell_ZG_B[1]);
         });
-        on(dojo.query("#Demo_Comprt_Zhaoguang_B_03_loc"), "click", function() {
-            add_polygon_comprt(block_ZG_B,Comprt_ZG_B[2]);
+        on(dojo.query("#Demo_Cell_Zhaoguang_B_03_loc"), "click", function() {
+            add_polygon_Cell(block_ZG_B,Cell_ZG_B[2]);
+        });
+
+        on(dojo.query("#Demo_Area_Zhaoguang_C_outline"), "click", function() {
+            add_polygon_block(block_ZG_C);
+            mainView.goTo({position: [126.45159, 48.04779,4000], heading: 0, tilt: 0});
+        });
+		on(dojo.query("#Demo_Area_Zhaoguang_C"), "click", function() {
+            add_polygon_block_nocolor(block_ZG_C);
+        });
+        on(dojo.query("#Demo_Cell_Zhaoguang_C_01_loc"), "click", function() {
+            add_polygon_Cell(block_ZG_C,Cell_ZG_C[0]);
+        });
+        on(dojo.query("#Demo_Cell_Zhaoguang_C_02_loc"), "click", function() {
+            add_polygon_Cell(block_ZG_C,Cell_ZG_C[1]);
+        });
+        on(dojo.query("#Demo_Cell_Zhaoguang_C_03_loc"), "click", function() {
+            add_polygon_Cell(block_ZG_C,Cell_ZG_C[2]);
         });
 
         on(dojo.query("#Demo_Area_Xinjiang_A_outline"), "click", function() {
@@ -1498,14 +1730,14 @@
 		on(dojo.query("#Demo_Area_Xinjiang_A"), "click", function() {
             add_polygon_block_nocolor(block_XJ_A);
         });
-        on(dojo.query("#Demo_Comprt_Xinjiang_A_01_loc"), "click", function() {
-            add_polygon_comprt(block_XJ_A,Comprt_XJ_A[0]);
+        on(dojo.query("#Demo_Cell_Xinjiang_A_01_loc"), "click", function() {
+            add_polygon_Cell(block_XJ_A,Cell_XJ_A[0]);
         });
-        on(dojo.query("#Demo_Comprt_Xinjiang_A_02_loc"), "click", function() {
-            add_polygon_comprt(block_XJ_A,Comprt_XJ_A[1]);
+        on(dojo.query("#Demo_Cell_Xinjiang_A_02_loc"), "click", function() {
+            add_polygon_Cell(block_XJ_A,Cell_XJ_A[1]);
         });
-        on(dojo.query("#Demo_Comprt_Xinjiang_A_03_loc"), "click", function() {
-            add_polygon_comprt(block_XJ_A,Comprt_XJ_A[2]);
+        on(dojo.query("#Demo_Cell_Xinjiang_A_03_loc"), "click", function() {
+            add_polygon_Cell(block_XJ_A,Cell_XJ_A[2]);
         });
 
         mainView.on('click', function(evt){
@@ -1513,7 +1745,8 @@
                var x = Math.round(evt.mapPoint.longitude * 100000)/100000;
                var y = Math.round(evt.mapPoint.latitude * 100000)/100000;
                var z = Math.round(evt.mapPoint.z * 100)/100;
-               document.getElementById("curloc").innerHTML = '鼠标单击位置：经纬度 [' + x + ', ' + y + '], 海拔' + z + 'm';
+               var loc = document.getElementById("curloc");
+               loc.innerHTML = '鼠标单击位置：经纬度 [' + x + ', ' + y + '], 海拔' + z + 'm';
            }
         });
 

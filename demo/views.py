@@ -27,7 +27,7 @@ def demomap(request, param1):
     nswe = abc_id_to_abc_imgloc(abc_id)
     (NCurl, NDVIurl) = abc_id_to_abc_imgurl(abc_id)
 
-    illtreecount = random.randint(15, 50)
+    illtreecount = random.randint(15, 30)
     illtrees = []
     for i in range(0, illtreecount):
         num = random.randint(5, 100)
@@ -70,6 +70,7 @@ def abc_id_to_abc_name(argument):
         '500020001': "示例小班00020001",
         '500020002': "示例小班00020002",
         '500020003': "示例小班00020003",
+        '70016': "七星农场十六区重点观察区",
     }
     return switcher.get(argument, "nothing")
 
@@ -92,6 +93,7 @@ def abc_id_to_abc_centerP(argument):
         '500020001': "114.19264",
         '500020002': "114.19237",
         '500020003': "114.19417",
+        '70016': "132.90421",
     }
     switcherlat = {
         '1': "49.2171",
@@ -110,6 +112,7 @@ def abc_id_to_abc_centerP(argument):
         '500020001': "23.12883",
         '500020002': "23.12758",
         '500020003': "23.12981",
+        '70016': "47.25683",
     }
     switcherzoom = {
         '1': "12",
@@ -128,6 +131,7 @@ def abc_id_to_abc_centerP(argument):
         '500020001': "20",
         '500020002': "20",
         '500020003': "20",
+        '70016': "20",
     }
     return switcherlng.get(argument, "116.358"), \
            switcherlat.get(argument, "40"), \
@@ -145,6 +149,7 @@ def abc_id_to_abc_imgloc(argument):
         '500020001': "23.12967",
         '500020002': "23.128448",
         '500020003': "23.13019885",
+        '70016': "47.26006",
     }
     switchersouth = {
         '5': "23.121167",
@@ -156,6 +161,7 @@ def abc_id_to_abc_imgloc(argument):
         '500020001': "23.12805",
         '500020002': "23.1260213",
         '500020003': "23.12899526",
+        '70016': "47.25312",
     }
     switcherwest = {
         '5': "114.191878",
@@ -167,6 +173,7 @@ def abc_id_to_abc_imgloc(argument):
         '500020001': "114.191877",
         '500020002': "114.191877",
         '500020003': "114.1936271",
+        '70016': "132.89877",
     }
     switchereast = {
         '5': "114.202375",
@@ -178,6 +185,7 @@ def abc_id_to_abc_imgloc(argument):
         '500020001': "114.193977",
         '500020002': "114.193977",
         '500020003': "114.1953767",
+        '70016': "132.90902",
     }
     return switchernorth.get(argument, "23"),\
            switchersouth.get(argument, "23"),\
@@ -196,6 +204,7 @@ def abc_id_to_abc_imgurl(argument):
         '500020001': "/static/img/Compartmentimg/BL_0002_0001_nc.png",
         '500020002': "/static/img/Compartmentimg/BL_0002_0002_nc.png",
         '500020003': "/static/img/Compartmentimg/BL_0002_0003_nc.png",
+        '70016': "/static/img/16eg.png",
     }
     switcherndvi = {
         '5': "/static/img/Areaimg/BL_ndvi.png",
