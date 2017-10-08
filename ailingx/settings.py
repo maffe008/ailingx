@@ -40,6 +40,7 @@ INSTALLED_APPS = [
 
     'ailingx.core',
     'demo',
+    'tenihe',
 ]
 
 MIDDLEWARE = [

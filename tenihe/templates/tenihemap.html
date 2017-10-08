@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
+	<title>{{ abc_name }}</title>
+    <link rel="shortcut icon" href="">
+
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/jquery-ui.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/jquery-ui.structure.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/jquery-ui.theme.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/sogis.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/somap.css' %}" />
+
+
+    <link rel="stylesheet" href="http://cache.amap.com/lbs/static/main1119.css"/>
+    <script src="http://cache.amap.com/lbs/static/es5.min.js"></script>
+    <script src="http://webapi.amap.com/maps?v=1.3&key=6a1f1e70483a2dc9efa4bfcbfb15c109"></script>
+    <script type="text/javascript" src="http://cache.amap.com/lbs/static/addToolbar.js"></script>
+
+    <!-- UI组件库 1.0 -->
+    <script src="//webapi.amap.com/ui/1.0/main.js"></script>
+
+    <script src="{% static 'js/jquery.js' %}"></script>
+    <script src="{% static 'js/bootstrap.js' %}"></script>
+    <script src="{% static 'js/jquery-ui.js' %}"></script>
+    <script src="{% static 'js/demo-option.js' %}"></script>
+    <script src="{% static 'js/demo-jquery.js' %}"></script>
+    <script src="{% static 'js/demo-blockfunc.js' %}"></script>
+    <script src="{% static 'js/demo-jquery-ui.js' %}"></script>
+
+</head>
+<body>
+    {% include 'DataDiv.html' %}
+	<div id="allmap"></div>
+</body>
+</html>
+<script type="text/javascript">
+
+    var imgnswe = {{ img_nswe|safe }};
+    var wsp = new AMap.LngLat(imgnswe[2],imgnswe[1]);
+    var enp = new AMap.LngLat(imgnswe[3],imgnswe[0]);
+    var gpscenterP = new AMap.LngLat({{ centerPlng|safe }},{{ centerPlat|safe }});
+    var ps = [wsp,enp,gpscenterP];
+    AMap.convertFrom(ps, "gps", function(status, result) {
+        //alert(result.locations[0]+","+result.locations[1]+","+result.locations[2]);
+        var map = new AMap.Map('allmap', {
+            resizeEnable: true,
+            zoom:{{ zoom|safe }},
+            center: result.locations[2],
+            expandZoomRange: true,
+            zooms: [3,20]
+        });
+        map.setMapStyle("fresh");
+        map.setDefaultCursor("crosshair");
+
+
+
+
+        AMapUI.loadUI(['control/BasicControl'], function(BasicControl) {
+            //缩放控件，显示Zoom值
+            map.addControl(new BasicControl.Zoom({
+                position: 'rb',
+                showZoomNum: true
+            }));
+            //图层切换控件
+            map.addControl(new BasicControl.LayerSwitcher({
+                position: 'rt'
+            }));
+        });
+        /*
+
+
+        var ruler,mousetool;
+        map.plugin(["AMap.RangingTool"], function() {
+            var lOptions = {
+                strokeStyle: "solid",
+                strokeColor: "#FF9000",
+                strokeOpacity: 1,
+                strokeWeight: 2
+            };
+            var tmplOptions = {
+                strokeStyle: "dashed",
+                strokeColor: "#FECF05",
+                strokeOpacity: 1,
+                strokeWeight: 2
+            };
+            var rulerOptions = {lineOptions: lOptions, tmpLineOptions: tmplOptions };
+            //实例化距离测量对象ruler
+            ruler = new AMap.RangingTool(map,rulerOptions);
+            //为ruler添加监听器
+            AMap.event.addListener(ruler, "addnode", function(e) {
+                var temppos = e.position;
+                //alert(temppos);
+            });
+            AMap.event.addListener(ruler, "end", function(e) {
+                var templ = e.distance;
+                alert(templ+"米|"+templ/1000+"千米");
+            });
+        });
+*/
+        map.plugin(["AMap.MouseTool"],function(){
+            mousetool = new AMap.MouseTool(map);
+            AMap.event.addListener(map, "click", function callback(e) {
+                //alert(e.lnglat.getLng() + ',' + e.lnglat.getLat())
+            });
+            AMap.event.addListener(mousetool, "draw", function callback(e) {
+                var eObject = e.obj;//obj属性就是鼠标事件完成所绘制的覆盖物对象。
+            });
+        });
+        //单击获取点击的经纬度
+        //map.on('dbclick', function(e) {alert('['+e.lnglat.getLng()+','+e.lnglat.getLat()+']');});
+        var bounds = new AMap.Bounds(result.locations[0],result.locations[1]),
+        groundImageOpts = {
+            opacity: 1,   //图片透明度
+            clickable: true,//图片相应鼠标点击事件，默认：false
+            map: map     //图片叠加的地图对象
+        };
+        map.setLimitBounds(bounds);
+        var groundImage = new AMap.GroundImage({{ NCurl|safe }}, bounds, groundImageOpts);
+
+        var NDVI_choose = document.getElementById("NDVI_choose");
+        NDVI_choose.addEventListener("click",show_ndvi);
+        function show_ndvi(){
+            if (NDVI_choose.className == "check-box glyphicon glyphicon-unchecked"){
+                NDVI_choose.className ='check-box glyphicon glyphicon-check';
+                var groundImagendvi = new AMap.GroundImage({{ NDVIurl|safe }}, bounds, groundImageOpts);
+            }else if(NDVI_choose.className == "check-box glyphicon glyphicon-check"){
+                NDVI_choose.className ='check-box glyphicon glyphicon-unchecked';
+                var groundImage = new AMap.GroundImage({{ NCurl|safe }}, bounds, groundImageOpts);
+            }else{
+                alert("NDVI_choose ERROR");
+            }
+        }
+        var MTool1 = document.getElementById("MTool1");
+        MTool1.addEventListener("click",show_coordinate);
+        var MTool2 = document.getElementById("MTool2");
+        MTool2.addEventListener("click",show_marker);
+        var MTool3 = document.getElementById("MTool3");
+        MTool3.addEventListener("click",calculate_length);
+        var MTool4 = document.getElementById("MTool4");
+        MTool4.addEventListener("click",calculate_area);
+        function show_coordinate(){
+
+        }
+        function show_marker(){
+            //ruler.turnOff();
+            mousetool.close(false);
+            mousetool.marker(); //使用鼠标工具，在地图上画标记点
+            AMap.event.addListener(mousetool, "draw", function callback(e) {
+                var eObject = e.obj;//obj属性就是鼠标事件完成所绘制的覆盖物对象。
+                var temppos = eObject.getPosition();
+                eObject.setLabel({
+                    offset: new AMap.Pixel(20, 20),//修改label相对于maker的位置
+                    content: temppos
+                });
+            });
+
+        }
+        function calculate_length(){
+            //ruler.turnOn();
+            mousetool.close(false);
+            mousetool.rule();
+        }
+
+        function calculate_area(){
+            //ruler.turnOff();
+            mousetool.close(false);
+            mousetool.measureArea();
+
+        }
+    });
+
+</script>
+

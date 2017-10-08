@@ -41,5 +41,6 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
 
     url(r'^demo/', include('demo.urls', namespace='demo')),
+    url(r'^tenihe/', include('tenihe.urls', namespace='tenihe')),
 
 ] + static(settings.STATIC_URL, document_root = settings.STATIC_ROOT)
