@@ -83,3 +83,47 @@ $(document).ready(function(){
         $(this).css({"color":"#f1f2f2"})
     });
 });
+
+$(document).ready(function(){
+    $("#Tool2").click(function(){
+        var sys_panel = $("#sys_panel");
+        sys_panel.css({"display":"block"});
+        sys_panel.siblings().css({"display":"none"});
+    })
+});
+
+$(document).ready(function(){
+    $(".area_id").click(function(){
+        var area_panel = $("#Area_panel");
+        area_panel.css({"display":"block"});
+        area_panel.siblings().css({"display":"none"});
+    })
+});
+
+$(document).ready(function(){
+    $(".block_id").click(function(){
+        var block_panel = $("#Block_panel");
+        block_panel.css({"display":"block"});
+        block_panel.siblings().css({"display":"none"});
+    })
+});
+
+$(document).ready(function(){
+
+    var cell_id = $(".cell_id");
+
+    cell_id.mouseenter(function(){
+        $(this).css({"color":"#ff8c00"})
+    });
+    cell_id.mouseout(function(){
+        $(this).css({"color":"#ffffff"})
+    });
+    cell_id.click(function(){
+        //alert($(this).attr("id"));
+        var cell_panel = $("#Cell_panel");
+        cell_panel.css({"display":"block"});
+        cell_panel.siblings().css({"display":"none"});
+        var cur_cell_id = $(this);
+        display_cell(cur_cell_id);
+    })
+});

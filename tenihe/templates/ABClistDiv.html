@@ -7,658 +7,119 @@
 			 <a href="#panel-forestry" data-toggle="tab">林业</a>
 		</li>
 		<li class="">
-			 <a href="#panel-uav" data-toggle="tab">飞行</a>
+			 <a href="#panel-grass" data-toggle="tab">草牧业</a>
 		</li>
 	</ul>
 	<div class="tab-content">
 		<!--农业面板-->
 		<div class="tab-pane active" id="panel-agriculture">
-			<!--七星-->
+            <!--呼伦贝尔特泥河-->
 			<div class="panel-group blocklist" id="panel-blocklist">
 				<div class="blocklist-heading-Area">
-					<a href="{% url 'demo:demomap' 7 %}" target="_blank"><span id="Demo_Area_Qixing" class="glyphicon glyphicon-map-marker" onclick="" style="cursor: pointer"></span></a>
-					<span id="Demo_Area_Qixing_loc" style="cursor: pointer">七星农场</span>
+					<a href="{% url 'tenihe:tenihemap' 1 %}" target="_blank"><span id="A_tnh" class="glyphicon glyphicon-map-marker" onclick="" style="cursor: pointer"></span></a>
+					<span class="area_id" id="A_tnh" onclick="change_intro('tnh')" style="cursor: pointer">特泥河农牧场</span>
 					<span class="glyphicon glyphicon-chevron-down" data-toggle="collapse" data-parent="#listBar"
-						  data-target="#panel-element-demo-Qixing"  style="float: right;cursor: pointer"></span>
+						  data-target="#panel-element-tnh"  style="float: right;cursor: pointer"></span>
 				</div>
-                <!--地块列表|七星农场十六区示例-->
-				<div id="panel-element-demo-Qixing" class="panel-collapse collapse in">
-					<div class="blocklist-heading">
-                        <a href="{% url 'demo:demomap' 70016 %}" target="_blank" data-toggle="tooltip" title="点击图标显示详细数据" >
-                            <span id="Demo_Area_Qixing_16eg" class="glyphicon glyphicon-fullscreen" onclick=""></span></a>
-                        <span id="Demo_Area_Qixing_16eg_outline">七星农场十六区（重点观察）</span>
-						<span class="glyphicon glyphicon-chevron-down" data-toggle="collapse" data-parent="#panel-blocklist"
-							  data-target="#panel-element-demo-Qixing_16eg" style="float: right"></span>
-					</div>
-					<div id="panel-element-demo-Qixing_16eg" class="panel-collapse collapse">
-                        <div id="Demo_Cell_Qixing_16eg_01" class="Blockname panel-body">
-                            <span id="Demo_Cell_Qixing_16eg_01_info" class="glyphicon glyphicon-map-marker" style="cursor: pointer"></span>
-                            <span id="Demo_Cell_Qixing_16eg_01_loc" style="cursor: pointer" onclick="">090472006-1-01|地块</span>
-                        </div>
-                        <div id="Demo_Cell_Qixing_16eg_02" class="Blockname panel-body">
-                            <span id="Demo_Cell_Qixing_16eg_02_info" class="glyphicon glyphicon-map-marker" style="cursor: pointer"></span>
-                            <span id="Demo_Cell_Qixing_16eg_02_loc" style="cursor: pointer" onclick="">090472006-1-02|地块</span>
-                        </div>
-                        <div id="Demo_Cell_Qixing_16eg_03" class="Blockname panel-body">
-                            <span id="Demo_Cell_Qixing_16eg_03_info" class="glyphicon glyphicon-map-marker" style="cursor: pointer"></span>
-                            <span id="Demo_Cell_Qixing_16eg_03_loc" style="cursor: pointer" onclick="">090472006-1-03|地块</span>
-                        </div>
-                        <div id="Demo_Cell_Qixing_16eg_04" class="Blockname panel-body">
-                            <span id="Demo_Cell_Qixing_16eg_04_info" class="glyphicon glyphicon-map-marker" style="cursor: pointer"></span>
-                            <span id="Demo_Cell_Qixing_16eg_04_loc" style="cursor: pointer" onclick="">090472006-1-04|地块</span>
-                        </div>
-                        <div id="Demo_Cell_Qixing_16eg_05" class="Blockname panel-body">
-                            <span id="Demo_Cell_Qixing_16eg_05_info" class="glyphicon glyphicon-map-marker" style="cursor: pointer"></span>
-                            <span id="Demo_Cell_Qixing_16eg_05_loc" style="cursor: pointer" onclick="">090472006-1-05|地块</span>
-                        </div>
-                        <div id="Demo_Cell_Qixing_16eg_06" class="Blockname panel-body">
-                            <span id="Demo_Cell_Qixing_16eg_06_info" class="glyphicon glyphicon-map-marker" style="cursor: pointer"></span>
-                            <span id="Demo_Cell_Qixing_16eg_06_loc" style="cursor: pointer" onclick="">090472006-1-06|地块</span>
-                        </div>
-                        <div id="Demo_Cell_Qixing_16eg_07" class="Blockname panel-body">
-                            <span id="Demo_Cell_Qixing_16eg_07_info" class="glyphicon glyphicon-map-marker" style="cursor: pointer"></span>
-                            <span id="Demo_Cell_Qixing_16eg_07_loc" style="cursor: pointer" onclick="">090472006-1-07|地块</span>
-                        </div>
-                        <div id="Demo_Cell_Qixing_16eg_08" class="Blockname panel-body">
-                            <span id="Demo_Cell_Qixing_16eg_08_info" class="glyphicon glyphicon-map-marker" style="cursor: pointer"></span>
-                            <span id="Demo_Cell_Qixing_16eg_08_loc" style="cursor: pointer" onclick="">090472006-1-08|地块</span>
-                        </div>
-                        <div id="Demo_Cell_Qixing_16eg_09" class="Blockname panel-body">
-                            <span id="Demo_Cell_Qixing_16eg_09_info" class="glyphicon glyphicon-map-marker" style="cursor: pointer"></span>
-                            <span id="Demo_Cell_Qixing_16eg_09_loc" style="cursor: pointer" onclick="">090472006-1-09|地块</span>
-                        </div>
-                        <div id="Demo_Cell_Qixing_16eg_10" class="Blockname panel-body">
-                            <span id="Demo_Cell_Qixing_16eg_10_info" class="glyphicon glyphicon-map-marker" style="cursor: pointer"></span>
-                            <span id="Demo_Cell_Qixing_16eg_10_loc" style="cursor: pointer" onclick="">090472006-1-10|地块</span>
-                        </div>
-                        <div id="Demo_Cell_Qixing_16eg_11" class="Blockname panel-body">
-                            <span id="Demo_Cell_Qixing_16eg_11_info" class="glyphicon glyphicon-map-marker" style="cursor: pointer"></span>
-                            <span id="Demo_Cell_Qixing_16eg_11_loc" style="cursor: pointer" onclick="">090472006-1-11|地块</span>
-                        </div>
-                        <div id="Demo_Cell_Qixing_16eg_12" class="Blockname panel-body">
-                            <span id="Demo_Cell_Qixing_16eg_12_info" class="glyphicon glyphicon-map-marker" style="cursor: pointer"></span>
-                            <span id="Demo_Cell_Qixing_16eg_12_loc" style="cursor: pointer" onclick="">090472006-1-12|地块</span>
-                        </div>
-                        <div id="Demo_Cell_Qixing_16eg_13" class="Blockname panel-body">
-                            <span id="Demo_Cell_Qixing_16eg_13_info" class="glyphicon glyphicon-map-marker" style="cursor: pointer"></span>
-                            <span id="Demo_Cell_Qixing_16eg_13_loc" style="cursor: pointer" onclick="">090472006-1-13|地块</span>
-                        </div>
-                        <div id="Demo_Cell_Qixing_16eg_14" class="Blockname panel-body">
-                            <span id="Demo_Cell_Qixing_16eg_14_info" class="glyphicon glyphicon-map-marker" style="cursor: pointer"></span>
-                            <span id="Demo_Cell_Qixing_16eg_14_loc" style="cursor: pointer" onclick="">090472006-1-14|地块</span>
-                        </div>
-                        <div id="Demo_Cell_Qixing_16eg_15" class="Blockname panel-body">
-                            <span id="Demo_Cell_Qixing_16eg_15_info" class="glyphicon glyphicon-map-marker" style="cursor: pointer"></span>
-                            <span id="Demo_Cell_Qixing_16eg_15_loc" style="cursor: pointer" onclick="">090472006-1-15|地块</span>
-                        </div>
-                        <div id="Demo_Cell_Qixing_16eg_16" class="Blockname panel-body">
-                            <span id="Demo_Cell_Qixing_16eg_16_info" class="glyphicon glyphicon-map-marker" style="cursor: pointer"></span>
-                            <span id="Demo_Cell_Qixing_16eg_16_loc" style="cursor: pointer" onclick="">090472006-1-16|地块</span>
-                        </div>
-                        <div id="Demo_Cell_Qixing_16eg_17" class="Blockname panel-body">
-                            <span id="Demo_Cell_Qixing_16eg_17_info" class="glyphicon glyphicon-map-marker" style="cursor: pointer"></span>
-                            <span id="Demo_Cell_Qixing_16eg_17_loc" style="cursor: pointer" onclick="">090472006-1-17|地块</span>
-                        </div>
-                        <div id="Demo_Cell_Qixing_16eg_18" class="Blockname panel-body">
-                            <span id="Demo_Cell_Qixing_16eg_18_info" class="glyphicon glyphicon-map-marker" style="cursor: pointer"></span>
-                            <span id="Demo_Cell_Qixing_16eg_18_loc" style="cursor: pointer" onclick="">090472006-1-18|地块</span>
-                        </div>
-                        <div id="Demo_Cell_Qixing_16eg_19" class="Blockname panel-body">
-                            <span id="Demo_Cell_Qixing_16eg_19_info" class="glyphicon glyphicon-map-marker" style="cursor: pointer"></span>
-                            <span id="Demo_Cell_Qixing_16eg_19_loc" style="cursor: pointer" onclick="">090472006-1-19|地块</span>
-                        </div>
-					</div>
-
-				<!--地块列表|七星农场十六区示例-->
-					<div class="blocklist-heading">
-						<a href="{% url 'demo:demomap' 7 %}" target="_blank" data-toggle="tooltip" title="点击图标显示详细数据" >
-                            <span id="Demo_Area_Qixing_16" class="glyphicon glyphicon-fullscreen" onclick=""></span></a>
-						<span id="Demo_Area_Qixing_16_outline">七星农场十六区（计划范围）</span>
-						<span class="glyphicon glyphicon-chevron-down" data-toggle="collapse" data-parent="#panel-blocklist"
-							  data-target="#panel-element-demo-Qixing_16" style="float: right"></span>
-					</div>
-					<div id="panel-element-demo-Qixing_16" class="panel-collapse collapse">
-						<div id="Demo_Cell_Qixing_16_00" class="Blockname panel-body">
-							<span id="Demo_Cell_Qixing_16_00_info" class="glyphicon glyphicon-map-marker" style="cursor: pointer"></span>
-                            <span id="Demo_Cell_Qixing_16_00_loc" style="cursor: pointer" onclick="">090472000</span>
-						</div>
-                        <div id="Demo_Cell_Qixing_16_01" class="Blockname panel-body">
-							<span id="Demo_Cell_Qixing_16_01_info" class="glyphicon glyphicon-map-marker" style="cursor: pointer"></span>
-                            <span id="Demo_Cell_Qixing_16_01_loc" style="cursor: pointer" onclick="">090472001</span>
-						</div>
-						<div id="Demo_Cell_Qixing_16_02" class="Blockname panel-body">
-							<span id="Demo_Cell_Qixing_16_02_info" class="glyphicon glyphicon-map-marker" style="cursor: pointer"></span>
-							<span id="Demo_Cell_Qixing_16_02_loc" style="cursor: pointer" onclick="">090472002</span>
-						</div>
-						<div id="Demo_Cell_Qixing_16_03" class="Blockname panel-body">
-							<span id="Demo_Cell_Qixing_16_03_info" class="glyphicon glyphicon-map-marker" style="cursor: pointer"></span>
-							<span id="Demo_Cell_Qixing_16_03_loc" style="cursor: pointer" onclick="">090472003</span>
-						</div>
-						<div id="Demo_Cell_Qixing_16_04" class="Blockname panel-body">
-							<span id="Demo_Cell_Qixing_16_04_info" class="glyphicon glyphicon-map-marker" style="cursor: pointer"></span>
-							<span id="Demo_Cell_Qixing_16_04_loc" style="cursor: pointer" onclick="">090472004</span>
-						</div>
-						<div id="Demo_Cell_Qixing_16_05" class="Blockname panel-body">
-							<span id="Demo_Cell_Qixing_16_05_info" class="glyphicon glyphicon-map-marker" style="cursor: pointer"></span>
-							<span id="Demo_Cell_Qixing_16_05_loc" style="cursor: pointer" onclick="">090472005</span>
-						</div>
-                        <div id="Demo_Cell_Qixing_16_06" class="Blockname panel-body">
-							<span id="Demo_Cell_Qixing_16_06_info" class="glyphicon glyphicon-map-marker" style="cursor: pointer"></span>
-							<span id="Demo_Cell_Qixing_16_06_loc" style="cursor: pointer" onclick="">090472006</span>
-						</div>
-                        <div id="Demo_Cell_Qixing_16_07" class="Blockname panel-body">
-							<span id="Demo_Cell_Qixing_16_07_info" class="glyphicon glyphicon-map-marker" style="cursor: pointer"></span>
-							<span id="Demo_Cell_Qixing_16_07_loc" style="cursor: pointer" onclick="">090472007</span>
-						</div>
-                        <div id="Demo_Cell_Qixing_16_08" class="Blockname panel-body">
-							<span id="Demo_Cell_Qixing_16_08_info" class="glyphicon glyphicon-map-marker" style="cursor: pointer"></span>
-							<span id="Demo_Cell_Qixing_16_08_loc" style="cursor: pointer" onclick="">090472008</span>
-						</div>
-                        <div id="Demo_Cell_Qixing_16_09" class="Blockname panel-body">
-							<span id="Demo_Cell_Qixing_16_09_info" class="glyphicon glyphicon-map-marker" style="cursor: pointer"></span>
-							<span id="Demo_Cell_Qixing_16_09_loc" style="cursor: pointer" onclick="">090472009</span>
-						</div>
-                        <div id="Demo_Cell_Qixing_16_10" class="Blockname panel-body">
-							<span id="Demo_Cell_Qixing_16_10_info" class="glyphicon glyphicon-map-marker" style="cursor: pointer"></span>
-							<span id="Demo_Cell_Qixing_16_10_loc" style="cursor: pointer" onclick="">090472010</span>
-						</div>
-                        <div id="Demo_Cell_Qixing_16_11" class="Blockname panel-body">
-							<span id="Demo_Cell_Qixing_16_11_info" class="glyphicon glyphicon-map-marker" style="cursor: pointer"></span>
-							<span id="Demo_Cell_Qixing_16_11_loc" style="cursor: pointer" onclick="">090472011</span>
-						</div>
-
-					</div>
-				</div>
-			</div>
-
-			<!--赵光-->
-			<div class="panel-group blocklist" id="panel-blocklist">
-				<div class="blocklist-heading-Area">
-					<a href="{% url 'demo:demomap' 6 %}" target="_blank"><span id="Demo_Area_Zhaoguang" class="glyphicon glyphicon-map-marker" onclick="" style="cursor: pointer"></span></a>
-					<span id="Demo_Area_Zhaoguang_loc" style="cursor: pointer">赵光农场</span>
-					<span class="glyphicon glyphicon-chevron-down" data-toggle="collapse" data-parent="#listBar"
-						  data-target="#panel-element-demo-Zhaoguang"  style="float: right;cursor: pointer"></span>
-				</div>
-				<!--地块列表|赵光农场1-5块-->
-				<div id="panel-element-demo-Zhaoguang" class="panel-collapse collapse">
-					<div class="blocklist-heading">
-						<span id="Demo_Area_Zhaoguang_A" class="glyphicon glyphicon-map-marker" onclick=""></span>
-						<span id="Demo_Area_Zhaoguang_A_outline">赵光农场北部地块</span>
-						<span class="glyphicon glyphicon-chevron-down" data-toggle="collapse" data-parent="#panel-blocklist"
-							  data-target="#panel-element-demo-Zhaoguang_A" style="float: right"></span>
-					</div>
-					<div id="panel-element-demo-Zhaoguang_A" class="panel-collapse collapse">
-						<div id="Demo_Cell_Zhaoguang_A_01" class="Blockname panel-body">
-							<span id="Demo_Cell_Zhaoguang_A_01_loc" class="glyphicon glyphicon-map-marker" style="cursor: pointer"></span>
-							区划01|东区第一大队
-						</div>
-						<div id="Demo_Cell_Zhaoguang_A_02" class="Blockname panel-body">
-							<span id="Demo_Cell_Zhaoguang_A_02_loc" class="glyphicon glyphicon-map-marker" style="cursor: pointer"></span>
-							区划02|东区第二大队
-						</div>
-						<div id="Demo_Cell_Zhaoguang_A_03" class="Blockname panel-body">
-							<span id="Demo_Cell_Zhaoguang_A_03_loc" class="glyphicon glyphicon-map-marker" style="cursor: pointer"></span>
-							区划03|东区第三大队
-						</div>
-						<div id="Demo_Cell_Zhaoguang_A_04" class="Blockname panel-body">
-							<span id="Demo_Cell_Zhaoguang_A_04_loc" class="glyphicon glyphicon-map-marker" style="cursor: pointer"></span>
-							区划04|东区第四大队
-						</div>
-						<div id="Demo_Cell_Zhaoguang_A_05" class="Blockname panel-body">
-							<span id="Demo_Cell_Zhaoguang_A_05_loc" class="glyphicon glyphicon-map-marker" style="cursor: pointer"></span>
-							区划05|东区第五大队
-						</div>
-					</div>
-
-						<!--地块列表|赵光中部-->
-					<div class="blocklist-heading">
-						<span id="Demo_Area_Zhaoguang_B" class="glyphicon glyphicon-map-marker" onclick=""></span>
-						<span id="Demo_Area_Zhaoguang_B_outline">赵光农场中部地块</span>
-						<span class="glyphicon glyphicon-chevron-down" data-toggle="collapse" data-parent="#panel-blocklist"
-							  data-target="#panel-element-demo-Zhaoguang_B" style="float: right"></span>
-					</div>
-					<div id="panel-element-demo-Zhaoguang_B" class="panel-collapse collapse">
-						<div id="Demo_Cell_Zhaoguang_B_01" class="Blockname panel-body">
-							<span id="Demo_Cell_Zhaoguang_B_01_loc" class="glyphicon glyphicon-map-marker" style="cursor: pointer"></span>
-							区划01|中部一区
-						</div>
-						<div id="Demo_Cell_Zhaoguang_B_02" class="Blockname panel-body">
-							<span id="Demo_Cell_Zhaoguang_B_02_loc" class="glyphicon glyphicon-map-marker" style="cursor: pointer"></span>
-							区划02|中部二区
-						</div>
-						<div id="Demo_Cell_Zhaoguang_B_03" class="Blockname panel-body">
-							<span id="Demo_Cell_Zhaoguang_B_03_loc" class="glyphicon glyphicon-map-marker" style="cursor: pointer"></span>
-							区划03|中部三区
-						</div>
-					</div>
-						<!--地块列表|赵光农场1-5块-->
-					<div class="blocklist-heading">
-						<span id="Demo_Area_Zhaoguang_C" class="glyphicon glyphicon-map-marker" onclick=""></span>
-						<span id="Demo_Area_Zhaoguang_C_outline">赵光农场南部地块</span>
-						<span class="glyphicon glyphicon-chevron-down" data-toggle="collapse" data-parent="#panel-blocklist"
-							  data-target="#panel-element-demo-Zhaoguang_C" style="float: right"></span>
-					</div>
-					<div id="panel-element-demo-Zhaoguang_C" class="panel-collapse collapse">
-						<div id="Demo_Cell_Zhaoguang_C_01" class="Blockname panel-body">
-							<span id="Demo_Cell_Zhaoguang_C_01_loc" class="glyphicon glyphicon-map-marker" style="cursor: pointer"></span>
-							区划01|南区第一大队
-						</div>
-						<div id="Demo_Cell_Zhaoguang_C_02" class="Blockname panel-body">
-							<span id="Demo_Cell_Zhaoguang_C_02_loc" class="glyphicon glyphicon-map-marker" style="cursor: pointer"></span>
-							区划02|南区第二大队
-						</div>
-						<div id="Demo_Cell_Zhaoguang_C_03" class="Blockname panel-body">
-							<span id="Demo_Cell_Zhaoguang_C_03_loc" class="glyphicon glyphicon-map-marker" style="cursor: pointer"></span>
-							区划03|南区第三大队
-						</div>
-					</div>
-				</div>
-			</div>
-
-            <!--呼伦贝尔-->
-			<div class="panel-group blocklist" id="panel-blocklist">
-				<div class="blocklist-heading-Area">
-					<a href="{% url 'demo:demomap' 1 %}" target="_blank"><span id="Demo_Area_Hulbr" class="glyphicon glyphicon-map-marker" onclick="" style="cursor: pointer"></span></a>
-					<span id="Demo_Area_Hulbr_loc" onclick="change_intro('Hulbr')" style="cursor: pointer">呼伦贝尔农垦</span>
-					<span class="glyphicon glyphicon-chevron-down" data-toggle="collapse" data-parent="#listBar"
-						  data-target="#panel-element-demo-Hulbr"  style="float: right;cursor: pointer"></span>
-				</div>
-				<!--地块列表|呼伦贝尔-->
-				<div id="panel-element-demo-Hulbr" class="panel-collapse collapse">
+				<!--地块列表|特泥河三队-->
+				<div id="panel-element-tnh" class="panel-collapse collapse in">
+					<!--地块列表|特泥河三队抬头-->
 					<div class="blocklist-heading" >
-						<span id="Demo_Area_Hulbr_T" class="glyphicon glyphicon-map-marker" onclick=""></span>
-						<span id="Demo_Area_Hulbr_T_outline" onclick="change_intro('Hulbr_T')">呼伦贝尔农垦特泥河农牧场</span>
+						<span id="B_tnh_03" class="glyphicon glyphicon-map-marker" onclick=""></span>
+						<span class="block_id" id="B_tnh_03" onclick="change_intro('tnh_03')">特泥河农牧场三队</span>
 						<span class="glyphicon glyphicon-chevron-down" data-toggle="collapse" data-parent="#panel-blocklist"
-							  data-target="#panel-element-demo-Hulbr_T" style="float: right"></span>
+							  data-target="#panel-element-tnh_03" style="float: right"></span>
 					</div>
-					<div id="panel-element-demo-Hulbr_T" class="panel-collapse collapse">
-						<div id="Demo_Cell_Hulbr_T_01" class="Blockname panel-body" >
-							<span id="Demo_Cell_Hulbr_T_01_info" class="glyphicon glyphicon-th-list" style="cursor: pointer"></span>
-							<span id="Demo_Cell_Hulbr_T_01_loc" style="cursor: pointer">特泥河四队</span>
-						</div>
-						<div id="Demo_Cell_Hulbr_T_02" class="Blockname panel-body">
-							<span id="Demo_Cell_Hulbr_T_02_info" class="glyphicon glyphicon-th-list" style="cursor: pointer"></span>
-							<span id="Demo_Cell_Hulbr_T_02_loc" style="cursor: pointer">特泥河七队</span>
-						</div>
+					<!--地块列表|特泥河三队地块表格-->
+					<div id="panel-element-tnh_03" class="panel-collapse collapse in">
+						<table class="table table-condensed table-bordered">
+							<tbody style="color: white">
+                            <tr>
+                                <td>
+                                    <span class="cell_id" id="C_tnh_03_01" style="cursor: pointer">0103001</span>
+                                </td>
+                                <td>
+                                    <span class="cell_id" id="C_tnh_03_02" style="cursor: pointer">0103002</span>
+                                </td>
+                                <td>
+                                    <span class="cell_id" id="C_tnh_03_03" style="cursor: pointer">0103003</span>
+                                </td>
+                                <td>
+                                    <span class="cell_id" id="C_tnh_03_04" style="cursor: pointer">0103004</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="cell_id" id="C_tnh_03_05" style="cursor: pointer">0103005</span>
+                                </td>
+                                <td>
+                                    <span class="cell_id" id="C_tnh_03_06" style="cursor: pointer">0103006</span>
+                                </td>
+                                <td>
+                                    <span class="cell_id" id="C_tnh_03_07" style="cursor: pointer">0103007</span>
+                                </td>
+                                <td>
+                                    <span class="cell_id" id="C_tnh_03_08" style="cursor: pointer">0103008</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="cell_id" id="C_tnh_03_09" style="cursor: pointer">0103009</span>
+                                </td>
+                                <td>
+                                    <span class="cell_id" id="C_tnh_03_10" style="cursor: pointer">0103010</span>
+                                </td>
+                                <td>
+                                    <span class="cell_id" id="C_tnh_03_11" style="cursor: pointer">0103011</span>
+                                </td>
+                                <td>
+                                    <span class="cell_id" id="C_tnh_03_12" style="cursor: pointer">0103012</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="cell_id" id="C_tnh_03_13" style="cursor: pointer">0103013</span>
+                                </td>
+                                <td>
+                                    <span class="cell_id" id="C_tnh_03_14" style="cursor: pointer">0103014</span>
+                                </td>
+                                <td>
+                                    <span class="cell_id" id="C_tnh_03_15" style="cursor: pointer">0103015</span>
+                                </td>
+                                <td>
+                                    <span class="cell_id" id="C_tnh_03_16" style="cursor: pointer">0103016</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="cell_id" id="C_tnh_03_17" style="cursor: pointer">0103017</span>
+                                </td>
+                                <td>
+                                    <span class="cell_id" id="C_tnh_03_18" style="cursor: pointer">0103018</span>
+                                </td>
+                                <td>
+                                    <span class="cell_id" id="C_tnh_03_19" style="cursor: pointer">0103019</span>
+                                </td>
+                                <td>
+                                    <span class="cell_id" id="C_tnh_03_20" style="cursor: pointer">0103020</span>
+                                </td>
+                            </tr>
+
+
+
+							</tbody>
+						</table>
 					</div>
-					<div class="blocklist-heading" >
-						<span id="Demo_Area_Hulbr_X" class="glyphicon glyphicon-map-marker" onclick=""></span>
-						<span id="Demo_Area_Hulbr_X_outline" onclick="change_intro('Hulbr_X')">呼伦贝尔农垦谢尔塔拉农牧场</span>
-						<span class="glyphicon glyphicon-chevron-down" data-toggle="collapse" data-parent="#panel-blocklist"
-							  data-target="#panel-element-demo-Hulbr_X" style="float: right"></span>
-					</div>
-					<div id="panel-element-demo-Hulbr_X" class="panel-collapse collapse">
-						<div id="Demo_Cell_Hulbr_X_01" class="Blockname panel-body" >
-							<span id="Demo_Cell_Hulbr_X_01_info" class="glyphicon glyphicon-th-list" style="cursor: pointer"> </span>
-							<span id="Demo_Cell_Hulbr_X_01_loc" style="cursor: pointer">谢尔塔拉一队</span>
-						</div>
-						<div id="Demo_Cell_Hulbr_X_02" class="Blockname panel-body">
-							<span id="Demo_Cell_Hulbr_X_02_info" class="glyphicon glyphicon-th-list" style="cursor: pointer"> </span>
-							<span id="Demo_Cell_Hulbr_X_02_loc" style="cursor: pointer">谢尔塔拉二队</span>
-						</div>
-						<div id="Demo_Cell_Hulbr_X_03" class="Blockname panel-body">
-							<span id="Demo_Cell_Hulbr_X_03_info" class="glyphicon glyphicon-th-list" style="cursor: pointer"> </span>
-							<span id="Demo_Cell_Hulbr_X_03_loc" style="cursor: pointer">谢尔塔拉三队</span>
-						</div>
-					</div>
-					<!--
-					<div class="blocklist-heading" >
-						<span id="Demo_Area_Hulbr_A" class="glyphicon glyphicon-map-marker" onclick=""></span>
-						<span id="Demo_Area_Hulbr_A_outline">呼伦贝尔农垦地块A</span>
-						<span class="glyphicon glyphicon-chevron-down" data-toggle="collapse" data-parent="#panel-blocklist"
-							  data-target="#panel-element-demo-Hulbr_A" style="float: right"></span>
-					</div>
-					<div id="panel-element-demo-Hulbr_A" class="panel-collapse collapse">
-						<div id="Demo_Cell_Hulbr_A_01" class="Blockname panel-body" >
-							<span id="Demo_Cell_Hulbr_A_01_loc" class="glyphicon glyphicon-map-marker" style="cursor: pointer"></span>
-							区划01|农场A
-						</div>
-						<div id="Demo_Cell_Hulbr_A_02" class="Blockname panel-body">
-							<span id="Demo_Cell_Hulbr_A_02_loc" class="glyphicon glyphicon-map-marker" style="cursor: pointer"></span>
-							区划02|农场B
-						</div>
-					</div>
-					<div class="blocklist-heading">
-						<span id="Demo_Area_Hulbr_B" class="glyphicon glyphicon-map-marker" onclick=""></span>
-						<span id="Demo_Area_Hulbr_B_outline">呼伦贝尔农垦地块B</span>
-						<span class="glyphicon glyphicon-chevron-down" data-toggle="collapse" data-parent="#panel-blocklist"
-							  data-target="#panel-element-demo-Hulbr_B" style="float: right"></span>
-					</div>
-					<div id="panel-element-demo-Hulbr_B" class="panel-collapse collapse">
-						<div id="Demo_Cell_Hulbr_B_03" class="Blockname panel-body">
-							<span id="Demo_Cell_Hulbr_B_03_loc" class="glyphicon glyphicon-map-marker" style="cursor: pointer"></span>
-							区划03|农场C
-						</div>
-						<div id="Demo_Cell_Hulbr_B_04" class="Blockname panel-body">
-							<span id="Demo_Cell_Hulbr_B_04_loc" class="glyphicon glyphicon-map-marker" style="cursor: pointer"></span>
-							区划04|农场D
-						</div>
-					</div>
-					-->
+
 				</div>
 			</div>
 
 		</div>
 		<!--林业面板-->
 		<div class="tab-pane" id="panel-forestry">
-
-			 <!--博罗-->
-			<div class="panel-group blocklist" id="panel-blocklist">
-				<div class="blocklist-heading-Area">
-					<a href="{% url 'demo:demomap' 5 %}" target="_blank" data-toggle="tooltip" title="点击图标显示详细数据" >
-                        <span id="Demo_Area_Boluo" class="glyphicon glyphicon-fullscreen"  style="cursor: pointer"></span></a>
-					<span id="Demo_Area_Boluo_loc" style="cursor: pointer" onclick="change_intro('BL')">博罗县罗阳镇</span>
-					<span class="glyphicon glyphicon-chevron-down" data-toggle="collapse" data-parent="#listBar"
-						  data-target="#panel-element-demo-Boluo"  style="float: right;cursor: pointer"></span>
-				</div>
-				<!--地块列表|博罗县罗阳镇细1-3块-->
-				<div id="panel-element-demo-Boluo" class="panel-collapse collapse in">
-					<div class="blocklist-heading">
-						<a href="{% url 'demo:demomap' 50001 %}" target="_blank" data-toggle="tooltip" title="点击图标显示详细数据" >
-                            <span id="Demo_Area_Boluo_A" class="glyphicon glyphicon-fullscreen" onclick=""></span></a>
-						<span id="Demo_Block_Boluo_A_outline" onclick="change_intro('BL_0001')" >博罗县罗阳镇示例林业区域甲</span>
-						<span class="glyphicon glyphicon-chevron-down" data-toggle="collapse" data-parent="#panel-blocklist"
-							  data-target="#panel-element-demo-Boluo_A" style="float: right" ></span>
-
-					</div>
-					<div id="panel-element-demo-Boluo_A" class="panel-collapse collapse in">
-						<div id="Demo_Cell_Boluo_A_01" class="Blockname panel-body ">
-							<a href="{% url 'demo:demomap' 500010001 %}" target="_blank" data-toggle="tooltip" title="点击图标显示详细数据" ><span id="Demo_Cell_Boluo_A_01_info" class="glyphicon glyphicon-fullscreen" style="cursor: pointer"></span></a>
-							<span id="Demo_Cell_Boluo_A_01_loc" style="cursor: pointer" onclick="change_intro('BL_0001_0001')">示例林班0001小班0001</span>
-						</div>
-						<div id="Demo_Cell_Boluo_A_02" class="Blockname panel-body">
-							<a href="{% url 'demo:demomap' 500010002 %}" target="_blank" data-toggle="tooltip" title="点击图标显示详细数据" ><span id="Demo_Cell_Boluo_A_02_info" class="glyphicon glyphicon-fullscreen" style="cursor: pointer"></span></a>
-							<span id="Demo_Cell_Boluo_A_02_loc" style="cursor: pointer" onclick="change_intro('BL_0001_0002')">示例林班0001小班0002</span>
-						</div>
-						<div id="Demo_Cell_Boluo_A_03" class="Blockname panel-body">
-							<a href="{% url 'demo:demomap' 500010003 %}" target="_blank" data-toggle="tooltip" title="点击图标显示详细数据" ><span id="Demo_Cell_Boluo_A_03_info" class="glyphicon glyphicon-fullscreen"  style="cursor: pointer"></span></a>
-							<span id="Demo_Cell_Boluo_A_03_loc" style="cursor: pointer" onclick="change_intro('BL_0001_0003')">示例林班0001小班0003</span>
-						</div>
-					</div>
-
-					<!--地块列表|博罗县罗阳镇细2-2块-->
-					<div class="blocklist-heading">
-						<a href="{% url 'demo:demomap' 50002 %}" target="_blank" data-toggle="tooltip" title="点击图标显示详细数据" ><span id="Demo_Area_Boluo_B" class="glyphicon glyphicon-fullscreen" onclick=""></span></a>
-						<span id="Demo_Block_Boluo_B_outline" onclick="change_intro('BL_0002')">博罗县罗阳镇示例林业区域乙</span>
-						<span class="glyphicon glyphicon-chevron-down" data-toggle="collapse" data-parent="#panel-blocklist"
-							  data-target="#panel-element-demo-Boluo_B" style="float: right" ></span>
-					</div>
-					<div id="panel-element-demo-Boluo_B" class="panel-collapse collapse">
-						<div id="Demo_Cell_Boluo_B_01" class="Blockname panel-body">
-							<a href="{% url 'demo:demomap' 500020001 %}" target="_blank" data-toggle="tooltip" title="点击图标显示详细数据" ><span id="Demo_Cell_Boluo_B_01_info" class="glyphicon glyphicon-fullscreen" style="cursor: pointer"></span></a>
-							<span id="Demo_Cell_Boluo_B_01_loc" style="cursor: pointer" onclick="change_intro('BL_0002_0001')">示例林班0002小班0001</span>
-						</div>
-						<div id="Demo_Cell_Boluo_B_02" class="Blockname panel-body">
-							<a href="{% url 'demo:demomap' 500020002 %}" target="_blank" data-toggle="tooltip" title="点击图标显示详细数据" ><span id="Demo_Cell_Boluo_B_02_info" class="glyphicon glyphicon-fullscreen" style="cursor: pointer"></span></a>
-							<span id="Demo_Cell_Boluo_B_02_loc" style="cursor: pointer" onclick="change_intro('BL_0002_0002')">示例林班0002小班0002</span>
-						</div>
-						<div id="Demo_Cell_Boluo_B_03" class="Blockname panel-body">
-							<a href="{% url 'demo:demomap' 500020003 %}" target="_blank" data-toggle="tooltip" title="点击图标显示详细数据" ><span id="Demo_Cell_Boluo_B_03_info" class="glyphicon glyphicon-fullscreen" style="cursor: pointer"></span></a>
-							<span id="Demo_Cell_Boluo_B_03_loc" style="cursor: pointer" onclick="change_intro('BL_0002_0003')">示例林班0002小班0003</span>
-						</div>
-					</div>
-
-				</div>
-			</div>
-
-			<!--重庆-->
-			<div class="panel-group blocklist" id="panel-blocklist">
-				<div class="blocklist-heading-Area">
-					 <a href="{% url 'demo:demomap' 2 %}" target="_blank"><span id="Demo_Area_Chongqing" class="glyphicon glyphicon-map-marker" onclick="" style="cursor: pointer"></span></a>
-					<span id="Demo_Area_Chongqing_loc" style="cursor: pointer">重庆市林业防治</span>
-					<span class="glyphicon glyphicon-chevron-down" data-toggle="collapse" data-parent="#listBar"
-						  data-target="#panel-element-demo-Chongqing" style="float: right;cursor: pointer"></span>
-				</div>
-				<!--地块列表|重庆1-5块-->
-				<div id="panel-element-demo-Chongqing" class="panel-collapse collapse">
-					<div class="blocklist-heading">
-						<span id="Demo_Area_Chongqing_A" class="glyphicon glyphicon-tree-conifer" onclick=""></span>
-						<span id="Demo_Area_Chongqing_A_outline">A</span>
-						<span class="glyphicon glyphicon-chevron-down" data-toggle="collapse" data-parent="#panel-blocklist"
-							  data-target="#panel-element-demo-Chongqing_A" style="float: right"></span>
-					</div>
-					<div id="panel-element-demo-Chongqing_A" class="panel-collapse collapse">
-						<div id="Demo_Cell_Chongqing_A_00" class="Blockname panel-body" >
-							<span id="Demo_Cell_Chongqing_A_01_loc" class="glyphicon glyphicon-leaf" style="cursor: pointer"></span>
-							示例区
-						</div>
-						<div id="Demo_Cell_Chongqing_A_01" class="Blockname panel-body" >
-							<span id="Demo_Cell_Chongqing_A_02_loc" class="glyphicon glyphicon-info-sign" style="cursor: pointer"></span>
-							功能
-						</div>
-					</div>
-
-						<div class="blocklist-heading">
-						<span id="Demo_Area_Chongqing_B" class="glyphicon glyphicon-tree-conifer" onclick=""></span>
-						<span id="Demo_Area_Chongqing_B_outline">B</span>
-						<span class="glyphicon glyphicon-chevron-down" data-toggle="collapse" data-parent="#panel-blocklist"
-							  data-target="#panel-element-demo-Chongqing_B" style="float: right"></span>
-					</div>
-					<div id="panel-element-demo-Chongqing_B" class="panel-collapse collapse">
-						<div id="Demo_Cell_Chongqing_B_00" class="Blockname panel-body" >
-							<span id="Demo_Cell_Chongqing_B_01_loc" class="glyphicon glyphicon-leaf" style="cursor: pointer"></span>
-							示例区
-						</div>
-						<div id="Demo_Cell_Chongqing_B_01" class="Blockname panel-body" >
-							<span id="Demo_Cell_Chongqing_B_02_loc" class="glyphicon glyphicon-info-sign" style="cursor: pointer"></span>
-							功能
-						</div>
-					</div>
-
-						<div class="blocklist-heading">
-						<span id="Demo_Area_Chongqing_C" class="glyphicon glyphicon-tree-conifer" onclick=""></span>
-						<span id="Demo_Area_Chongqing_C_outline">C</span>
-						<span class="glyphicon glyphicon-chevron-down" data-toggle="collapse" data-parent="#panel-blocklist"
-							  data-target="#panel-element-demo-Chongqing_C" style="float: right"></span>
-					</div>
-					<div id="panel-element-demo-Chongqing_C" class="panel-collapse collapse">
-						<div id="Demo_Cell_Chongqing_C_00" class="Blockname panel-body" >
-							<span id="Demo_Cell_Chongqing_C_01_loc" class="glyphicon glyphicon-leaf" style="cursor: pointer"></span>
-							示例区
-						</div>
-						<div id="Demo_Cell_Chongqing_C_01" class="Blockname panel-body" >
-							<span id="Demo_Cell_Chongqing_C_02_loc" class="glyphicon glyphicon-info-sign" style="cursor: pointer"></span>
-							功能
-						</div>
-					</div>
-				</div>
-			</div>
 		</div>
-		<!--飞行面板-->
-		<div class="tab-pane" id="panel-uav">
-			<!--青岛-->
-			<div class="panel-group blocklist" id="panel-blocklist">
-				<div class="blocklist-heading-Area">
-					<a href="{% url 'demo:demomap' 4 %}" target="_blank"><span id="Demo_Area_Qingdao" class="glyphicon glyphicon-map-marker" onclick="" style="cursor: pointer"></span></a>
-					<span id="Demo_Area_Qingdao_loc" style="cursor: pointer">青岛市林业防治</span>
-					<span class="glyphicon glyphicon-chevron-down" data-toggle="collapse" data-parent="#listBar"
-						  data-target="#panel-element-demo-Qingdao"  style="float: right;cursor: pointer"></span>
-				</div>
-				<!--地块列表|青岛-->
-				<div id="panel-element-demo-Qingdao" class="panel-collapse collapse in">
-					<div class="blocklist-heading">
-						<span id="Demo_Area_Qingdao_A" class="glyphicon glyphicon-plane" onclick=""></span>
-						<span id="Demo_Area_Qingdao_A_outline">崂山区</span>
-						<span class="glyphicon glyphicon-chevron-down" data-toggle="collapse" data-parent="#panel-blocklist"
-							  data-target="#panel-element-demo-Qingdao_A" style="float: right"></span>
-					</div>
-					<div id="panel-element-demo-Qingdao_A" class="panel-collapse collapse in">
-						<div id="Demo_Cell_Qingdao_A_00" class="Blockname panel-body" >
-							<span id="Demo_Cell_Qingdao_A_00_loc" class="glyphicon glyphicon-send" style="cursor: pointer"></span>
-							600米高度平面
-						</div>
-						<div id="Demo_Cell_Qingdao_A_01" class="Blockname panel-body" >
-							<span id="Demo_Cell_Qingdao_A_01_loc" class="glyphicon glyphicon-send" style="cursor: pointer"></span>
-							800米高度平面
-						</div>
-					</div>
-
-					<div class="blocklist-heading">
-						<span id="Demo_Area_Qingdao_C" class="glyphicon glyphicon-plane" onclick=""></span>
-						<span id="Demo_Area_Qingdao_C_outline">城阳区</span>
-						<span class="glyphicon glyphicon-chevron-down" data-toggle="collapse" data-parent="#panel-blocklist"
-							  data-target="#panel-element-demo-Qingdao_C" style="float: right"></span>
-					</div>
-					<div id="panel-element-demo-Qingdao_C" class="panel-collapse collapse">
-						<div id="Demo_Cell_Qingdao_C_01" class="Blockname panel-body" >
-							<span id="Demo_Cell_Qingdao_C_01_loc" class="glyphicon glyphicon-exclamation-sign" style="cursor: pointer"></span>
-							与崂山区共同规划航线
-						</div>
-					</div>
-
-					<div class="blocklist-heading">
-						<span id="Demo_Area_Qingdao_D" class="glyphicon glyphicon-plane" onclick=""></span>
-						<span id="Demo_Area_Qingdao_D_outline">黄岛区</span>
-						<span class="glyphicon glyphicon-chevron-down" data-toggle="collapse" data-parent="#panel-blocklist"
-							  data-target="#panel-element-demo-Qingdao_D" style="float: right"></span>
-					</div>
-					<div id="panel-element-demo-Qingdao_D" class="panel-collapse collapse">
-						<div id="Demo_Cell_Qingdao_D_01" class="Blockname panel-body" >
-							<span id="Demo_Cell_Qingdao_D_00_loc" class="glyphicon glyphicon-send" style="cursor: pointer"></span>
-							海拔650米平面
-						</div>
-						<div id="Demo_Cell_Qingdao_D_01" class="Blockname panel-body" >
-							<span id="Demo_Cell_Qingdao_D_01_loc" class="glyphicon glyphicon-send" style="cursor: pointer"></span>
-							海拔800米平面
-						</div>
-					</div>
-
-					<div class="blocklist-heading">
-						<span id="Demo_Area_Qingdao_E" class="glyphicon glyphicon-plane" onclick=""></span>
-						<span id="Demo_Area_Qingdao_E_outline">即墨市</span>
-						<span class="glyphicon glyphicon-chevron-down" data-toggle="collapse" data-parent="#panel-blocklist"
-							  data-target="#panel-element-demo-Qingdao_E" style="float: right"></span>
-					</div>
-					<div id="panel-element-demo-Qingdao_E" class="panel-collapse collapse">
-						<div id="Demo_Cell_Qingdao_E_01" class="Blockname panel-body" >
-							<span id="Demo_Cell_Qingdao_E_01_loc" class="glyphicon glyphicon-exclamation-sign" style="cursor: pointer"></span>
-							最高海拔不超过300米
-						</div>
-					</div>
-				</div>
-			</div>
-
-			<!--大连-->
-			<div class="panel-group blocklist" id="panel-blocklist">
-				<div class="blocklist-heading-Area">
-					 <a href="{% url 'demo:demomap' 3 %}" target="_blank"><span id="Demo_Area_Dalian" class="glyphicon glyphicon-map-marker" onclick="" style="cursor: pointer"></span></a>
-					<span id="Demo_Area_Dalian_loc" style="cursor: pointer">大连市林业防治</span>
-					<span class="glyphicon glyphicon-chevron-down" data-toggle="collapse" data-parent="#listBar"
-						  data-target="#panel-element-demo-Dalian"  style="float: right;cursor: pointer"></span>
-				</div>
-				<!--地块列表|大连1-6块-->
-				<div id="panel-element-demo-Dalian" class="panel-collapse collapse">
-					<div class="blocklist-heading">
-						<span id="Demo_Area_Dalian_P" class="glyphicon glyphicon-plane" onclick=""></span>
-						<span id="Demo_Area_Dalian_P_outline">大连机场(下拉选择显示范围)</span>
-						<span class="glyphicon glyphicon-chevron-down" data-toggle="collapse" data-parent="#panel-blocklist"
-							  data-target="#panel-element-demo-Dalian_P" style="float: right"></span>
-					</div>
-					<div id="panel-element-demo-Dalian_P" class="panel-collapse collapse">
-						<div id="Demo_Cell_Dalian_P_01" class="Blockname panel-body" >
-							<span id="Demo_Cell_Dalian_P_01_alt" class="glyphicon glyphicon-send" style="cursor: pointer"></span>
-							净空区范围
-						</div>
-						<div id="Demo_Cell_Dalian_P_02" class="Blockname panel-body" >
-							<span id="Demo_Cell_Dalian_P_02_alt" class="glyphicon glyphicon-send" style="cursor: pointer"></span>
-							立方体显示
-						</div>
-					</div>
-					<div class="blocklist-heading">
-						<span id="Demo_Area_Dalian_A" class="glyphicon glyphicon-plane" onclick=""></span>
-						<span id="Demo_Area_Dalian_A_outline">金普新区</span>
-						<span class="glyphicon glyphicon-chevron-down" data-toggle="collapse" data-parent="#panel-blocklist"
-							  data-target="#panel-element-demo-Dalian_A" style="float: right"></span>
-					</div>
-					<div id="panel-element-demo-Dalian_A" class="panel-collapse collapse">
-						<div id="Demo_Cell_Dalian_A_01" class="Blockname panel-body" >
-							<span id="Demo_Cell_Dalian_A_01_alt" class="glyphicon glyphicon-send" style="cursor: pointer"></span>
-							500米高度平面
-						</div>
-						<div id="Demo_Cell_Dalian_A_02" class="Blockname panel-body" >
-							<span id="Demo_Cell_Dalian_A_02_alt" class="glyphicon glyphicon-send" style="cursor: pointer"></span>
-							800米高度平面
-						</div>
-					</div>
-
-					<div class="blocklist-heading">
-						<span id="Demo_Area_Dalian_B" class="glyphicon glyphicon-plane" onclick=""></span>
-						<span id="Demo_Area_Dalian_B_outline">主城区</span>
-						<span class="glyphicon glyphicon-chevron-down" data-toggle="collapse" data-parent="#panel-blocklist"
-							  data-target="#panel-element-demo-Dalian_B" style="float: right"></span>
-					</div>
-					<div id="panel-element-demo-Dalian_B" class="panel-collapse collapse">
-						<div id="Demo_Cell_Dalian_B_01" class="Blockname panel-body" >
-							<span id="Demo_Cell_Dalian_B_01_alt" class="glyphicon glyphicon-send" style="cursor: pointer"></span>
-							海拔500米平面
-						</div>
-					</div>
-
-					<div class="blocklist-heading">
-						<span id="Demo_Area_Dalian_C" class="glyphicon glyphicon-plane" onclick=""></span>
-						<span id="Demo_Area_Dalian_C_outline">甘井子区</span>
-						<span class="glyphicon glyphicon-chevron-down" data-toggle="collapse" data-parent="#panel-blocklist"
-							  data-target="#panel-element-demo-Dalian_C" style="float: right"></span>
-					</div>
-					<div id="panel-element-demo-Dalian_C" class="panel-collapse collapse">
-						<div id="Demo_Cell_Dalian_C_01" class="Blockname panel-body" >
-							<span id="Demo_Cell_Dalian_C_01_alt" class="glyphicon glyphicon-send" style="cursor: pointer"></span>
-							海拔500米平面
-						</div>
-					</div>
-
-					<div class="blocklist-heading">
-						<span id="Demo_Area_Dalian_D" class="glyphicon glyphicon-plane" onclick=""></span>
-						<span id="Demo_Area_Dalian_D_outline">高新技术园区</span>
-						<span class="glyphicon glyphicon-chevron-down" data-toggle="collapse" data-parent="#panel-blocklist"
-							  data-target="#panel-element-demo-Dalian_D" style="float: right"></span>
-					</div>
-					<div id="panel-element-demo-Dalian_D" class="panel-collapse collapse">
-						<div id="Demo_Cell_Dalian_D_01" class="Blockname panel-body" >
-							<span id="Demo_Cell_Dalian_D_01_alt" class="glyphicon glyphicon-send" style="cursor: pointer"></span>
-							海拔500米平面
-						</div>
-					</div>
-
-					<div class="blocklist-heading">
-						<span id="Demo_Area_Dalian_E" class="glyphicon glyphicon-plane" onclick=""></span>
-						<span id="Demo_Area_Dalian_E_outline">旅顺口区</span>
-						<span class="glyphicon glyphicon-chevron-down" data-toggle="collapse" data-parent="#panel-blocklist"
-							  data-target="#panel-element-demo-Dalian_E" style="float: right"></span>
-					</div>
-					<div id="panel-element-demo-Dalian_E" class="panel-collapse collapse">
-						<div id="Demo_Cell_Dalian_E_01" class="Blockname panel-body" >
-							<span id="Demo_Cell_Dalian_E_01_alt" class="glyphicon glyphicon-send" style="cursor: pointer"></span>
-							海拔500米平面
-						</div>
-					</div>
-
-					<div class="blocklist-heading">
-						<span id="Demo_Area_Dalian_F" class="glyphicon glyphicon-plane" onclick=""></span>
-						<span id="Demo_Area_Dalian_F_outline">长海县</span>
-						<span class="glyphicon glyphicon-chevron-down" data-toggle="collapse" data-parent="#panel-blocklist"
-							  data-target="#panel-element-demo-Dalian_F" style="float: right"></span>
-					</div>
-					<div id="panel-element-demo-Dalian_F" class="panel-collapse collapse">
-						<div id="Demo_Cell_Dalian_F_01" class="Blockname panel-body" >
-							<span id="Demo_Cell_Dalian_F_01_alt" class="glyphicon glyphicon-send" style="cursor: pointer"></span>
-							岛群1
-						</div>
-						<div id="Demo_Cell_Dalian_F_01" class="Blockname panel-body" >
-							<span id="Demo_Cell_Dalian_F_02_alt" class="glyphicon glyphicon-send" style="cursor: pointer"></span>
-							岛群2
-						</div>
-						<div id="Demo_Cell_Dalian_F_01" class="Blockname panel-body" >
-							<span id="Demo_Cell_Dalian_F_03_alt" class="glyphicon glyphicon-send" style="cursor: pointer"></span>
-							岛群3
-						</div>
-						<div id="Demo_Cell_Dalian_F_01" class="Blockname panel-body" >
-							<span id="Demo_Cell_Dalian_F_04_alt" class="glyphicon glyphicon-send" style="cursor: pointer"></span>
-							岛群4
-						</div>
-					</div>
-				</div>
-			</div>
+		<!--牧业面板-->
+		<div class="tab-pane" id="panel-grass">
 		</div>
 	</div>
 </div>
