@@ -52,6 +52,28 @@ $(document).ready(function(){
 });
 
 $(document).ready(function(){
+    $(".manage_func_btn").mouseover(function(){
+        $(this).css({"background-color":"rgba(241,242,242,0.9)","color":"#222222"})
+    });
+});
+$(document).ready(function(){
+    $(".manage_func_btn").mouseout(function(){
+        $(this).css({"background-color":"transparent","color":"#f1f2f2"})
+    });
+});
+$(document).ready(function(){
+    $(".map_func_btn").mouseover(function(){
+        $(this).css({"background-color":"rgba(241,242,242,0.9)","color":"#222222"})
+    });
+});
+$(document).ready(function(){
+    $(".map_func_btn").mouseout(function(){
+        $(this).css({"background-color":"transparent","color":"#f1f2f2"})
+    });
+});
+
+
+$(document).ready(function(){
     $(".blocklist-heading").mouseover(function(){
         $(this).css({"background-color":"rgba(241,242,242,0.7)","color":"#222222","font-weight":"bold"})
     });
@@ -73,16 +95,7 @@ $(document).ready(function(){
     });
 });
 
-$(document).ready(function(){
-    $(".glyphicon").mouseover(function(){
-        $(this).css({"color":"#ff8c00"})
-    });
-});
-$(document).ready(function(){
-    $(".glyphicon").mouseout(function(){
-        $(this).css({"color":"#f1f2f2"})
-    });
-});
+
 
 $(document).ready(function(){
     $("#Tool2").click(function(){
@@ -105,6 +118,8 @@ $(document).ready(function(){
         var block_panel = $("#Block_panel");
         block_panel.css({"display":"block"});
         block_panel.siblings().css({"display":"none"});
+        var cur_block_id = $(this);
+        display_block(cur_block_id);
     })
 });
 
@@ -127,3 +142,12 @@ $(document).ready(function(){
         display_cell(cur_cell_id);
     })
 });
+
+$(document).ready(function(){
+    $(".date_title").click(function(){
+        var cur_date = $(this);
+        display_date(cur_date);
+    })
+});
+
+

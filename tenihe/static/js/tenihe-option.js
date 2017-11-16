@@ -49,13 +49,3 @@ function Thermal_onclick(){
         alert("Thermal_choose ERROR");
     }
 }
-function DSM_onclick(){
-    NC_choose = document.getElementById("DSM_choose");
-    if (NC_choose.className == "check-box glyphicon glyphicon-unchecked"){
-        NC_choose.className ='check-box glyphicon glyphicon-check';
-    }else if(NC_choose.className == "check-box glyphicon glyphicon-check"){
-        NC_choose.className ='check-box glyphicon glyphicon-unchecked';
-    }else{
-        alert("DSM_choose ERROR");
-    }
-}

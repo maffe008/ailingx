@@ -1,7 +1,23 @@
 <div id="optionDiv">
     <div id="optionBar" >
-        <div id="optionBar-name">
-              <h3 class="Bar-name"><a href="{% url 'index' %}" data-toggle="tooltip" title="返回首页" ><span class="glyphicon glyphicon-home"></span></a> 数据信息</h3>
+        <div class="sys_func_card">
+            <div id="Tool0" class="optionToolBlock">
+                <a href="{% url 'index' %}" data-toggle="tooltip" title="返回首页" >
+                <span class="optionToolIcon glyphicon glyphicon-home"></span></a>
+            </div>
+            <div id="Tool1" class="optionToolBlock">
+                <a href="{% url 'index' %}" data-toggle="tooltip" title="搜索" >
+                <span class="optionToolIcon glyphicon glyphicon-search" style="cursor: pointer"></span></a>
+
+            </div>
+            <div id="Tool2" class="optionToolBlock">
+                <a href="{% url 'index' %}" data-toggle="tooltip" title="帮助" >
+                <span class="optionToolIcon glyphicon glyphicon-question-sign" style="cursor: pointer"></span></a>
+            </div>
+            <div id="Tool4" class="optionToolBlock">
+                <a href="{% url 'index' %}" data-toggle="tooltip" title="去除高程" >
+                <span id="toGround" class="optionToolIcon glyphicon glyphicon-eject" style="cursor: pointer"></span></a>
+            </div>
         </div>
         {% include 'AboutDiv.html' %}
         {% include 'IntroDiv.html' %}

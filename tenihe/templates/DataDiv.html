@@ -4,14 +4,8 @@
              <h3 class="Bar-name">{{ abc_name }}数据</h3>
         </div>
         {%  include 'LayerDiv.html' %}
-        <div class="intro">
-            <h4>数据显示示例</h4>
-            <table border="1" width="100%">
-                <tr><th>ID</th><th>经纬度</th><th>范围</th><th>数量</th></tr>
-                {% for tree in illtrees %}
-                     <tr><td>{{ tree.index }}</td><td>{{ tree.lng }},{{ tree.lat }}</td><td>{{ tree.area }} </td><td>{{ tree.count }}</td></tr>
-                {% endfor %}
-            </table>
+        <div class="card-red">
+
         </div>
 
     </div>
