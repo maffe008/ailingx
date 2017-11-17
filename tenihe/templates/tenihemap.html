@@ -36,6 +36,7 @@
 <body>
     {% include 'DataDiv.html' %}
 	<div id="allmap"></div>
+    {% include 'MaplistDiv.html' %}
 </body>
 </html>
 <script type="text/javascript">
@@ -57,9 +58,6 @@
         map.setMapStyle("fresh");
         map.setDefaultCursor("crosshair");
 
-
-
-
         AMapUI.loadUI(['control/BasicControl'], function(BasicControl) {
             //缩放控件，显示Zoom值
             map.addControl(new BasicControl.Zoom({
@@ -71,37 +69,7 @@
                 position: 'rt'
             }));
         });
-        /*
 
-
-        var ruler,mousetool;
-        map.plugin(["AMap.RangingTool"], function() {
-            var lOptions = {
-                strokeStyle: "solid",
-                strokeColor: "#FF9000",
-                strokeOpacity: 1,
-                strokeWeight: 2
-            };
-            var tmplOptions = {
-                strokeStyle: "dashed",
-                strokeColor: "#FECF05",
-                strokeOpacity: 1,
-                strokeWeight: 2
-            };
-            var rulerOptions = {lineOptions: lOptions, tmpLineOptions: tmplOptions };
-            //实例化距离测量对象ruler
-            ruler = new AMap.RangingTool(map,rulerOptions);
-            //为ruler添加监听器
-            AMap.event.addListener(ruler, "addnode", function(e) {
-                var temppos = e.position;
-                //alert(temppos);
-            });
-            AMap.event.addListener(ruler, "end", function(e) {
-                var templ = e.distance;
-                alert(templ+"米|"+templ/1000+"千米");
-            });
-        });
-*/
         map.plugin(["AMap.MouseTool"],function(){
             mousetool = new AMap.MouseTool(map);
             AMap.event.addListener(map, "click", function callback(e) {
@@ -120,21 +88,56 @@
             map: map     //图片叠加的地图对象
         };
         map.setLimitBounds(bounds);
-        var groundImage = new AMap.GroundImage({{ NCurl|safe }}, bounds, groundImageOpts);
+
+        has_nc = false;
+        has_ndvi = false;
+        has_th = false;
+
+        if(has_nc == false){
+            var groundImage = new AMap.GroundImage({{ NCurl|safe }}, bounds, groundImageOpts);
+            has_nc = true;
+        }
+
 
         var NDVI_choose = document.getElementById("NDVI_choose");
         NDVI_choose.addEventListener("click",show_ndvi);
         function show_ndvi(){
-            if (NDVI_choose.className == "check-box glyphicon glyphicon-unchecked"){
+            if (has_ndvi == false){
+                groundImagendvi = new AMap.GroundImage({{ NDVIurl|safe }}, bounds, groundImageOpts);
                 NDVI_choose.className ='check-box glyphicon glyphicon-check';
-                var groundImagendvi = new AMap.GroundImage({{ NDVIurl|safe }}, bounds, groundImageOpts);
-            }else if(NDVI_choose.className == "check-box glyphicon glyphicon-check"){
-                NDVI_choose.className ='check-box glyphicon glyphicon-unchecked';
-                var groundImage = new AMap.GroundImage({{ NCurl|safe }}, bounds, groundImageOpts);
-            }else{
-                alert("NDVI_choose ERROR");
+                has_ndvi = true;
+            }else {
+                if(NDVI_choose.className == "check-box glyphicon glyphicon-check"){
+                    NDVI_choose.className ='check-box glyphicon glyphicon-unchecked';
+                    groundImagendvi.setOpacity(0);
+                }else if(NDVI_choose.className == "check-box glyphicon glyphicon-unchecked"){
+                    NDVI_choose.className ='check-box glyphicon glyphicon-check';
+                    groundImagendvi.setOpacity(1);
+                }else{
+                    alert("NDVI_choose ERROR");
+                }
             }
         }
+        var TH_choose = document.getElementById("Thermal_choose");
+        TH_choose.addEventListener("click",show_thermal);
+        function show_thermal(){
+            if (has_th == false){
+                groundImagethermal = new AMap.GroundImage({{ THurl|safe }}, bounds, groundImageOpts);
+                TH_choose.className ='check-box glyphicon glyphicon-check';
+                has_th = true;
+            }else {
+                if(TH_choose.className == "check-box glyphicon glyphicon-check"){
+                    TH_choose.className ='check-box glyphicon glyphicon-unchecked';
+                    groundImagethermal.setOpacity(0);
+                }else if(TH_choose.className == "check-box glyphicon glyphicon-unchecked"){
+                    TH_choose.className ='check-box glyphicon glyphicon-check';
+                    groundImagethermal.setOpacity(1);
+                }else{
+                    alert("TH_choose ERROR");
+                }
+            }
+        }
+
         var MTool1 = document.getElementById("MTool1");
         MTool1.addEventListener("click",show_coordinate);
         var MTool2 = document.getElementById("MTool2");

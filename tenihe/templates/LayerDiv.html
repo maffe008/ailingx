@@ -1,5 +1,5 @@
 <div>
-    <div class="map_func_card">
+    <div class="map_func_card card-darkgreen">
         <div class="map_func_btn">
             <span id="MTool1" class="map_func_icon glyphicon glyphicon-map-marker" style="cursor: pointer"></span>
             <div class="map_func_label">坐标</div>
@@ -20,49 +20,52 @@
 
 
     <div class="layer_div panel-group" id="accordion">
-        <div class="layer_func_card">
-            <div class="layer_title panel-heading">
-                <span id="NC_choose" class="check-box glyphicon glyphicon-check" ></span>
-                可见光
-                <a data-toggle="collapse" data-parent="#accordion" href="#collapseOption-NC">
-                    <span class="glyphicon glyphicon-th-large" style="float: right"></span>
-                </a>
-            </div>
-            <div id="collapseOption-NC" class="panel-collapse collapse">
-                <div class="panel-body">
-                    <div class="option-info">无人机航拍10cm分辨率可见光图像</div>
-                </div>
-            </div>
-        </div>
 
-        <div class="layer_func_card">
+
+        <div class="layer_func_card card-midgreen">
             <div class="layer_title panel-heading">
-                <span id="NDVI_choose" class="check-box glyphicon glyphicon-unchecked"></span>
-                NDVI
                 <a data-toggle="collapse" data-parent="#accordion" href="#collapseOption-NDVI">
+                    <span id="NDVI_choose" class="check-box glyphicon glyphicon-unchecked"></span>
+                    NDVI
                     <span class="glyphicon glyphicon-th-large" style="float: right"></span>
                 </a>
             </div>
             <div id="collapseOption-NDVI" class="panel-collapse collapse">
                 <div class="panel-body">
                     <div class="option-info">归一化植被覆盖指数（Normalized Difference Vegetation Index，缩写NDVI）对比从植物叶子反射的红光和近红外波段。应用于检测植被生长状态、植被覆盖度等。</div>
-                    <div class="option-info" id="ndvicolor"><img src="/static/img/BLhl.png" width="260px" height="18px"></div>
+                    <div class="option-info" id="ndvicolor"><img src="/static/img/BLhl.png" width="230px" height="18px"></div>
 
                 </div>
             </div>
         </div>
 
-        <div class="layer_func_card">
+        <div class="layer_func_card card-midgreen">
             <div class="layer_title panel-heading">
-                <span id="Thermal_choose" class="check-box glyphicon glyphicon-unchecked" onclick="Thermal_onclick()"></span>
-                热像图
+
                 <a data-toggle="collapse" data-parent="#accordion" href="#collapseOption-Thermal">
+                    <span id="Thermal_choose" class="check-box glyphicon glyphicon-unchecked"></span>
+                    热像图
                     <span class="glyphicon glyphicon-th-large" style="float: right"></span>
                 </a>
             </div>
             <div id="collapseOption-Thermal" class="panel-collapse collapse">
                 <div class="panel-body">
                     <div class="option-info">热成像（Thermal Image）是通过非接触探测红外能量（热量），并将其转换为可显示的图像。</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="layer_func_card card-midgreen">
+            <div class="layer_title panel-heading">
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapseOption-NC">
+                    <span id="NC_choose" class="check-box glyphicon glyphicon-check" ></span>
+                    可见光
+                    <span class="glyphicon glyphicon-th-large" style="float: right"></span>
+                </a>
+            </div>
+            <div id="collapseOption-NC" class="panel-collapse collapse">
+                <div class="panel-body">
+                    <div class="option-info">无人机航拍10cm分辨率可见光图像</div>
                 </div>
             </div>
         </div>

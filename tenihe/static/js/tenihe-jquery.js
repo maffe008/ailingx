@@ -39,15 +39,22 @@ $(document).ready(function(){
 
     });
 });
+$(document).ready(function(){
+    $("#maplistToggle").click(function(){
+        $("#maplistBar").toggle();
+        $(this).toggleClass("ToggleLogomaprightArrow");
+
+    });
+});
 
 $(document).ready(function(){
     $(".optionToolBlock").mouseover(function(){
-        $(this).css({"background-color":"rgba(241,242,242,0.9)","color":"#222222"})
+        $(this).css({"background-color":"rgba(0,0,0,0.8)"})
     });
 });
 $(document).ready(function(){
     $(".optionToolBlock").mouseout(function(){
-        $(this).css({"background-color":"transparent","color":"#f1f2f2"})
+        $(this).css({"background-color":"transparent"})
     });
 });
 
@@ -72,6 +79,16 @@ $(document).ready(function(){
     });
 });
 
+$(document).ready(function(){
+    $(".blocklist-heading-Area").mouseover(function(){
+        $(this).css({"background-color":"rgba(241,242,242,0.7)","color":"#222222","font-weight":"bold"})
+    });
+});
+$(document).ready(function(){
+    $(".blocklist-heading-Area").mouseout(function(){
+        $(this).css({"background-color":"rgba(1, 75, 32, 0.8)","color":"#f1f2f2","font-weight":"normal"})
+    });
+});
 
 $(document).ready(function(){
     $(".blocklist-heading").mouseover(function(){
@@ -80,7 +97,7 @@ $(document).ready(function(){
 });
 $(document).ready(function(){
     $(".blocklist-heading").mouseout(function(){
-        $(this).css({"background-color":"transparent","color":"#f1f2f2","font-weight":"normal"})
+        $(this).css({"background-color":"rgba(64, 161, 2, 0.8)","color":"#f1f2f2","font-weight":"normal"})
     });
 });
 
@@ -131,7 +148,7 @@ $(document).ready(function(){
         $(this).css({"color":"#ff8c00"})
     });
     cell_id.mouseout(function(){
-        $(this).css({"color":"#ffffff"})
+        $(this).css({"color":"#f1f2f2"})
     });
     cell_id.click(function(){
         //alert($(this).attr("id"));
@@ -148,6 +165,28 @@ $(document).ready(function(){
         var cur_date = $(this);
         display_date(cur_date);
     })
+});
+
+$(document).ready(function(){
+    $(".layer_func_card").mouseover(function(){
+        $(this).css({"background-color":"rgba(0,0,0,0.8)"})
+    });
+});
+$(document).ready(function(){
+    $(".layer_func_card").mouseout(function(){
+        $(this).css({"background-color":"rgba(64, 161, 2, 0.8)"})
+    });
+});
+
+$(document).ready(function(){
+    $(".card-date").mouseover(function(){
+        $(this).css({"background-color":"rgba(64,64,64,0.4)"})
+    });
+});
+$(document).ready(function(){
+    $(".card-date").mouseout(function(){
+        $(this).css({"background-color":"rgba(162, 181, 1, 0.8)"})
+    });
 });
 
 

@@ -1,6 +1,6 @@
 <div class="intropanel">
     <div id="sys_panel">
-        <div class="card-blue">
+        <div class="card-lightgreen">
             <h3>呼伦贝尔农垦</h3>
             <p>
                 呼伦贝尔农垦集团是一个最有条件、最有基础、最有特色、最有潜力、优势明显、后劲十足的大型国有农垦企业：
@@ -14,7 +14,7 @@
                 <li>六、区位优越，生态良好，适宜打造绿色有机农产品基地。</li>
             </ul>
         </div>
-        <div class="card-red">
+        <div class="card-orange">
             <h4>
                  单击列表跳转至该地区视野。
             </h4>
@@ -24,7 +24,7 @@
                 <li>单击第三级列表显示地块</li>
             </ul>
         </div>
-        <div class="card-green">
+        <div class="card-darkgreen">
             <ul>
                 <li><span class="glyphicon glyphicon-map-marker"></span>：无数据，单击跳转地区信息图</li>
                 <li><span class="glyphicon glyphicon-fullscreen"></span>：有数据，单击跳转地区高清图</li>
@@ -35,14 +35,14 @@
 
 
     <div id="Area_panel" style="display:none">
-        <div class="card-red">
+        <div class="card-midgreen">
             <h4>头条新闻</h4>
             <strong>2017-11-11</strong>
             <p id="area_new">
                 今年特泥河农场粮食产量比去年增长20%！
             </p>
         </div>
-        <div class="card-blue">
+        <div class="card-darkgreen">
             <h4>特泥河农牧场</h4>
             <strong>呼伦贝尔农垦</strong>
             <p id="coordinate"></p>
@@ -52,12 +52,12 @@
                 其中草原120万亩，可垦耕地67万亩，林地30万亩，水面5万亩，村屯道路6万亩，低洼沼泽地J0万亩，山岭砂地17万亩。
             </p>
         </div>
-        <div class="card-green">
+        <div class="card-lightgreen">
             <p>
                 草原面积126万亩，耕地面积38万亩，人工林地面积1.9万亩。
             </p>
         </div>
-        <div class="card-yellow">
+        <div class="card-orange">
             <p>
                 全场38万亩耕地全部实施免耕播种，5.48万耕地实现了抗旱节水灌溉；
                 建成了以农业科技研发和新品种繁育推广为核心的科技试验示范园区一处，建成现代化农业样板队两个（二队、四队）。
@@ -69,7 +69,7 @@
     </div>
 
     <div id="Block_panel" style="display:none">
-        <div class="card-green" >
+        <div class="card-darkgreen" >
             <h4 id="block_id">XX生产队</h4>
             <strong>特泥河农牧场</strong>
             <p id="block_intro">
@@ -82,7 +82,7 @@
                 XX生产队信息
             </p>
         </div>
-        <div class="card-blue">
+        <div class="card-midgreen">
             <h4>生产队新闻</h4>
             <strong>2017-11-11</strong>
             <p id="block_new">
@@ -92,7 +92,7 @@
         </div>
     </div>
     <div id="Cell_panel" style="display:none">
-        <div class="card-yellow">
+        <div class="card-darkgreen">
             <h4><strong id="cell_id">XX生产队010x00x地块</strong> <small  id="cell_data" style="color: #f1f2f2"></small></h4>
             <strong id="cell_block"></strong>
             <p id="cell_intro">
@@ -103,7 +103,7 @@
             </p>
         </div>
 
-        <div class="manage_func_card card-green">
+        <div class="manage_func_card card-midgreen">
             <div class="manage_func_btn"><span class="optionToolIcon glyphicon glyphicon-tint" ></span>水分值</div>
             <div class="manage_func_btn"><span class="optionToolIcon glyphicon glyphicon-certificate" ></span>肥力值</div>
             <div class="manage_func_btn"><span class="optionToolIcon glyphicon glyphicon-camera" ></span>巡田率</div>
@@ -124,7 +124,8 @@
                         异常点数量为1个，正常。
                     </div>
                     <div id="D_tnh_08_001_04_img" class="date_img_div">
-                        <img class="date_img" src="/static/img/Dateimg/1.png" >
+                        <a href="{% url 'tenihe:tenihemap' '010800104' %}" target="_blank" data-toggle="tooltip" title="点击图标显示详细数据">
+                        <img class="date_img" src="/static/img/Dateimg/1.png" ></a>
                     </div>
                 </div>
             </div>
@@ -154,101 +155,6 @@
                     </div>
                 </div>
             </div>
-            <div class="card-date panel">
-                <div>
-                     <h5 class="date_title" id="D_tnh_08_001_01" data-toggle="collapse" data-parent="#accordion" href="#date1">2017-08-16</h5>
-                </div>
-                <div id="date1" class="collapse">
-                    <div id="D_tnh_08_001_01_info">
-                        异常点数量为1个，正常。
-                    </div>
-                </div>
-            </div>
-            <div class="card-date panel">
-                <div>
-                     <h5 class="date_title" id="D_tnh_08_001_01" data-toggle="collapse" data-parent="#accordion" href="#date1">2017-08-16</h5>
-                </div>
-                <div id="date1" class="collapse">
-                    <div id="D_tnh_08_001_01_info">
-                        异常点数量为1个，正常。
-                    </div>
-                </div>
-            </div>
-            <div class="card-date panel">
-                <div>
-                     <h5 class="date_title" id="D_tnh_08_001_01" data-toggle="collapse" data-parent="#accordion" href="#date1">2017-08-16</h5>
-                </div>
-                <div id="date1" class="collapse">
-                    <div id="D_tnh_08_001_01_info">
-                        异常点数量为1个，正常。
-                    </div>
-                </div>
-            </div>
-            <div class="card-date panel">
-                <div>
-                     <h5 class="date_title" id="D_tnh_08_001_01" data-toggle="collapse" data-parent="#accordion" href="#date1">2017-08-16</h5>
-                </div>
-                <div id="date1" class="collapse">
-                    <div id="D_tnh_08_001_01_info">
-                        异常点数量为1个，正常。
-                    </div>
-                </div>
-            </div>
-            <div class="card-date panel">
-                <div>
-                     <h5 class="date_title" id="D_tnh_08_001_01" data-toggle="collapse" data-parent="#accordion" href="#date1">2017-08-16</h5>
-                </div>
-                <div id="date1" class="collapse">
-                    <div id="D_tnh_08_001_01_info">
-                        异常点数量为1个，正常。
-                    </div>
-                </div>
-            </div>
-            <div class="card-date panel">
-                <div>
-                     <h5 class="date_title" id="D_tnh_08_001_01" data-toggle="collapse" data-parent="#accordion" href="#date1">2017-08-16</h5>
-                </div>
-                <div id="date1" class="collapse">
-                    <div id="D_tnh_08_001_01_info">
-                        异常点数量为1个，正常。
-                    </div>
-                </div>
-            </div>
-            <div class="card-date panel">
-                <div>
-                     <h5 class="date_title" id="D_tnh_08_001_01" data-toggle="collapse" data-parent="#accordion" href="#date1">2017-08-16</h5>
-                </div>
-                <div id="date1" class="collapse">
-                    <div id="D_tnh_08_001_01_info">
-                        异常点数量为1个，正常。
-                    </div>
-                </div>
-            </div>
-            <div class="card-date panel">
-                <div>
-                     <h5 class="date_title" id="D_tnh_08_001_01" data-toggle="collapse" data-parent="#accordion" href="#date1">2017-08-16</h5>
-                </div>
-                <div id="date1" class="collapse">
-                    <div id="D_tnh_08_001_01_info">
-                        异常点数量为1个，正常。
-                    </div>
-                </div>
-            </div>
-            <div class="card-date panel">
-                <div>
-                     <h5 class="date_title" id="D_tnh_08_001_01" data-toggle="collapse" data-parent="#accordion" href="#date1">2017-08-16</h5>
-                </div>
-                <div id="date1" class="collapse">
-                    <div id="D_tnh_08_001_01_info">
-                        异常点数量为1个，正常。
-                    </div>
-                </div>
-            </div>
         </div>
-
-
     </div>
-
-
-
 </div>
