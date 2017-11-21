@@ -115,26 +115,64 @@
         //map.on('dbclick', function(e) {alert('['+e.lnglat.getLng()+','+e.lnglat.getLat()+']');});
         var bounds = new AMap.Bounds(result.locations[0],result.locations[1]),
         groundImageOpts = {
-            opacity: 1,   //图片透明度
+            opacity: 0.9,   //图片透明度
             clickable: true,//图片相应鼠标点击事件，默认：false
             map: map     //图片叠加的地图对象
         };
         map.setLimitBounds(bounds);
-        var groundImage = new AMap.GroundImage({{ NCurl|safe }}, bounds, groundImageOpts);
+        
+        has_nc = false;
+        has_ndvi = false;
+        has_color = false;
+        
+        if(has_nc == false){
+            var groundImage = new AMap.GroundImage({{ NCurl|safe }}, bounds, groundImageOpts);
+            has_nc = true;
+        }
+
 
         var NDVI_choose = document.getElementById("NDVI_choose");
         NDVI_choose.addEventListener("click",show_ndvi);
         function show_ndvi(){
-            if (NDVI_choose.className == "check-box glyphicon glyphicon-unchecked"){
+            if (has_ndvi == false){
+                groundImagendvi = new AMap.GroundImage({{ NDVIurl|safe }}, bounds, groundImageOpts);
                 NDVI_choose.className ='check-box glyphicon glyphicon-check';
-                var groundImagendvi = new AMap.GroundImage({{ NDVIurl|safe }}, bounds, groundImageOpts);
-            }else if(NDVI_choose.className == "check-box glyphicon glyphicon-check"){
-                NDVI_choose.className ='check-box glyphicon glyphicon-unchecked';
-                var groundImage = new AMap.GroundImage({{ NCurl|safe }}, bounds, groundImageOpts);
-            }else{
-                alert("NDVI_choose ERROR");
+                has_ndvi = true;
+            }else {
+                if(NDVI_choose.className == "check-box glyphicon glyphicon-check"){
+                    NDVI_choose.className ='check-box glyphicon glyphicon-unchecked';
+                    groundImagendvi.setOpacity(0);
+                }else if(NDVI_choose.className == "check-box glyphicon glyphicon-unchecked"){
+                    NDVI_choose.className ='check-box glyphicon glyphicon-check';
+                    groundImagendvi.setOpacity(1);
+                }else{
+                    alert("NDVI_choose ERROR");
+                }
             }
         }
+        var color_choose = document.getElementById("color_choose");
+        color_choose.addEventListener("click",show_color);
+        function show_color(){
+            //alert("11");
+            if (has_color == false){
+                //alert({{ NDVICurl|safe }}+"|"+has_color);
+                groundImagecolor = new AMap.GroundImage({{ NDVICurl|safe }}, bounds, groundImageOpts);
+                color_choose.className ='check-box glyphicon glyphicon-check';
+                has_color = true;
+            }else {
+                if(color_choose.className == "check-box glyphicon glyphicon-check"){
+                    color_choose.className ='check-box glyphicon glyphicon-unchecked';
+                    groundImagecolor.setOpacity(0);
+                }else if(color_choose.className == "check-box glyphicon glyphicon-unchecked"){
+                    color_choose.className ='check-box glyphicon glyphicon-check';
+                    groundImagecolor.setOpacity(1);
+                }else{
+                    alert("color_choose ERROR");
+                }
+            }
+        }
+        
+        
         var MTool1 = document.getElementById("MTool1");
         MTool1.addEventListener("click",show_coordinate);
         var MTool2 = document.getElementById("MTool2");
@@ -157,9 +195,12 @@
                     offset: new AMap.Pixel(20, 20),//修改label相对于maker的位置
                     content: temppos
                 });
+                document.getElementById("trees").innerHTML += "<tr><td>"+temppos.lng+"</td>"+"<td>"+temppos.lat+"</td>"+"<td>["+temppos+"]</td>"+"<td>"+"</td></tr>";
+                document.getElementById("savetrees").innerHTML += "["+temppos+"],"
             });
 
         }
+//<td></td><td></td><td></td><td></td>
         function calculate_length(){
             //ruler.turnOn();
             mousetool.close(false);

@@ -342,7 +342,73 @@
 		<!--林业面板-->
 		<div class="tab-pane" id="panel-forestry">
 
-			 <!--博罗-->
+            <!--河源-->
+			<div class="panel-group blocklist" id="panel-blocklist">
+				<div class="blocklist-heading-Area">
+                    <a href="{% url 'demo:demomap' 9 %}" target="_blank"><span id="Demo_Area_Heyuan" class="glyphicon glyphicon-fullscreen" onclick="" style="cursor: pointer"></span></a>
+					<span id="Demo_Area_Heyuan_loc" style="cursor: pointer">河源林业防治</span>
+					<span class="glyphicon glyphicon-chevron-down" data-toggle="collapse" data-parent="#listBar"
+						  data-target="#panel-element-demo-Heyuan" style="float: right;cursor: pointer"></span>
+				</div>
+				<!--地块列表|河源1-5块-->
+				<div id="panel-element-demo-Heyuan" class="panel-collapse collapse">
+					<div class="blocklist-heading">
+						<a href="{% url 'demo:demomap' 901 %}" target="_blank">
+                            <span id="Demo_Area_Heyuan_A" class="glyphicon glyphicon-fullscreen" onclick=""></span></a>
+						<span id="Demo_Area_Heyuan_A_outline">东北部范围</span>
+						<span class="glyphicon glyphicon-chevron-down" data-toggle="collapse" data-parent="#panel-blocklist"
+							  data-target="#panel-element-demo-Heyuan_A" style="float: right"></span>
+					</div>
+					<div id="panel-element-demo-Heyuan_A" class="panel-collapse collapse">
+						<div id="Demo_Cell_Heyuan_A_00" class="Blockname panel-body" >
+							<span id="Demo_Cell_Heyuan_A_01_loc" class="glyphicon glyphicon-leaf" style="cursor: pointer"></span>
+							示例区
+						</div>
+						<div id="Demo_Cell_Heyuan_A_01" class="Blockname panel-body" >
+							<span id="Demo_Cell_Heyuan_A_02_loc" class="glyphicon glyphicon-info-sign" style="cursor: pointer"></span>
+							功能
+						</div>
+					</div>
+
+						<div class="blocklist-heading">
+						<a href="{% url 'demo:demomap' 902 %}" target="_blank">
+                            <span id="Demo_Area_Heyuan_B" class="glyphicon glyphicon-fullscreen" onclick=""></span></a>
+						<span id="Demo_Area_Heyuan_B_outline">西南部范围1</span>
+						<span class="glyphicon glyphicon-chevron-down" data-toggle="collapse" data-parent="#panel-blocklist"
+							  data-target="#panel-element-demo-Heyuan_B" style="float: right"></span>
+					</div>
+					<div id="panel-element-demo-Heyuan_B" class="panel-collapse collapse">
+						<div id="Demo_Cell_Heyuan_B_00" class="Blockname panel-body" >
+							<span id="Demo_Cell_Heyuan_B_01_loc" class="glyphicon glyphicon-leaf" style="cursor: pointer"></span>
+							示例区
+						</div>
+						<div id="Demo_Cell_Heyuan_B_01" class="Blockname panel-body" >
+							<span id="Demo_Cell_Heyuan_B_02_loc" class="glyphicon glyphicon-info-sign" style="cursor: pointer"></span>
+							功能
+						</div>
+					</div>
+
+						<div class="blocklist-heading">
+						<a href="{% url 'demo:demomap' 903 %}" target="_blank">
+                            <span id="Demo_Area_Heyuan_C" class="glyphicon glyphicon-fullscreen" onclick=""></span></a>
+						<span id="Demo_Area_Heyuan_C_outline">西南部范围2</span>
+						<span class="glyphicon glyphicon-chevron-down" data-toggle="collapse" data-parent="#panel-blocklist"
+							  data-target="#panel-element-demo-Heyuan_C" style="float: right"></span>
+					</div>
+					<div id="panel-element-demo-Heyuan_C" class="panel-collapse collapse">
+						<div id="Demo_Cell_Heyuan_C_00" class="Blockname panel-body" >
+							<span id="Demo_Cell_Heyuan_C_01_loc" class="glyphicon glyphicon-leaf" style="cursor: pointer"></span>
+							示例区
+						</div>
+						<div id="Demo_Cell_Heyuan_C_01" class="Blockname panel-body" >
+							<span id="Demo_Cell_Heyuan_C_02_loc" class="glyphicon glyphicon-info-sign" style="cursor: pointer"></span>
+							功能
+						</div>
+					</div>
+				</div>
+			</div>
+
+            <!--博罗-->
 			<div class="panel-group blocklist" id="panel-blocklist">
 				<div class="blocklist-heading-Area">
 					<a href="{% url 'demo:demomap' 5 %}" target="_blank" data-toggle="tooltip" title="点击图标显示详细数据" >
@@ -352,7 +418,7 @@
 						  data-target="#panel-element-demo-Boluo"  style="float: right;cursor: pointer"></span>
 				</div>
 				<!--地块列表|博罗县罗阳镇细1-3块-->
-				<div id="panel-element-demo-Boluo" class="panel-collapse collapse in">
+				<div id="panel-element-demo-Boluo" class="panel-collapse collapse">
 					<div class="blocklist-heading">
 						<a href="{% url 'demo:demomap' 50001 %}" target="_blank" data-toggle="tooltip" title="点击图标显示详细数据" >
                             <span id="Demo_Area_Boluo_A" class="glyphicon glyphicon-fullscreen" onclick=""></span></a>

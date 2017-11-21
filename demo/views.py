@@ -25,7 +25,7 @@ def demomap(request, param1):
     abc_name = abc_id_to_abc_name(abc_id)
     (centerPlng, centerPlat, zoom) = abc_id_to_abc_centerP(abc_id)
     nswe = abc_id_to_abc_imgloc(abc_id)
-    (NCurl, NDVIurl) = abc_id_to_abc_imgurl(abc_id)
+    (NCurl, NDVIurl, NDVICurl) = abc_id_to_abc_imgurl(abc_id)
 
     illtreecount = random.randint(15, 30)
     illtrees = []
@@ -48,6 +48,7 @@ def demomap(request, param1):
         'img_nswe': json.dumps(nswe),
         'NCurl': json.dumps(NCurl),
         'NDVIurl': json.dumps(NDVIurl),
+        'NDVICurl': json.dumps(NDVICurl),
         'illtrees': illtrees,
     })
 
@@ -71,6 +72,10 @@ def abc_id_to_abc_name(argument):
         '7': "新疆",
         '70016': "七星农场十六区重点观察区",
         '8': "张家口",
+        '9': "河源",
+        '901': "河源东北部地块",
+        '902': "河源西南部地块上半部分",
+        '903': "河源西南部地块下半部分",
     }
     return switcher.get(argument, "nothing")
 
@@ -94,6 +99,10 @@ def abc_id_to_abc_centerP(argument):
         '7': "132.91",
         '70016': "132.90421",
         '8': "114.848022",
+        '9': "河源",
+        '901': "114.73484",
+        '902': "114.68264",
+        '903': "114.66624",
 
 
     }
@@ -115,6 +124,10 @@ def abc_id_to_abc_centerP(argument):
         '7': "47.24",
         '70016': "47.25683",
         '8': "40.785556",
+        '9': "河源",
+        '901': "23.84557",
+        '902': "23.80764",
+        '903': "23.79567",
 
     }
     switcherzoom = {
@@ -135,6 +148,10 @@ def abc_id_to_abc_centerP(argument):
         '7': "14",
         '70016': "20",
         '8': "12",
+        '9': "12",
+        '901': "16",
+        '902': "16",
+        '903': "16",
 
     }
     return switcherlng.get(argument, "116.358"), \
@@ -156,6 +173,10 @@ def abc_id_to_abc_imgloc(argument):
         '500020003': "23.13019885",
         '7': "47.27325",
         '70016': "47.26006",
+        '9': "河源",
+        '901': "23.85415",
+        '902': "23.82362",
+        '903': "23.80345",
 
     }
     switchersouth = {
@@ -171,6 +192,10 @@ def abc_id_to_abc_imgloc(argument):
         '500020003': "23.12899526",
         '7': "47.20734",
         '70016': "47.25312",
+        '9': "河源",
+        '901': "23.8372",
+        '902': "23.80112",
+        '903': "23.78074",
 
     }
     switcherwest = {
@@ -186,6 +211,10 @@ def abc_id_to_abc_imgloc(argument):
         '500020003': "114.1936271",
         '7': "132.85228",
         '70016': "132.89877",
+        '9': "河源",
+        '901': "114.72593",
+        '902': "114.65927",
+        '903': "114.64901",
 
     }
     switchereast = {
@@ -201,6 +230,10 @@ def abc_id_to_abc_imgloc(argument):
         '500020003': "114.1953767",
         '7': "132.95563",
         '70016': "132.90902",
+        '9': "河源",
+        '901': "114.74437",
+        '902': "114.70413",
+        '903': "114.694",
 
     }
     return switchernorth.get(argument, "23"),\
@@ -222,6 +255,10 @@ def abc_id_to_abc_imgurl(argument):
         '500020003': "/static/img/Compartmentimg/BL_0002_0003_nc.png",
         '7': "/static/img/Areaimg/QXnc.png",
         '70016': "/static/img/16eg.png",
+        '9': "河源",
+        '901': "/static/img/Blockimg/HY_1.png",
+        '902': "/static/img/Blockimg/HY_2.png",
+        '903': "/static/img/Blockimg/HY_3.png",
     }
     switcherndvi = {
         '5': "/static/img/Areaimg/BL_ndvi.png",
@@ -234,6 +271,28 @@ def abc_id_to_abc_imgurl(argument):
         '500020002': "/static/img/Compartmentimg/BL_0002_0002_ndvi.png",
         '500020003': "/static/img/Compartmentimg/BL_0002_0003_ndvi.png",
         '7': "/static/img/Areaimg/QXndvi.png",
+        '9': "河源",
+        '901': "/static/img/Blockimg/HY_1_ndvi.png",
+        '902': "/static/img/Blockimg/HY_2_ndvi.png",
+        '903': "/static/img/Blockimg/HY_3_ndvi.png",
+    }
+    switcherndvicolor = {
+        '5': "/static/img/Areaimg/BL_ndvi.png",
+        '50001': "/static/img/Blockimg/BL_0001_ndvi.png",
+        '50002': "/static/img/Blockimg/BLWN_ndvi_1_00.png",
+        '500010001': "/static/img/Compartmentimg/BL_0001_0001_ndvi.png",
+        '500010002': "/static/img/Compartmentimg/BL_0001_0002_ndvi.png",
+        '500010003': "/static/img/Compartmentimg/BL_0001_0003_ndvi.png",
+        '500020001': "/static/img/Compartmentimg/BL_0002_0001_ndvi.png",
+        '500020002': "/static/img/Compartmentimg/BL_0002_0002_ndvi.png",
+        '500020003': "/static/img/Compartmentimg/BL_0002_0003_ndvi.png",
+        '7': "/static/img/Areaimg/QXndvi.png",
+        '9': "河源",
+        '901': "/static/img/Blockimg/HY_1_ndvi_color.png",
+        '902': "/static/img/Blockimg/HY_2_ndvi_color.png",
+        '903': "/static/img/Blockimg/HY_3_ndvi_color.png",
     }
     return switchernc.get(argument, "/static/img/default.png"),\
-           switcherndvi.get(argument, "/static/img/default.png")
+           switcherndvi.get(argument, "/static/img/default.png"),\
+           switcherndvicolor.get(argument, "/static/img/default.png")
+

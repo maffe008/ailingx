@@ -5,13 +5,18 @@
         </div>
         {%  include 'demo_LayerDiv.html' %}
         <div class="intro">
-            <h4>数据显示示例</h4>
-            <table border="1" width="100%">
-                <tr><th>ID</th><th>经纬度</th><th>范围</th><th>数量</th></tr>
-                {% for tree in illtrees %}
-                     <tr><td>{{ tree.index }}</td><td>{{ tree.lng }},{{ tree.lat }}</td><td>{{ tree.area }} </td><td>{{ tree.count }}</td></tr>
-                {% endfor %}
+            <h4>数据显示</h4>
+            <table id="trees" border="1" width="100%">
+                <tr><th>经度</th><th>纬度</th><th>坐标组</th><th>备注</th></tr>
+                <tr>
+                    <td></td><td></td><td></td><td></td>
+                </tr>
+
             </table>
+        </div>
+        <div class="intro">
+            <h4>数据存档</h4>
+            <p id= "savetrees"></p>
         </div>
 
     </div>

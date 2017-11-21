@@ -581,6 +581,14 @@
             [p_XJ_A[5],p_XJ_A[7],p_XJ_A[8],p_XJ_A[6]]
         ];
 
+        var area_hy_1 = [[114.724, 23.83885], [114.72833, 23.85507], [114.74587, 23.8519],  [114.7415, 23.83619] ];
+        var area_hy_23 = [[114.653476,23.793194],[114.688269,23.820227],[114.697778,23.811529],[114.662123,23.785058]];
+
+
+        var block_hy_1 = [];
+        var block_hy_2 = [];
+        var block_hy_3 = [];
+
         var egbl = [[114.19984, 23.12434],[114.19984, 23.12205],[114.20219, 23.12205],[114.20219, 23.12434]];
 
         // 3-2.Create a symbol for rendering the graphic
@@ -1738,6 +1746,13 @@
         });
         on(dojo.query("#Demo_Cell_Xinjiang_A_03_loc"), "click", function() {
             add_polygon_Cell(block_XJ_A,Cell_XJ_A[2]);
+        });
+
+
+        on(dojo.query("#Demo_Area_Heyuan_loc"), "click", function() {
+            add_polygon_block(area_hy_1);
+            add_polygon_block_noclear(area_hy_23);
+            mainView.goTo({position: [114.688269,23.820227,20000], heading: 0, tilt: 0});
         });
 
         mainView.on('click', function(evt){
