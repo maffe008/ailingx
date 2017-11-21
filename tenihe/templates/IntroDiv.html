@@ -113,48 +113,15 @@
             <div class="manage_func_btn"><span class="optionToolIcon glyphicon glyphicon-warning-sign" ></span>异常点</div>
             <div class="manage_func_btn"><span class="optionToolIcon glyphicon glyphicon-tree-deciduous" ></span>成熟度</div>
         </div>
-
-        <div class="panel-group" id="accordion">
-            <div class="card-date panel">
-                <div>
-                    <h5 class="date_title" id="D_tnh_08_001_04" data-toggle="collapse" data-parent="#accordion" href="#date4">2017-10-18</h5>
-                </div>
-                <div id="date4" class="collapse in">
-                    <div id="D_tnh_08_001_04_info">
-                        异常点数量为1个，正常。
-                    </div>
-                    <div id="D_tnh_08_001_04_img" class="date_img_div">
-                        <a href="{% url 'tenihe:tenihemap' '010800104' %}" target="_blank" data-toggle="tooltip" title="点击图标显示详细数据">
-                        <img class="date_img" src="/static/img/Dateimg/1.png" ></a>
-                    </div>
-                </div>
+        <div>
+            <div id="C01date" style="display: none">
+                {% include 'C01date.html' %}
             </div>
-            <div class="card-date panel">
-                <div>
-                     <h5 class="date_title" id="D_tnh_08_001_02" data-toggle="collapse" data-parent="#accordion" href="#date2">2017-08-30</h5>
-                </div>
-                <div id="date2" class="collapse">
-                    <div id="D_tnh_08_001_02_info">
-                        异常点数量为1个，正常。
-                    </div>
-                    <div id="D_tnh_08_001_02_img" class="date_img_div">
-                        <img class="date_img" src="/static/img/Dateimg/2.png" >
-                    </div>
-                </div>
-            </div>
-            <div class="card-date panel">
-                <div>
-                     <h5 class="date_title" id="D_tnh_08_001_01" data-toggle="collapse" data-parent="#accordion" href="#date1">2017-08-16</h5>
-                </div>
-                <div id="date1" class="collapse">
-                    <div id="D_tnh_08_001_01_info">
-                        异常点数量为1个，正常。
-                    </div>
-                    <div id="D_tnh_08_001_01_img" class="date_img_div">
-                        <img class="date_img" src="/static/img/Dateimg/3.png" >
-                    </div>
-                </div>
+            <div id="C02date" style="display: none">
+                {% include 'C02date.html' %}
             </div>
         </div>
     </div>
+
+
 </div>

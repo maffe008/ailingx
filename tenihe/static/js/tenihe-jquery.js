@@ -159,6 +159,24 @@ $(document).ready(function(){
         display_cell(cur_cell_id);
     })
 });
+$(document).ready(function(){
+    $("#C_tnh_08_001").click(function(){
+        var c01date = $("#C01date");
+        c01date.css({"display":"block"});
+        c01date.siblings().css({"display":"none"});
+        var cur_cd_id = $(this);
+        display_cd(cur_cd_id);
+    })
+});
+$(document).ready(function(){
+    $("#C_tnh_08_002").click(function(){
+        var c02date = $("#C02date");
+        c02date.css({"display":"block"});
+        c02date.siblings().css({"display":"none"});
+        var cur_cd_id = $(this);
+        display_cd(cur_cd_id);
+    })
+});
 
 $(document).ready(function(){
     $(".date_title").click(function(){
@@ -166,6 +184,7 @@ $(document).ready(function(){
         display_date(cur_date);
     })
 });
+
 
 $(document).ready(function(){
     $(".layer_func_card").mouseover(function(){

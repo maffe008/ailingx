@@ -89,19 +89,19 @@ function display_cell(id){
     switch (Cid){
         case "C_tnh_08_001":
             document.getElementById("cell_intro").innerText = '地块情况,种植水飞蓟';
-            document.getElementById("cell_data").innerText = cell_sq(800,200)+"亩";
+            document.getElementById("cell_data").innerText = "193亩";
             break;
         case "C_tnh_08_002":
             document.getElementById("cell_intro").innerText = '地块情况,种植大麦';
-            document.getElementById("cell_data").innerText = cell_sq(800,200)+"亩";
+            document.getElementById("cell_data").innerText = "229亩";
             break;
         case "C_tnh_08_003":
             document.getElementById("cell_intro").innerText = '地块情况,种植水飞蓟';
-            document.getElementById("cell_data").innerText = cell_sq(800,200)+"亩";
+            document.getElementById("cell_data").innerText = cell_sq(200,100)+"亩";
             break;
         default:
             document.getElementById("cell_intro").innerText = '地块情况,种植XX';
-            document.getElementById("cell_data").innerText = cell_sq(800,200)+"亩";
+            document.getElementById("cell_data").innerText = cell_sq(200,100)+"亩";
             break;
     }
 }
@@ -156,4 +156,7 @@ function Date_info_random(Did){
     else{
         return [error_c,"存在异常"];
     }
+}
+function display_cd(id){
+    //alert(id);
 }
