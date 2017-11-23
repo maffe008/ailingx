@@ -80,24 +80,40 @@ def getcell(argument):
 
 def abc_id_to_abc_name(argument):
     switcher = {
-        '010800102': "特泥河农场八队001地块",
-        '010800202': "特泥河农场八队002地块",
+        '010800101': "特泥河农场八队001地块2017-08-16架次",
+        '010800201': "特泥河农场八队002地块2017-08-16架次",
+        '010800102': "特泥河农场八队001地块2017-08-30架次",
+        '010800202': "特泥河农场八队002地块2017-08-30架次",
+        '010800104': "特泥河农场八队001地块2017-10-18架次",
+        '010800204': "特泥河农场八队002地块2017-10-18架次",
     }
     return switcher.get(argument, "nothing")
 
 
 def abc_id_to_abc_centerP(argument):
     switcherlng = {
+        '010800101': "120.36365",
+        '010800201': "120.34881",
         '010800102': "120.36365",
         '010800202': "120.34881",
+        '010800104': "120.36365",
+        '010800204': "120.34881",
     }
     switcherlat = {
+        '010800101': "49.52156",
+        '010800201': "49.52691",
         '010800102': "49.52156",
         '010800202': "49.52691",
+        '010800104': "49.52156",
+        '010800204': "49.52691",
     }
     switcherzoom = {
+        '010800101': "18",
+        '010800201': "18",
         '010800102': "18",
         '010800202': "18",
+        '010800104': "18",
+        '010800204': "18",
     }
     return switcherlng.get(argument, "120"), \
            switcherlat.get(argument, "49"), \
@@ -106,20 +122,36 @@ def abc_id_to_abc_centerP(argument):
 
 def abc_id_to_abc_imgloc(argument):
     switchernorth = {
+        '010800101': "49.52325",
+        '010800201': "49.52935",
         '010800102': "49.52325",
         '010800202': "49.52935",
+        '010800104': "49.52325",
+        '010800204': "49.52935",
     }
     switchersouth = {
+        '010800101': "49.520",
+        '010800201': "49.5243",
         '010800102': "49.520",
         '010800202': "49.5243",
+        '010800104': "49.520",
+        '010800204': "49.5243",
     }
     switcherwest = {
+        '010800101': "120.35877",
+        '010800201': "120.34283",
         '010800102': "120.35877",
         '010800202': "120.34283",
+        '010800104': "120.35877",
+        '010800204': "120.34283",
     }
     switchereast = {
+        '010800101': "120.36831",
+        '010800201': "120.35726",
         '010800102': "120.36831",
         '010800202': "120.35726",
+        '010800104': "120.36831",
+        '010800204': "120.35726",
     }
     return switchernorth.get(argument, "49"),\
            switchersouth.get(argument, "49"),\
@@ -129,16 +161,28 @@ def abc_id_to_abc_imgloc(argument):
 
 def abc_id_to_abc_imgurl(argument):
     switchernc = {
+        '010800101': "/static/img/Dateimg/0108001_01_nc.png",
+        '010800201': "/static/img/Dateimg/0108002_01_nc.png",
         '010800102': "/static/img/Dateimg/0108001_02_nc.png",
         '010800202': "/static/img/Dateimg/0108002_02_nc.png",
+        '010800104': "/static/img/Dateimg/0108001_04_nc.png",
+        '010800204': "/static/img/Dateimg/0108002_04_nc.png",
     }
     switcherndvi = {
+        '010800101': "/static/img/Dateimg/0108001_01_ndvi.png",
+        '010800201': "/static/img/Dateimg/0108002_01_ndvi.png",
         '010800102': "/static/img/Dateimg/0108001_02_ndvi.png",
         '010800202': "/static/img/Dateimg/0108002_02_ndvi.png",
+        '010800104': "/static/img/Dateimg/0108001_04_ndvi.png",
+        '010800204': "/static/img/Dateimg/0108002_04_ndvi.png",
     }
     switcherthermal = {
+        '010800101': "/static/img/Dateimg/0108001_01_thermal.png",
+        '010800201': "/static/img/Dateimg/0108002_01_thermal.png",
         '010800102': "/static/img/Dateimg/0108001_02_thermal.png",
         '010800202': "/static/img/Dateimg/0108002_02_thermal.png",
+        '010800104': "/static/img/Dateimg/0108001_04_thermal.png",
+        '010800204': "/static/img/Dateimg/0108002_04_thermal.png",
     }
     return switchernc.get(argument, "/static/img/default.png"),\
            switcherndvi.get(argument, "/static/img/default.png"),\

@@ -191,11 +191,8 @@
             AMap.event.addListener(mousetool, "draw", function callback(e) {
                 var eObject = e.obj;//obj属性就是鼠标事件完成所绘制的覆盖物对象。
                 var temppos = eObject.getPosition();
-                eObject.setLabel({
-                    offset: new AMap.Pixel(20, 20),//修改label相对于maker的位置
-                    content: temppos
-                });
-                document.getElementById("trees").innerHTML += "<tr><td>"+temppos.lng+"</td>"+"<td>"+temppos.lat+"</td>"+"<td>["+temppos+"]</td>"+"<td>"+"</td></tr>";
+
+                document.getElementById("trees").innerHTML += "<tr><td>"+temppos.lng+"</td>"+"<td>"+temppos.lat+"</td>"+"<td>["+temppos+"]</td></tr>";
                 document.getElementById("savetrees").innerHTML += "["+temppos+"],"
             });
 

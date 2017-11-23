@@ -48,7 +48,7 @@
     var ps = [wsp,enp,gpscenterP];
     AMap.convertFrom(ps, "gps", function(status, result) {
         //alert(result.locations[0]+","+result.locations[1]+","+result.locations[2]);
-        var map = new AMap.Map('allmap', {
+        var mouseListener,map = new AMap.Map('allmap', {
             resizeEnable: true,
             zoom:{{ zoom|safe }},
             center: result.locations[2],
@@ -146,34 +146,78 @@
         MTool3.addEventListener("click",calculate_length);
         var MTool4 = document.getElementById("MTool4");
         MTool4.addEventListener("click",calculate_area);
+        index_mkr = 0;
+        index_len = 0;
+        index_area = 0;
         function show_coordinate(){
 
         }
+        var remove = function() {
+            if (mouseListener) {
+                AMap.event.removeListener(mouseListener);//移除事件，以绑定时返回的对象作为参数
+            }
+        };
+
         function show_marker(){
-            //ruler.turnOff();
+            remove();
             mousetool.close(false);
             mousetool.marker(); //使用鼠标工具，在地图上画标记点
-            AMap.event.addListener(mousetool, "draw", function callback(e) {
-                var eObject = e.obj;//obj属性就是鼠标事件完成所绘制的覆盖物对象。
-                var temppos = eObject.getPosition();
-                eObject.setLabel({
-                    offset: new AMap.Pixel(20, 20),//修改label相对于maker的位置
-                    content: temppos
-                });
-            });
-
+            mouseListener = AMap.event.addListener(mousetool, "draw", data_marker);
         }
+        function data_marker(e){
+            if (index_mkr == 0){
+                document.getElementById("tool2data").innerHTML += "<tr><th>标记编号</th><th>经纬度</th></tr>";
+            }
+            index_mkr += 1;
+            var eObject = e.obj;//obj属性就是鼠标事件完成所绘制的覆盖物对象。
+            var temppos = eObject.getPosition();
+            eObject.setLabel({
+                offset: new AMap.Pixel(20, 20),//修改label相对于maker的位置
+                content: index_mkr+"|"+temppos
+            });
+            document.getElementById("tool2data").innerHTML += "<tr><td>"+index_mkr+"</td>"+"<td>"+temppos+"</td></tr>";
+        }
+
         function calculate_length(){
-            //ruler.turnOn();
+            remove();
             mousetool.close(false);
             mousetool.rule();
+            mouseListener = AMap.event.addListener(mousetool, "draw", data_length);
+        }
+        function data_length(e){
+            index_len += 1;
+            var eObject = e.obj;//obj属性就是鼠标事件完成所绘制的覆盖物对象。
+            var templen = eObject.getLength();
+            var temppath = eObject.getPath();
+            document.getElementById("tool3data").innerHTML += "<tr style='background:grey'><th>第"+index_len+"条线</th><th>长度"+templen+"米</th></tr>";
+            document.getElementById("tool3data").innerHTML += "<tr><th>折点编号</th><th>经纬度</th></tr>";
+            var i=0,len=temppath.length;
+            for (; i<len; )
+            {
+                document.getElementById("tool3data").innerHTML += "<tr><td>"+i+"</td><td>"+temppath[i]+"</td></tr>";
+                i++;
+            }
         }
 
         function calculate_area(){
-            //ruler.turnOff();
+            remove();
             mousetool.close(false);
             mousetool.measureArea();
-
+            mouseListener = AMap.event.addListener(mousetool, "draw", data_area);
+        }
+        function data_area(e) {
+            index_area += 1;
+            var eObject = e.obj;//obj属性就是鼠标事件完成所绘制的覆盖物对象。
+            var temparea = eObject.getArea();
+            var temppath = eObject.getPath();
+            document.getElementById("tool4data").innerHTML += "<tr style='background:grey'><th>第"+index_area+"个范围</th><th>面积"+temparea+"平方米</th></tr>";
+            document.getElementById("tool4data").innerHTML += "<tr><th>顶点编号</th><th>经纬度</th></tr>";
+            var i=0,len=temppath.length;
+            for (; i<len; )
+            {
+                document.getElementById("tool4data").innerHTML += "<tr><td>"+i+"</td><td>"+temppath[i]+"</td></tr>";
+                i++;
+            }
         }
     });
 
