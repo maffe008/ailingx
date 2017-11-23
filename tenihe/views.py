@@ -80,6 +80,9 @@ def getcell(argument):
 
 def abc_id_to_abc_name(argument):
     switcher = {
+        '010801': "特泥河农场八队2017-08-16架次",
+        '010802': "特泥河农场八队2017-08-30架次",
+        '010804': "特泥河农场八队2017-10-18架次",
         '010800101': "特泥河农场八队001地块2017-08-16架次",
         '010800201': "特泥河农场八队002地块2017-08-16架次",
         '010800102': "特泥河农场八队001地块2017-08-30架次",
@@ -92,6 +95,9 @@ def abc_id_to_abc_name(argument):
 
 def abc_id_to_abc_centerP(argument):
     switcherlng = {
+        '010801': "120.35625",
+        '010802': "120.35625",
+        '010804': "120.35625",
         '010800101': "120.36365",
         '010800201': "120.34881",
         '010800102': "120.36365",
@@ -100,6 +106,9 @@ def abc_id_to_abc_centerP(argument):
         '010800204': "120.34881",
     }
     switcherlat = {
+        '010801': "49.5297",
+        '010802': "49.5297",
+        '010804': "49.5297",
         '010800101': "49.52156",
         '010800201': "49.52691",
         '010800102': "49.52156",
@@ -108,6 +117,9 @@ def abc_id_to_abc_centerP(argument):
         '010800204': "49.52691",
     }
     switcherzoom = {
+        '010801': "15",
+        '010802': "15",
+        '010804': "15",
         '010800101': "18",
         '010800201': "18",
         '010800102': "18",
@@ -122,6 +134,9 @@ def abc_id_to_abc_centerP(argument):
 
 def abc_id_to_abc_imgloc(argument):
     switchernorth = {
+        '010801': "49.54289",
+        '010802': "49.54289",
+        '010804': "49.54289",
         '010800101': "49.52325",
         '010800201': "49.52935",
         '010800102': "49.52325",
@@ -130,6 +145,9 @@ def abc_id_to_abc_imgloc(argument):
         '010800204': "49.52935",
     }
     switchersouth = {
+        '010801': "49.51583",
+        '010802': "49.51583",
+        '010804': "49.51583",
         '010800101': "49.520",
         '010800201': "49.5243",
         '010800102': "49.520",
@@ -138,6 +156,9 @@ def abc_id_to_abc_imgloc(argument):
         '010800204': "49.5243",
     }
     switcherwest = {
+        '010801': "120.33527",
+        '010802': "120.33527",
+        '010804': "120.33527",
         '010800101': "120.35877",
         '010800201': "120.34283",
         '010800102': "120.35877",
@@ -146,6 +167,9 @@ def abc_id_to_abc_imgloc(argument):
         '010800204': "120.34283",
     }
     switchereast = {
+        '010801': "120.37551",
+        '010802': "120.37551",
+        '010804': "120.37551",
         '010800101': "120.36831",
         '010800201': "120.35726",
         '010800102': "120.36831",
@@ -161,6 +185,9 @@ def abc_id_to_abc_imgloc(argument):
 
 def abc_id_to_abc_imgurl(argument):
     switchernc = {
+        '010801': "/static/img/Blockimg/0108_01_nc.png",
+        '010802': "/static/img/Blockimg/0108_02_nc.png",
+        '010804': "/static/img/Blockimg/0108_04_nc.png",
         '010800101': "/static/img/Dateimg/0108001_01_nc.png",
         '010800201': "/static/img/Dateimg/0108002_01_nc.png",
         '010800102': "/static/img/Dateimg/0108001_02_nc.png",
@@ -169,6 +196,9 @@ def abc_id_to_abc_imgurl(argument):
         '010800204': "/static/img/Dateimg/0108002_04_nc.png",
     }
     switcherndvi = {
+        '010801': "/static/img/Blockimg/0108_01_ndvi.png",
+        '010802': "/static/img/Blockimg/0108_02_ndvi.png",
+        '010804': "/static/img/Blockimg/0108_04_ndvi.png",
         '010800101': "/static/img/Dateimg/0108001_01_ndvi.png",
         '010800201': "/static/img/Dateimg/0108002_01_ndvi.png",
         '010800102': "/static/img/Dateimg/0108001_02_ndvi.png",
@@ -177,6 +207,9 @@ def abc_id_to_abc_imgurl(argument):
         '010800204': "/static/img/Dateimg/0108002_04_ndvi.png",
     }
     switcherthermal = {
+        '010801': "/static/img/Blockimg/0108_01_thermal.png",
+        '010802': "/static/img/Blockimg/0108_02_thermal.png",
+        '010804': "/static/img/Blockimg/0108_04_thermal.png",
         '010800101': "/static/img/Dateimg/0108001_01_thermal.png",
         '010800201': "/static/img/Dateimg/0108002_01_thermal.png",
         '010800102': "/static/img/Dateimg/0108001_02_thermal.png",
