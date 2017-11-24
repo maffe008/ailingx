@@ -256,7 +256,7 @@
             var fillSymbol = new SimpleFillSymbol({
                 color: [20, 75, 255, 0.8],
                 outline: {
-                    color: [255, 255, 255],
+                    color: [20, 75, 255],
                     width: 1
                 }
             });
@@ -268,7 +268,7 @@
             var fillSymbol = new SimpleFillSymbol({
                 color: [160, 225, 255, 0.5],
                 outline: {
-                    color: [255, 255, 255],
+                    color: [160, 225, 255],
                     width: 1
                 }
             });
@@ -278,9 +278,9 @@
         }
         function add_polygon_water_low(plg){
             var fillSymbol = new SimpleFillSymbol({
-                color: [255, 255, 0, 0.3],
+                color: [255, 200, 170, 0.5],
                 outline: {
-                    color: [255, 255, 255],
+                    color: [255, 200, 170],
                     width: 1
                 }
             });
@@ -332,7 +332,7 @@
             );
             // 1-2.Create a symbol for drawing the point
             var markerSymbol = new SimpleMarkerSymbol({
-                color: [226, 119, 40],
+                color: [102, 174, 255],
                 outline: {
                     color: [255, 255, 255],
                     width: 2
@@ -341,12 +341,12 @@
             var ptinfo = {
                 Name: "巡田人",
                 coordinate: lng+','+lat,
-                Info: "巡田情况简述"
+                info: "巡田情况简述"
             };
             var popupTemp = {
                 title: "{Name}",
-                content: "<h3><b>{coordinate}</b></h3>"+
-                        "<p>{Info}</p>"
+                content: "<h4><b>{coordinate}</b></h4>"+
+                        "<p>{info}</p>"
             };
             var pointGraphic = new Graphic({
                 geometry: pt,
@@ -399,7 +399,7 @@
             var fillSymbol = new SimpleFillSymbol({
                 color: [64, 161, 0, 0.5],
                 outline: {
-                    color: [255, 255, 255],
+                    color: [64, 161, 0],
                     width: 1
                 }
             });
@@ -411,7 +411,7 @@
             var fillSymbol = new SimpleFillSymbol({
                 color: [191, 191, 0, 0.5],
                 outline: {
-                    color: [255, 255, 255],
+                    color: [191, 191, 0],
                     width: 1
                 }
             });
@@ -423,7 +423,7 @@
             var fillSymbol = new SimpleFillSymbol({
                 color: [255, 0, 0,0.5],
                 outline: {
-                    color: [255, 255, 255],
+                    color: [255, 0, 0],
                     width: 1
                 }
             });
@@ -433,40 +433,41 @@
         }
 		//异常
 		function add_ill_crop(lng,lat){
-            var tp = new Point({longitude: lng, latitude: lat});
-            var webStyleSymbol_ill = new WebStyleSymbol({
-                name: "Other",
-                portal: {
-                url: "https://www.arcgis.com"
-                },
-                styleName: "EsriRealisticTreesStyle"
+            var pt = new Point(
+                    {longitude: lng, latitude: lat }
+            );
+            var markerSymbol = new SimpleMarkerSymbol({
+                color: [226, 119, 40],
+                outline: {
+                    color: [255, 255, 255],
+                    width: 2
+                }
             });
             var attr_crop = {
-                lng: lng,
-                lat: lat
+                coordinate: lng+','+lat,
+                info: "异常点情况"
             };
-            // Create pop-up template
-            var popupTemp_crop = {
+            var popupTemp = {
                 title: "异常点位置",
                 content:
-				"<h5>经度：<b>{lng}</b></h5>" +
-                "<h5>纬度：<b>{lat}</b></h5>"
+                "<h4><b>{coordinate}</b></h4>" +
+                "<p>{info}</p>"
             };
-            var ptGra = new Graphic({
-                geometry: tp,
-                symbol: webStyleSymbol_ill,
+            var pointGraphic = new Graphic({
+                geometry: pt,
+                symbol: markerSymbol,
                 attributes: attr_crop,
-                popupTemplate: popupTemp_crop
+                popupTemplate: popupTemp
             });
-            mainView.graphics.add(ptGra);
+            mainView.graphics.add(pointGraphic);
 
         }
-		//成熟
+        //成熟
 		function add_polygon_grow_done(plg){
             var fillSymbol = new SimpleFillSymbol({
-                color: [196, 171, 44, 0.5],
+                color: [253, 207, 6, 0.8],
                 outline: {
-                    color: [196, 171, 44],
+                    color: [253, 207, 6],
                     width: 1
                 }
             });
@@ -528,10 +529,42 @@
             [120.34364, 49.52852], [120.34432, 49.52934], [120.35481, 49.52566], [120.3534, 49.52428], [120.34431, 49.52739]];
         var tnh_08_003 =[
             [120.36706, 49.53226], [120.36902, 49.53538], [120.3713, 49.53662], [120.37334, 49.53625], [120.372, 49.53134]];
-        var tnh_08_001_water_mid =[ [120.36038, 49.52182], [120.36264, 49.52197], [120.36247, 49.52088],[120.36012, 49.52082]];
-        var tnh_08_001_water_high =[ [120.36206, 49.52224], [120.36351, 49.52213], [120.36528, 49.52131], [120.36157, 49.52117] ];
 
+        var tnh_08_001_water_mid1 = [
+            [120.35934, 49.52173], [120.36074, 49.5216], [120.3608, 49.52108], [120.36012, 49.52103], [120.35957, 49.52131],
+            [120.35935, 49.52132]];
+        var tnh_08_001_water_mid2 = [
+            [120.36164, 49.52189], [120.36191, 49.52207], [120.36235, 49.52178], [120.36183, 49.5218]];
+        var tnh_08_001_water_high1 = [
+            [120.36546, 49.52196], [120.36602, 49.52226], [120.36693, 49.52239], [120.36737, 49.52291], [120.36755, 49.52127],
+            [120.36672, 49.52142], [120.36663, 49.52174], [120.36561, 49.52172] ];
+        var tnh_08_001_water_high2 = [
+            [120.3616, 49.52224], [120.362, 49.52243], [120.36252, 49.52228], [120.36245, 49.52197], [120.36212, 49.52196]];
 
+        var tnh_08_001_organic_mid1 = [
+            [120.36186, 49.52184], [120.36251, 49.52219], [120.36251, 49.52257], [120.36361, 49.52263], [120.36374, 49.52197],
+            [120.36425, 49.52195], [120.36385, 49.52142], [120.36282, 49.52135]];
+        var tnh_08_001_organic_mid2 = [
+            [120.36565, 49.52145], [120.36659, 49.52143], [120.36657, 49.52126], [120.36641, 49.52114], [120.36593, 49.52123]];
+        var tnh_08_001_organic_high1 = [
+            [120.36455, 49.52161], [120.36569, 49.52192], [120.36672, 49.52206], [120.36685, 49.52287], [120.36736, 49.52291],
+            [120.36758, 49.52077], [120.36653, 49.52068], [120.36659, 49.52143], [120.36561, 49.52145], [120.36488, 49.52142]];
+        var tnh_08_001_organic_high2 = [
+            [120.36113, 49.52081], [120.3614, 49.52083], [120.36164, 49.52071], [120.36133, 49.52065]];
+
+        var tnh_08_001_insurance1 = [[120.36054, 49.52196], [120.36159, 49.52191], [120.36166, 49.52161], [120.36108, 49.5216]];
+
+        var tnh_08_001_emerge_false1 = [[120.36524, 49.52192], [120.36569, 49.52194], [120.36569, 49.52181], [120.36536, 49.52181]];
+        var tnh_08_001_emerge_false2 = [[120.3615, 49.52206], [120.36196, 49.52173], [120.36217, 49.52178], [120.36183, 49.52214]];
+        var tnh_08_001_emerge_false3 = [[120.36648, 49.52271], [120.36707, 49.52273], [120.36711, 49.52253], [120.36669, 49.52257]];
+
+        var tnh_08_001_health_mid1 = [[120.36406, 49.52223], [120.3657, 49.52236], [120.3657, 49.52226], [120.36419, 49.52218]];
+        var tnh_08_001_health_mid2 = [[120.36037, 49.522], [120.36137, 49.52206], [120.36157, 49.52146], [120.36064, 49.52147],[120.36071, 49.52179]];
+        var tnh_08_001_health_mid3 = [[120.36011, 49.52099], [120.36125, 49.52111], [120.36128, 49.52101],[120.36007, 49.5209]];
+        var tnh_08_001_health_low1 = [[120.36574, 49.52139], [120.36659, 49.52143], [120.36644, 49.52116], [120.36597, 49.52123]];
+
+        var tnh_08_001_grow_no1 = [[120.36416, 49.52056], [120.36451, 49.52103], [120.36518, 49.52125], [120.36592, 49.52115], [120.36621, 49.52067]];
+        var tnh_08_001_grow_yet1 = [[120.35945, 49.52075], [120.35997, 49.52087], [120.36001, 49.52023], [120.35949, 49.52021]];
 
 
 		var tnh_09 = [
@@ -666,7 +699,7 @@
             add_polygon_block_noclear(tnh_08b);
         });
         on(dojo.query("#C_tnh_08_001"), "click", function() {
-            mainView.goTo({position: [ 120.36365, 49.52156,2000], heading: 0, tilt: 0});
+            mainView.goTo({position: [ 120.36365, 49.52086,2000], heading: 0, tilt: 0});
             add_polygon_Cell(tnh_08a,tnh_08_001,"特泥河","八","001");
         });
         on(dojo.query("#C_tnh_08_002"), "click", function() {
@@ -680,22 +713,26 @@
 
         //功能
         on(dojo.query("#func_water"), "click", function() {
-            mainView.goTo({position: [ 120.36365, 49.52156,2000], heading: 0, tilt: 0});
+            mainView.goTo({position: [ 120.36365, 49.52086,2000], heading: 0, tilt: 0});
             remove_polygon_all();
             add_polygon_water_low(tnh_08_001);
-            add_polygon_water_mid(tnh_08_001_water_mid);
-            add_polygon_water_high(tnh_08_001_water_high);
+            add_polygon_water_mid(tnh_08_001_water_mid1);
+            add_polygon_water_mid(tnh_08_001_water_mid2);
+            add_polygon_water_high(tnh_08_001_water_high1);
+            add_polygon_water_high(tnh_08_001_water_high2);
         });
         on(dojo.query("#func_organic"), "click", function() {
-            mainView.goTo({position: [ 120.36365, 49.52156,2000], heading: 0, tilt: 0});
+            mainView.goTo({position: [ 120.36365, 49.52086,2000], heading: 0, tilt: 0});
             remove_polygon_all();
             add_polygon_organic_low(tnh_08_001);
-            add_polygon_organic_mid(tnh_08_001_water_mid);
-            add_polygon_organic_high(tnh_08_001_water_high);
+            add_polygon_organic_mid(tnh_08_001_organic_mid1);
+            add_polygon_organic_mid(tnh_08_001_organic_mid2);
+            add_polygon_organic_high(tnh_08_001_organic_high1);
+            add_polygon_organic_high(tnh_08_001_organic_high2);
 
         });
         on(dojo.query("#func_patrol"), "click", function() {
-            mainView.goTo({position: [ 120.36365, 49.52156,2000], heading: 0, tilt: 0});
+            mainView.goTo({position: [ 120.36365, 49.52086,2000], heading: 0, tilt: 0});
             remove_polygon_all();
             add_polygon_cellblank(tnh_08_001);
             add_point_patrol(120.36733, 49.52086);
@@ -707,38 +744,42 @@
             add_point_patrol(120.3673, 49.52286);
         });
         on(dojo.query("#func_insurance"), "click", function() {
-            mainView.goTo({position: [ 120.36365, 49.52156,2000], heading: 0, tilt: 0});
+            mainView.goTo({position: [ 120.36365, 49.52086,2000], heading: 0, tilt: 0});
             remove_polygon_all();
-            add_polygon_insurance(tnh_08_001_water_high)
+            add_polygon_insurance(tnh_08_001_insurance1)
         });
         on(dojo.query("#func_emerge"), "click", function() {
-            mainView.goTo({position: [ 120.36365, 49.52156,2000], heading: 0, tilt: 0});
+            mainView.goTo({position: [ 120.36365, 49.52086,2000], heading: 0, tilt: 0});
             remove_polygon_all();
             add_polygon_emerge_true(tnh_08_001);
-            add_polygon_emerge_false(tnh_08_001_water_high);
+            add_polygon_emerge_false(tnh_08_001_emerge_false1);
+            add_polygon_emerge_false(tnh_08_001_emerge_false2);
+            add_polygon_emerge_false(tnh_08_001_emerge_false3);
 
         });
         on(dojo.query("#func_health"), "click", function() {
-            mainView.goTo({position: [ 120.36365, 49.52156,2000], heading: 0, tilt: 0});
+            mainView.goTo({position: [ 120.36365, 49.52086,2000], heading: 0, tilt: 0});
             remove_polygon_all();
             add_polygon_health_high(tnh_08_001);
-            add_polygon_health_mid(tnh_08_001_water_mid);
-            add_polygon_health_low(tnh_08_001_water_high);
+            add_polygon_health_mid(tnh_08_001_health_mid1);
+            add_polygon_health_mid(tnh_08_001_health_mid2);
+            add_polygon_health_mid(tnh_08_001_health_mid3);
+            add_polygon_health_low(tnh_08_001_health_low1);
 
         });
         on(dojo.query("#func_ill_crop"), "click", function() {
-            mainView.goTo({position: [ 120.36365, 49.52156,2000], heading: 0, tilt: 0});
+            mainView.goTo({position: [ 120.36365, 49.52086,2000], heading: 0, tilt: 0});
             remove_polygon_all();
             add_ill_crop(120.36733, 49.52086);
             add_ill_crop(120.3595, 49.52041);
 
         });
         on(dojo.query("#func_grow"), "click", function() {
-            mainView.goTo({position: [ 120.36365, 49.52156,2000], heading: 0, tilt: 0});
+            mainView.goTo({position: [ 120.36365, 49.52086,2000], heading: 0, tilt: 0});
             remove_polygon_all();
-            add_polygon_grow_no(tnh_08_001);
-            add_polygon_grow_yet(tnh_08_001_water_mid);
-            add_polygon_grow_done(tnh_08_001_water_high);
+            add_polygon_grow_done(tnh_08_001);
+            add_polygon_grow_yet(tnh_08_001_grow_yet1);
+            add_polygon_grow_no(tnh_08_001_grow_no1);
         });
 
 
@@ -767,7 +808,7 @@
                var z = Math.round(evt.mapPoint.z * 100)/100;
                var loc = document.getElementById("curloc");
                loc.innerHTML = '鼠标单击位置：经纬度 [' + x + ', ' + y + '], 海拔' + z + 'm';
-               var tempco = document.getElementById("coordinate");
+               var tempco = document.getElementById("cell_newest");
                tempco.innerHTML = tempco.innerHTML +'[' + x + ', ' + y + '], ';
            }
         });
