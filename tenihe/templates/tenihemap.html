@@ -69,7 +69,57 @@
                 position: 'rt'
             }));
         });
+        AMap.service('AMap.Weather',function(){
+            var weather = new AMap.Weather();
+            weather.getLive('呼伦贝尔', function(err, data){
+                if(!err){
+                    var str = [];
+                    str.push('<tr class="table_date"><td>发布时间：</td><td>' + data.reportTime + '</td></tr>');
+                    str.push('<tr><td>天气：</td><td>' + data.weather + '</td></tr>');
+                    str.push('<tr><td>温度：</td><td>' + data.temperature + '℃</td></tr>');
+                    str.push('<tr><td>风向：</td><td>' + data.windDirection + '</td></tr>');
+                    str.push('<tr><td>风力：</td><td>' + data.windPower + ' 级</td></tr>');
+                    str.push('<tr><td>湿度：</td><td>' + data.humidity + '</td></tr>');
+                    str = str.join('');
+                    document.getElementById("realtime_wrather").innerHTML = str;
+                }
+            });
+            weather.getForecast('呼伦贝尔', function(err, data) {
+                if (err) {return;}
+                var str = [];
+                var temp_weather = [];
+                var temp_winddir = [];
+                var temp_windpower = [];
+                str.push('<tr><td>发布时间：</td><td>' + data.reportTime + '</td></tr>');
+                for (var i = 0,dateweather; i < data.forecasts.length; i++) {
+                    dateweather = data.forecasts[i];
+                    if(dateweather.dayWeather == dateweather.nightWeather){
+                        temp_weather = '<tr><td>天气</td><td>'+dateweather.dayWeather+'</td></tr>';
+                    }
+                    else{
+                        temp_weather = '<tr><td>天气</td><td>'+dateweather.dayWeather+'转'+dateweather.nightWeather+'</td></tr>';
+                    }
 
+                    if(dateweather.dayWindDir == dateweather.nightWindDir){
+                        temp_winddir = '<tr><td>风向</td><td>'+dateweather.dayWindDir + '风</td></tr>';
+                    }
+                    else{
+                        temp_winddir = '<tr><td>风向</td><td>'+dateweather.dayWindDir + '风转' + dateweather.nightWindDir+'风</td></tr>';
+                    }
+                    if(dateweather.dayWindPower == dateweather.nightWindPower){
+                        temp_windpower = '<tr><td>风力</td><td>'+dateweather.dayWindPower + '级</td></tr>';
+                    }
+                    else{
+                        temp_windpower = '<tr><td>风力</td><td>'+dateweather.dayWindPower + '转' + dateweather.nightWindPower+'级</td></tr>';
+                    }
+                    str.push('<tr class="table_date"><td>日期</td><td>'+dateweather.date+'</td></tr>'+ temp_weather +
+                            '<tr><td>温度</td><td>'+dateweather.nightTemp + '~' + dateweather.dayTemp+'℃</td></tr>'+ temp_winddir + temp_windpower
+                    );
+                }
+                str = str.join('');
+                document.getElementById('forcast_weather').innerHTML = str;
+            });
+        });
         map.plugin(["AMap.MouseTool"],function(){
             mousetool = new AMap.MouseTool(map);
             AMap.event.addListener(map, "click", function callback(e) {
@@ -139,7 +189,7 @@
         }
 
         var MTool1 = document.getElementById("MTool1");
-        MTool1.addEventListener("click",show_coordinate);
+        MTool1.addEventListener("click",show_weather);
         var MTool2 = document.getElementById("MTool2");
         MTool2.addEventListener("click",show_marker);
         var MTool3 = document.getElementById("MTool3");
@@ -149,7 +199,7 @@
         index_mkr = 0;
         index_len = 0;
         index_area = 0;
-        function show_coordinate(){
+        function show_weather(){
 
         }
         var remove = function() {

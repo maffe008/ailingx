@@ -2,7 +2,13 @@
     <div id="dataBar" >
         {% include 'SysNavDiv.html' %}
         {% include 'LayerDiv.html' %}
-        {% include 'Userdata.html' %}
+        <div id="weather_panel" style="display: block">
+            {%  include 'Weather.html' %}
+        </div>
+        <div id="userdata_panel" style="display: none">
+            {% include 'Userdata.html' %}
+        </div>
+
 
     </div>
     <div id="dataToggle" class="ToggleLogoleftArrow">

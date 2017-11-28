@@ -209,3 +209,27 @@ $(document).ready(function(){
 });
 
 
+$(document).ready(function(){
+    $("#MTool1").click(function(){
+        $("#weather_panel").css({"display":"block"});
+        $("#userdata_panel").css({"display":"none"});
+    })
+});
+$(document).ready(function(){
+    $("#MTool2").click(function(){
+        $("#weather_panel").css({"display":"none"});
+        $("#userdata_panel").css({"display":"block"});
+    })
+});
+$(document).ready(function(){
+    $("#MTool3").click(function(){
+        $("#weather_panel").css({"display":"none"});
+        $("#userdata_panel").css({"display":"block"});
+    })
+});
+$(document).ready(function(){
+    $("#MTool4").click(function(){
+        $("#weather_panel").css({"display":"none"});
+        $("#userdata_panel").css({"display":"block"});
+    })
+});

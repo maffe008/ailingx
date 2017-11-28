@@ -43,6 +43,7 @@ def tenihemap(request, param1):
     (centerPlng, centerPlat, zoom) = abc_id_to_abc_centerP(abc_id)
     nswe = abc_id_to_abc_imgloc(abc_id)
     (NCurl, NDVIurl, THurl) = abc_id_to_abc_imgurl(abc_id)
+    (f_date, f_weather, f_temperature, f_winddir, f_windpower, f_humidity ) = abc_id_to_abc_weather(abc_id)
 
     illtreecount = random.randint(15, 30)
     illtrees = []
@@ -67,6 +68,12 @@ def tenihemap(request, param1):
         'NDVIurl': json.dumps(NDVIurl),
         'THurl': json.dumps(THurl),
         'illtrees': illtrees,
+        'f_date': f_date,
+        'f_weather': f_weather,
+        'f_temperature': f_temperature,
+        'f_winddir': f_winddir,
+        'f_windpower': f_windpower,
+        'f_humidity': f_humidity,
     })
 
 
@@ -220,4 +227,61 @@ def abc_id_to_abc_imgurl(argument):
     return switchernc.get(argument, "/static/img/default.png"),\
            switcherndvi.get(argument, "/static/img/default.png"),\
            switcherthermal.get(argument, "/static/img/default.png"),
+
+def abc_id_to_abc_weather(argument):
+    switcherdate = {
+        '010800101': "2017-08-16 15:00:00",
+        '010800201': "2017-08-16 15:00:00",
+        '010800102': "2017-08-30 11:00:00",
+        '010800202': "2017-08-30 11:00:00",
+        '010800104': "2017-10-18 11:30:00",
+        '010800204': "2017-10-18 11:30:00",
+    }
+    switcherweather = {
+        '010800101': "多云",
+        '010800201': "多云",
+        '010800102': "晴",
+        '010800202': "晴",
+        '010800104': "晴",
+        '010800204': "晴",
+    }
+    switchertemperature = {
+        '010800101': "16~29℃",
+        '010800201': "16~29℃",
+        '010800102': "5~16℃",
+        '010800202': "5~16℃",
+        '010800104': "-5~6℃",
+        '010800204': "-5~6℃",
+    }
+    switcherwinddir = {
+        '010800101': "西风",
+        '010800201': "西风",
+        '010800102': "北风",
+        '010800202': "北风",
+        '010800104': "西风",
+        '010800204': "西风",
+    }
+    switcherwindpower = {
+        '010800101': "2级",
+        '010800201': "2级",
+        '010800102': "3级",
+        '010800202': "3级",
+        '010800104': "3级",
+        '010800204': "3级",
+    }
+    switcherhumidity = {
+        '010800101': "35",
+        '010800201': "35",
+        '010800102': "50",
+        '010800202': "50",
+        '010800104': "30",
+        '010800204': "30",
+    }
+    return switcherdate.get(argument, ""),\
+           switcherweather.get(argument, "未记录"),\
+           switchertemperature.get(argument, "--"),\
+           switcherwinddir.get(argument, "未记录"),\
+           switcherwindpower.get(argument, "--"),\
+           switcherhumidity.get(argument, "--")
+
 
