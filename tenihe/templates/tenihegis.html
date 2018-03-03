@@ -807,7 +807,7 @@
                var y = Math.round(evt.mapPoint.latitude * 100000)/100000;
                var z = Math.round(evt.mapPoint.z * 100)/100;
                var loc = document.getElementById("curloc");
-               loc.innerHTML = '鼠标单击位置：经纬度 [' + x + ', ' + y + '], 海拔' + z + 'm';
+               loc.innerHTML = '单击位置：经纬度 [' + x + ', ' + y + '], 海拔' + z + 'm';
                var tempco = document.getElementById("cell_newest");
                tempco.innerHTML = tempco.innerHTML +'[' + x + ', ' + y + '], ';
            }
