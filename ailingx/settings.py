@@ -126,6 +126,8 @@ STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATICFILES_DIRS = (
      os.path.join(BASE_DIR, 'ailingx/static'),
+     os.path.join(BASE_DIR, 'demo/static'),
+     os.path.join(BASE_DIR, 'tenihe/static'),
 )
 
 LOGIN_URL = 'login'

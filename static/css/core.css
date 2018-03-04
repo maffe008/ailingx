@@ -13,3 +13,9 @@ main{
     width: 100%;
     height:100%
 }
+#baseheader{
+    font-size: medium ;
+}
+#rightest{
+    padding-right: 45px;
+}
